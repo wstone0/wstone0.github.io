@@ -1,28 +1,26 @@
 ---
-title: "wstone0.github.io"
+title: ""
 about:
   id: intro-heading
   template: trestles
   image: images/2024-01-13 12.11.18.jpg
   links:
-    - icon: twitter
-      href: https://twitter.com/wstone0
+    - icon: envelope
+      href: mailto:wstone@macalester.edu
     - icon: github
       href: https://github.com/wstone0
 ---
-### Wesley Stone
-:::{#intro-heading}
 
-Hi! I'm a junior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration. 
+:::{#intro-heading}
+## Wesley Stone
+
+Hi! I'm a junior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration.
 
 ## Education
 
-Macalester College | St. Paul MN <br>
-B.A. in DATA SCIENCE/PHILOSOPHY | Sept 2022 - May 2026
-
+Macalester College \| St. Paul MN <br> B.A. in DATA SCIENCE/PHILOSOPHY \| Sept 2022 - May 2026
 :::
 
-### Biography
+## Biography
 
 I was born in Madison, Wisconsin, but I'd lived in Atlanta, Georgia nearly my entire life before returning to my Midwestern roots for college. I became interested in philosophy my first semester after taking an ethics class, and I soon decided to add data science to incorporate my diverse academic interests. With these two majors, my cognitive science concentration, and a study abroad semester next spring in Amsterdam that I'm very much looking forward to, my schedule is tight but I feel like it reflects the breadth of my passions. Outside of class, I enjoy reading, watching tv, and playing guitar.
-
