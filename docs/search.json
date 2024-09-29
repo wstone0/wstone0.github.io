@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nTidy Tuesday 1\n\n\n\n\n\n\nWesley Stone\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\n\n\n\nWesley Stone\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\nPolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChess First Strike Capability\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -116,7 +116,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\npolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate Change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChess First Strike Capability\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\nPolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChess First Strike Capability\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/urbanheat/index.html",
@@ -180,5 +180,26 @@
     "title": "Chess First Strike Capability",
     "section": "",
     "text": "It’s a well-known fact that playing the white pieces brings a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought to translate to winning about 55% of non-draws in reasonably competitive environments. But I was interested in how much this advantage varies given the skill level of the players.\n\n\n# A tibble: 6 × 16\n  game_id  rated  start_time end_time turns victory_status winner time_increment\n  &lt;chr&gt;    &lt;lgl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;         \n1 TZJHLljE FALSE     1.50e12  1.50e12    13 outoftime      white  15+2          \n2 l1NXvwaE TRUE      1.50e12  1.50e12    16 resign         black  5+10          \n3 mIICvQHh TRUE      1.50e12  1.50e12    61 mate           white  5+10          \n4 kWKvrqYL TRUE      1.50e12  1.50e12    61 mate           white  20+0          \n5 9tXo1AUZ TRUE      1.50e12  1.50e12    95 mate           white  30+3          \n6 MsoDV9wj FALSE     1.50e12  1.50e12     5 draw           draw   10+0          \n# ℹ 8 more variables: white_id &lt;chr&gt;, white_rating &lt;dbl&gt;, black_id &lt;chr&gt;,\n#   black_rating &lt;dbl&gt;, moves &lt;chr&gt;, opening_eco &lt;chr&gt;, opening_name &lt;chr&gt;,\n#   opening_ply &lt;dbl&gt;\n\n\nThis week’s dataset consists of 20,000 games collected from Lichess.org. To analyze it, I first filtered out unrated games, so that hopefully most of the games left would represent genuine effort rather than just testing or having fun. Next, I created four (somewhat arbitrary) rating categories: Beginner (&lt;1200), Intermediate (1200-1600), Advanced (1600-2000), and Expert (&gt;2000). Then, all that was left was to calculate the win rates and put them in a bar chart."
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html",
+    "href": "projects/STAT155FP/urbanization.html",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "",
+    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html#introduction",
+    "href": "projects/STAT155FP/urbanization.html#introduction",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "",
+    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html#exploratory-analysis",
+    "href": "projects/STAT155FP/urbanization.html#exploratory-analysis",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "Exploratory Analysis",
+    "text": "Exploratory Analysis\nTo answer these questions, I compared presidential election results, from MIT’s Election Data and Science Lab, to 538’s state urbanization index, calculated as the natural logarithm of the average number of people living within a five-mile radius of a given resident in each census tract in that state. This is a great dataset, because it is not sample data; it represents exactly what we are trying to study. Because of this, we can more confidently draw conclusions from analysis of the data. To start, let’s look at the most recent election. Here the conventional wisdom certainly holds up well."
   }
 ]

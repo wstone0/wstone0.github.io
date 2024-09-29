@@ -4,7 +4,7 @@ date: "2023-08-15"
 image: featured.png
 image-alt: "Screenshot of Shiny App."
 categories:
-  - Climate Change
+  - Climate change
 about: 
   template: solana
   image: featured.png

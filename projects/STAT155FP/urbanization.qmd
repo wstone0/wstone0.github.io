@@ -1,0 +1,54 @@
+---
+title: "The Urban-Rural Divide in American Politics"
+date: "2024-04-27"
+categories: Politics
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-packages, echo=FALSE, message=FALSE}
+library(dplyr)
+library(readr)
+library(tidyverse)
+library(ggplot2)
+library(extrafont)
+```
+
+```{r, echo=FALSE, message=FALSE}
+results <- read_csv("1976-2020-president.csv")
+urbanindex <- read_csv("urbanization-state.csv")
+```
+
+## Introduction
+
+The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?
+
+## Exploratory Analysis
+
+To answer these questions, I compared presidential election results, from MIT's Election Data and Science Lab, to 538's state urbanization index, calculated as the natural logarithm of the average number of people living within a five-mile radius of a given resident in each census tract in that state. This is a great dataset, because it is not sample data; it represents exactly what we are trying to study. Because of this, we can more confidently draw conclusions from analysis of the data. To start, let's look at the most recent election. Here the conventional wisdom certainly holds up well.
+
+```{r, echo=FALSE, message=FALSE}
+urbanindex <- urbanindex %>% 
+  mutate(state = toupper(state))
+```
+
+```{r, echo=FALSE, message=FALSE, fig.alt="Scatterplot of 538's state urbanization index versus Democratic vote share in the 2020 presidential election."}
+urbanD <- results %>%
+  filter(year == "2020") %>% 
+  left_join(urbanindex, by = join_by(state)) %>% 
+  mutate(voteprop = candidatevotes/totalvotes) %>% 
+  filter(party_simplified == "DEMOCRAT") %>% 
+  filter(voteprop > 0.01)
+
+urbanD %>% 
+  ggplot(aes(x = urbanindex, y = voteprop)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F) +
+  labs(x = "538's Urbanization Index", y = "2020 Democratic Vote Share", title = "The more urban a state, the better Biden's performance") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  theme_classic() +
+  theme(text = element_text(family = "Georgia"))
+```
