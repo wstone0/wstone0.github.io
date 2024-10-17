@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-10-17">
+
+<title>2024 Election Model – Wesley Stone</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Wesley Stone</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">2024 Election Model</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Politics</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 17, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>For my Stat 155 final project last semester (which can also be found in the Projects menu), I examined the connection between urbanization and presidential elections. The results were intriguing; there was both a strong correlation between the variables, and a nearly linear trend of increase in the past fifty years. With the 2024 election just around the corner, I thought it might be interesting to revisit these findings, and see what the implications could be for this pivotal race. To do so, I built a simple model meant to predict the outcome of the election, assuming a very strong correlation between urbanization and voting patterns.</p>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p>First, I retrieved urbanization numbers updated with 2020 census data from 538. Next, I computed the urbanization index for the US as a whole, to have a baseline to compare the states to. From these numbers, I obtained an “urban lean” for each state, showing how much more urban or rural it is than the country as a whole. This metric corresponds to the “partisan lean” calculated by 538, Cook, and others, which tells how much redder or bluer a state is from the baseline. So once I rescaled according to 2020 results, I had an “urban-partisan lean” for each Electoral College “state” (negative numbers indicate Republican advantage).</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">State</th>
+<th style="text-align: right;">Urban-Partisan Lean</th>
+<th style="text-align: right;">Predicted Outcome</th>
+<th style="text-align: left;">State</th>
+<th style="text-align: right;">Urban-Partisan Lean</th>
+<th style="text-align: right;">Predicted Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: right;">-45.70</td>
+<td style="text-align: right;">-43.10</td>
+<td style="text-align: left;">Nebraska</td>
+<td style="text-align: right;">-12.85</td>
+<td style="text-align: right;">-10.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alabama</td>
+<td style="text-align: right;">-22.43</td>
+<td style="text-align: right;">-19.83</td>
+<td style="text-align: left;">New Hampshire</td>
+<td style="text-align: right;">-17.76</td>
+<td style="text-align: right;">-15.16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arkansas</td>
+<td style="text-align: right;">-29.04</td>
+<td style="text-align: right;">-26.44</td>
+<td style="text-align: left;">New Jersey</td>
+<td style="text-align: right;">25.14</td>
+<td style="text-align: right;">27.74</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arizona</td>
+<td style="text-align: right;">8.63</td>
+<td style="text-align: right;">11.23</td>
+<td style="text-align: left;">New Mexico</td>
+<td style="text-align: right;">-17.51</td>
+<td style="text-align: right;">-14.91</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">California</td>
+<td style="text-align: right;">23.95</td>
+<td style="text-align: right;">26.55</td>
+<td style="text-align: left;">Nevada</td>
+<td style="text-align: right;">17.38</td>
+<td style="text-align: right;">19.98</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Colorado</td>
+<td style="text-align: right;">5.78</td>
+<td style="text-align: right;">8.38</td>
+<td style="text-align: left;">New York</td>
+<td style="text-align: right;">32.25</td>
+<td style="text-align: right;">34.85</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Connecticut</td>
+<td style="text-align: right;">7.70</td>
+<td style="text-align: right;">10.30</td>
+<td style="text-align: left;">Ohio</td>
+<td style="text-align: right;">-1.34</td>
+<td style="text-align: right;">1.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Delaware</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">3.16</td>
+<td style="text-align: left;">Oklahoma</td>
+<td style="text-align: right;">-16.82</td>
+<td style="text-align: right;">-14.22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Florida</td>
+<td style="text-align: right;">10.71</td>
+<td style="text-align: right;">13.31</td>
+<td style="text-align: left;">Oregon</td>
+<td style="text-align: right;">-3.01</td>
+<td style="text-align: right;">-0.41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Georgia</td>
+<td style="text-align: right;">-4.30</td>
+<td style="text-align: right;">-1.70</td>
+<td style="text-align: left;">Pennsylvania</td>
+<td style="text-align: right;">3.91</td>
+<td style="text-align: right;">6.51</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hawaii</td>
+<td style="text-align: right;">3.42</td>
+<td style="text-align: right;">6.02</td>
+<td style="text-align: left;">Rhode Island</td>
+<td style="text-align: right;">14.84</td>
+<td style="text-align: right;">17.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Iowa</td>
+<td style="text-align: right;">-24.72</td>
+<td style="text-align: right;">-22.12</td>
+<td style="text-align: left;">South Carolina</td>
+<td style="text-align: right;">-13.55</td>
+<td style="text-align: right;">-10.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Idaho</td>
+<td style="text-align: right;">-20.30</td>
+<td style="text-align: right;">-17.70</td>
+<td style="text-align: left;">South Dakota</td>
+<td style="text-align: right;">-40.99</td>
+<td style="text-align: right;">-38.39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Illinois</td>
+<td style="text-align: right;">13.13</td>
+<td style="text-align: right;">15.73</td>
+<td style="text-align: left;">Tennessee</td>
+<td style="text-align: right;">-13.14</td>
+<td style="text-align: right;">-10.54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Indiana</td>
+<td style="text-align: right;">-9.83</td>
+<td style="text-align: right;">-7.23</td>
+<td style="text-align: left;">Texas</td>
+<td style="text-align: right;">5.88</td>
+<td style="text-align: right;">8.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kansas</td>
+<td style="text-align: right;">-15.99</td>
+<td style="text-align: right;">-13.39</td>
+<td style="text-align: left;">Utah</td>
+<td style="text-align: right;">3.50</td>
+<td style="text-align: right;">6.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kentucky</td>
+<td style="text-align: right;">-19.43</td>
+<td style="text-align: right;">-16.83</td>
+<td style="text-align: left;">Virginia</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">3.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Louisiana</td>
+<td style="text-align: right;">-12.99</td>
+<td style="text-align: right;">-10.39</td>
+<td style="text-align: left;">Vermont</td>
+<td style="text-align: right;">-39.32</td>
+<td style="text-align: right;">-36.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Massachusetts</td>
+<td style="text-align: right;">16.77</td>
+<td style="text-align: right;">19.37</td>
+<td style="text-align: left;">Washington</td>
+<td style="text-align: right;">4.75</td>
+<td style="text-align: right;">7.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Maryland</td>
+<td style="text-align: right;">14.54</td>
+<td style="text-align: right;">17.14</td>
+<td style="text-align: left;">Wisconsin</td>
+<td style="text-align: right;">-14.30</td>
+<td style="text-align: right;">-11.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maine</td>
+<td style="text-align: right;">-35.91</td>
+<td style="text-align: right;">-33.31</td>
+<td style="text-align: left;">West Virginia</td>
+<td style="text-align: right;">-33.71</td>
+<td style="text-align: right;">-31.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Michigan</td>
+<td style="text-align: right;">-2.60</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">Wyoming</td>
+<td style="text-align: right;">-49.85</td>
+<td style="text-align: right;">-47.25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Minnesota</td>
+<td style="text-align: right;">-7.70</td>
+<td style="text-align: right;">-5.10</td>
+<td style="text-align: left;">NE 01</td>
+<td style="text-align: right;">-0.93</td>
+<td style="text-align: right;">1.67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Missouri</td>
+<td style="text-align: right;">-12.23</td>
+<td style="text-align: right;">-9.63</td>
+<td style="text-align: left;">NE 02</td>
+<td style="text-align: right;">18.66</td>
+<td style="text-align: right;">21.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mississippi</td>
+<td style="text-align: right;">-35.04</td>
+<td style="text-align: right;">-32.44</td>
+<td style="text-align: left;">NE 03</td>
+<td style="text-align: right;">-55.07</td>
+<td style="text-align: right;">-52.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Montana</td>
+<td style="text-align: right;">-44.73</td>
+<td style="text-align: right;">-42.13</td>
+<td style="text-align: left;">ME 01</td>
+<td style="text-align: right;">-22.52</td>
+<td style="text-align: right;">-19.92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">North Carolina</td>
+<td style="text-align: right;">-9.78</td>
+<td style="text-align: right;">-7.18</td>
+<td style="text-align: left;">ME 02</td>
+<td style="text-align: right;">-49.29</td>
+<td style="text-align: right;">-46.69</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">North Dakota</td>
+<td style="text-align: right;">-35.14</td>
+<td style="text-align: right;">-32.54</td>
+<td style="text-align: left;">District of Columbia</td>
+<td style="text-align: right;">48.43</td>
+<td style="text-align: right;">51.03</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>However, a partisan lean alone isn’t enough to tell you what will happen; it only predicts results in a neutral national environment. Thankfully, there are ample polls at both the national and state levels available for public consumption. <a href="https://www.270towin.com/2024-presidential-election-polls/">270towin</a> had the most state polls (relevant in a moment) available, so I took their national average, Harris +2.6% on the day of writing this. Now the model is giving real predictions. By and large they are reasonable, but there are some eye-raising outliers (Utah D+6? Vermont R+37???). In its current state, the model is just a representation of the national mood, and a fairly crude one at that. So I decided to take things a step further, and average the urban-partisan predictions with current state polling, which can hopefully account more for local trends. In turn, however, the polls are flawed in that they sometimes make incorrect assumptions about the overall environment. The urban-partisan lean can then be seen as adjusting the polls on the assumption that urbanization is the main plotline of the 2024 election (which could very well turn out not to be the case).</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">State</th>
+<th style="text-align: right;">Predicted Outcome</th>
+<th style="text-align: left;">State</th>
+<th style="text-align: right;">Predicted Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">District of Columbia</td>
+<td style="text-align: right;">68.86</td>
+<td style="text-align: left;">New Mexico</td>
+<td style="text-align: right;">-3.65</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">California</td>
+<td style="text-align: right;">25.78</td>
+<td style="text-align: left;">North Carolina</td>
+<td style="text-align: right;">-4.39</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Massachusetts</td>
+<td style="text-align: right;">24.33</td>
+<td style="text-align: left;">Wisconsin</td>
+<td style="text-align: right;">-5.70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New York</td>
+<td style="text-align: right;">24.17</td>
+<td style="text-align: left;">NE 01</td>
+<td style="text-align: right;">-6.71</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maryland</td>
+<td style="text-align: right;">22.97</td>
+<td style="text-align: left;">Maine</td>
+<td style="text-align: right;">-10.15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Jersey</td>
+<td style="text-align: right;">21.77</td>
+<td style="text-align: left;">South Carolina</td>
+<td style="text-align: right;">-10.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hawaii</td>
+<td style="text-align: right;">17.71</td>
+<td style="text-align: left;">Missouri</td>
+<td style="text-align: right;">-10.57</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rhode Island</td>
+<td style="text-align: right;">16.97</td>
+<td style="text-align: left;">Indiana</td>
+<td style="text-align: right;">-11.87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Illinois</td>
+<td style="text-align: right;">16.32</td>
+<td style="text-align: left;">Utah</td>
+<td style="text-align: right;">-12.95</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NE 02</td>
+<td style="text-align: right;">14.83</td>
+<td style="text-align: left;">Iowa</td>
+<td style="text-align: right;">-13.56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Washington</td>
+<td style="text-align: right;">14.17</td>
+<td style="text-align: left;">Nebraska</td>
+<td style="text-align: right;">-13.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Connecticut</td>
+<td style="text-align: right;">13.15</td>
+<td style="text-align: left;">Kansas</td>
+<td style="text-align: right;">-14.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Delaware</td>
+<td style="text-align: right;">10.83</td>
+<td style="text-align: left;">Louisiana</td>
+<td style="text-align: right;">-14.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Colorado</td>
+<td style="text-align: right;">9.69</td>
+<td style="text-align: left;">Oklahoma</td>
+<td style="text-align: right;">-15.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nevada</td>
+<td style="text-align: right;">9.69</td>
+<td style="text-align: left;">Tennessee</td>
+<td style="text-align: right;">-16.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Virginia</td>
+<td style="text-align: right;">5.41</td>
+<td style="text-align: left;">Arkansas</td>
+<td style="text-align: right;">-20.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arizona</td>
+<td style="text-align: right;">4.76</td>
+<td style="text-align: left;">Kentucky</td>
+<td style="text-align: right;">-21.42</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Florida</td>
+<td style="text-align: right;">3.66</td>
+<td style="text-align: left;">Alabama</td>
+<td style="text-align: right;">-22.61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ME 01</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: left;">ME 02</td>
+<td style="text-align: right;">-23.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pennsylvania</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: left;">Idaho</td>
+<td style="text-align: right;">-24.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oregon</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: left;">Mississippi</td>
+<td style="text-align: right;">-24.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vermont</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: right;">-26.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Texas</td>
+<td style="text-align: right;">1.24</td>
+<td style="text-align: left;">West Virginia</td>
+<td style="text-align: right;">-29.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Minnesota</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: left;">North Dakota</td>
+<td style="text-align: right;">-29.77</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Michigan</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: left;">Montana</td>
+<td style="text-align: right;">-30.57</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Georgia</td>
+<td style="text-align: right;">-1.10</td>
+<td style="text-align: left;">South Dakota</td>
+<td style="text-align: right;">-32.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ohio</td>
+<td style="text-align: right;">-2.97</td>
+<td style="text-align: left;">Wyoming</td>
+<td style="text-align: right;">-45.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Hampshire</td>
+<td style="text-align: right;">-3.08</td>
+<td style="text-align: left;">NE 03</td>
+<td style="text-align: right;">-52.83</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>Incorporating 270towin’s averages where available (and using 2020 results in the noncompetitive states where they aren’t), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there’s a lot to like. The model predicts Harris flipping the electoral-vote rich states of Florida and Texas, beating the polls in Pennsylvania, Nevada and Arizona and keeping surprisingly close in Ohio. There are silver linings for Republicans as well. The “Blue Wall” cracks, with Wisconsin turning red and Michigan and Minnesota becoming tossups. Trump also flips Maine, New Hampshire and New Mexico, while keeping remarkably close in Vermont and Oregon. While the Vermont number is pure fantasy, and a reminder that these “predictions” are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it’s often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 in 2020, two years ago the Democrat only won the governer’s race by 3.5%, which is pretty in-line with what the model predicts. However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a decisive Kamala Harris victory.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  Candidate Votes
+  &lt;chr&gt;     &lt;dbl&gt;
+1 Harris      336
+2 Trump       202</code></pre>
+</div>
+</div>
+<p>However, in reality this is a much closer contest than it appears: a shift of just 2.15 points to the right nationally would flip Michigan, Minnesota, Texas and, in the height of irony, Vermont, giving Trump exactly the 270 electoral votes needed to be the next President of the United States. Even ignoring Vermont, he would only have to make up an additional 0.12 points to win the aforementioned Oregon, and if the polls were off by about 4 points in Trump’s favor, as they were in 2020, he would take back Pennsylvania and Florida, as well as Maine’s 1st district for good measure, enough for a comfortable Electoral College victory.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="model-copy_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>How seriously should these predictions be taken? Mostly, this was just an exercise to satisfy my curiosity, and I wouldn’t put too much weight in the exact numbers. However, there are some reasons to think that it might be more accurate than it seems. For one, there’s my previous project, which showed that urbanization is a strong predictor of election results. It also has an advantage over other commonly-used predictors, such as race, gender or education, in that where you live is something you can change. But no one explanatory variable can possibly capture the collective consciousness of 330 million Americans. At the end of the day, the only way to know for sure who will win is to wait for all the votes to be cast and counted.</p>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">Geographic data</a><br> <a href="https://www.270towin.com/2024-presidential-election-polls/">Polls</a> (accessed on October 15)<br> <a href="https://www.kaggle.com/datasets/mikedelong/2024-electoral-college-votes-available?resource=download">Electoral votes</a><br> <a href="https://github.com/fivethirtyeight/data/tree/master/district-urbanization-index-2022">Urbanization, and</a><br> <a href="https://github.com/fivethirtyeight/data/tree/master/urbanization-index">Urbanization (for DC)</a><br> <a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html">Population data</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

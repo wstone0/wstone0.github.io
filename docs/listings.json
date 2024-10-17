@@ -2,19 +2,21 @@
   {
     "listing": "/about.html",
     "items": [
-      "/projects/TT8:6:2024/OlympicMedalTrends.html",
-      "/projects/STAT155FP/urbanization.html",
       "/projects/urbanheat/index.html",
-      "/projects/TT10:1:2024/TT2 copy.html"
+      "/projects/STAT155FP/urbanization.html",
+      "/projects/TT8:6:2024/OlympicMedalTrends.html",
+      "/projects/TT10:1:2024/TT2 copy.html",
+      "/projects/2024electionmodel/model copy.html"
     ]
   },
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/TT8:6:2024/OlympicMedalTrends.html",
-      "/projects/STAT155FP/urbanization.html",
       "/projects/urbanheat/index.html",
-      "/projects/TT10:1:2024/TT2 copy.html"
+      "/projects/STAT155FP/urbanization.html",
+      "/projects/TT8:6:2024/OlympicMedalTrends.html",
+      "/projects/TT10:1:2024/TT2 copy.html",
+      "/projects/2024electionmodel/model copy.html"
     ]
   }
 ]
