@@ -81,7 +81,7 @@ preds <- urban_table %>%
   mutate(urbanlean = urbanindex - UI_US_adj) %>% 
   mutate(predlean = urbanlean * 20) %>% 
   select(state, predlean) %>% 
-  mutate(predoutcome = predlean + 1.7)
+  mutate(predoutcome = predlean + 1.4)
 
 first_half <- preds[1:28, ]
 second_half <- preds[29:56, ]
@@ -102,7 +102,7 @@ However, a partisan lean alone isn't enough to tell you what will happen; it onl
 ```{r, echo=FALSE}
 polls <- tibble(
   state = c("Georgia", "Florida", "Pennsylvania", "Arizona", "Michigan", "Nevada", "North Carolina", "Wisconsin", "California", "Montana", "Ohio", "Texas", "Maryland", "Massachusetts", "Minnesota", "Virginia", "New Hampshire", "Iowa", "North Dakota", "South Carolina", "Alaska", "Indiana", "Delaware", "New York", "Colorado", "New Mexico", "Connecticut", "Rhode Island", "Maine", "Missouri", "Arkansas", "Washington", "Oklahoma", "Nebraska", "West Virginia", "Utah", "Vermont", "Oregon", "Alabama", "Hawaii", "Idaho", "Illinois", "Kansas", "Kentucky", "Louisiana", "Mississippi", "New Jersey", "South Dakota", "Tennessee", "Wyoming"),
-  avg = c(-1.8, -7, 0.3, -1.7, 0.0, 0.0, -0.5, -0.7, 24.7, -19, -6.4, -5.3, 29.8, 28.5, 6.5, 7.6, 9, -5, -27, -10, -7, -16.5, 18.5, 13.5, 11, 7.6, 16, 16.5, 13, -11.5, -15, 20.6, -16, -17, -27, -16, 41, 12, -25.4, 29.4, -30.7, 16.9, -14.6, -26, -18.6, -16.5, 15.8, -25.8, -21, -43.3)
+  avg = c(-1.9, -6.6, -0.3, -1.7, 0.2, 0.3, -0.6, 0.4, 24.7, -19, -6.4, -5.6, 29.2, 28.5, 6.5, 7.6, 9, -5, -27, -10, -7, -16.5, 18.5, 16.5, 11, 7, 16, 16.5, 13, -11.5, -15, 20.6, -16, -17, -27, -16, 41, 12, -25.4, 29.4, -30.7, 16.9, -14.6, -26, -18.6, -16.5, 15.8, -25.8, -21, -43.3)
 )
 
 district_polls <- tibble(
@@ -127,7 +127,8 @@ combined <- bind_cols(first_half, second_half)
 
 kable(combined, col.names = c("State", "Predicted Outcome", "State", "Predicted Outcome"))
 ```
-NOTE: polls last updated October 20
+
+NOTE: polls last updated October 23
 
 ## Analysis
 
@@ -160,7 +161,7 @@ winner <- finalpreds %>%
 print(winner)
 ```
 
-However, in reality this is a much closer contest than it appears: a shift of just 1.7 points to the right nationally (exactly Kamala Harris' edge as of today) would flip Minnesota, Texas and, in the height of irony, Vermont, giving Trump exactly the 270 electoral votes needed to be the next President of the United States. If we ignore Vermont, a 2020-sized polling error of roughly 4 points in Trump's favor would be sufficient for him to retake Pennsylvania and Florida, as well as Maine's 1st district for good measure, enough for a comfortable Electoral College victory.
+However, in reality this is a much closer contest than it appears: a shift of just 1.55 points to the right nationally would flip Minnesota, Texas and, in the height of irony, Vermont, giving Trump exactly the 270 electoral votes needed to be the next President of the United States. If we ignore Vermont, a 2020-sized polling error of roughly 4 points in Trump's favor would be sufficient for him to retake Pennsylvania and Florida, as well as Maine's 1st district for good measure, enough for a comfortable Electoral College victory.
 
 ```{r, echo=FALSE}
 nowater <- read_sf(dsn = "cb_2018_us_state_500k", layer = "cb_2018_us_state_500k")
@@ -222,4 +223,4 @@ How seriously should these predictions be taken? Mostly, this was just an exerci
 
 ## Sources
 
-[Geographic data](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)<br> [Polls](https://www.270towin.com/2024-presidential-election-polls/) (accessed on October 20)<br> [Electoral votes](https://www.kaggle.com/datasets/mikedelong/2024-electoral-college-votes-available?resource=download)<br> [Urbanization, and](https://github.com/fivethirtyeight/data/tree/master/district-urbanization-index-2022)<br> [Urbanization (for DC)](https://github.com/fivethirtyeight/data/tree/master/urbanization-index)<br> [Population data](https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html)
+[Geographic data](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)<br> [Polls](https://www.270towin.com/2024-presidential-election-polls/) <br> [Electoral votes](https://www.kaggle.com/datasets/mikedelong/2024-electoral-college-votes-available?resource=download)<br> [Urbanization, and](https://github.com/fivethirtyeight/data/tree/master/district-urbanization-index-2022)<br> [Urbanization (for DC)](https://github.com/fivethirtyeight/data/tree/master/urbanization-index)<br> [Population data](https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html)
