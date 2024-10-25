@@ -212,7 +212,7 @@ new_bounds %>%
   scale_fill_manual(values = c(
     "Safe R" = "red",
     "Lean R" = "lightcoral",
-    "Tossup" = "darkgrey",
+    "Tossup" = "#aaacab",
     "Lean D" = "lightblue",
     "Safe D" = "blue"
   ),
@@ -227,7 +227,7 @@ new_bounds %>%
     axis.ticks = element_blank()
   ) +
   labs(caption = "Note: district-level predictions not shown.") +
-  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))
+  theme(plot.caption = element_text(hjust = 0.5, face = "italic", color = "#aaacab"))
 ```
 
 ## Conclusion
