@@ -46,7 +46,7 @@ state_urban <- urban %>%
 
 ## Methodology
 
-First, I retrieved urbanization numbers updated with 2020 census data from 538. Next, I computed the urbanization index for the US as a whole, to have a baseline to compare the states to. From these numbers, I obtained an "urban lean" for each state, showing how much more urban or rural it is than the country as a whole. This metric corresponds to the "partisan lean" calculated by 538, Cook, and others, which tells how much redder or bluer a state is from the baseline. So once I rescaled according to 2020 results, I had an "urban-partisan lean" for each Electoral College "state" (negative numbers indicate Republican advantage).
+First, I retrieved urbanization numbers updated with 2020 census data from 538. Next, I computed the urbanization index for the US as a whole, to have a baseline to compare the states to. From these numbers, I obtained an "urban lean" for each state, showing how much more urban or rural it is than the country as a whole. This metric corresponds to the "partisan lean" calculated by 538, Cook, and others, which tells how much redder or bluer a state is from the baseline. So once I rescaled using 538's partisan lean, I had an "urban-partisan lean" for each Electoral College "state" (negative numbers indicate Republican advantage).
 
 ```{r, echo=FALSE}
 cleanpop2 <- cleanpop %>% 
@@ -70,6 +70,18 @@ UI_US_adj <- log(UI_US)
 ```
 
 ```{r, echo=FALSE, message=FALSE}
+standard_data <- read_csv("data/fivethirtyeight_partisan_lean_STATES.csv")
+```
+
+```{r, echo=FALSE}
+standard_data2 <- standard_data %>% 
+  filter(state != "District of Columbia")
+
+avg <- mean(standard_data2$`2022`)
+sd <- sd(standard_data2$`2022`)
+```
+
+```{r, echo=FALSE, message=FALSE}
 district_urban <- tibble(
   "state" = c("NE 01", "NE 02", "NE 03", "ME 01", "ME 02", "District of Columbia"),
   "urbanindex" = c(10.97282, 11.95222, 8.26581, 9.89315, 8.55475, 13.44057)
@@ -78,10 +90,11 @@ district_urban <- tibble(
 preds <- urban_table %>% 
   select(state, urbanindex) %>% 
   rbind(district_urban) %>% 
-  mutate(urbanlean = urbanindex - UI_US_adj) %>% 
-  mutate(predlean = urbanlean * 20) %>% 
+  mutate(urbanlean = urbanindex - UI_US_adj) %>%
+  mutate(zscore = scale(urbanlean)) %>% 
+  mutate(predlean = (zscore * sd) + avg) %>% 
   select(state, predlean) %>% 
-  mutate(predoutcome = predlean + 1.4)
+  mutate(predoutcome = predlean + 0.8)
 
 first_half <- preds[1:28, ]
 second_half <- preds[29:56, ]
@@ -97,17 +110,17 @@ combined <- combined %>%
 kable(combined, col.names = c("State", "Urban-Partisan Lean", "Predicted Outcome", "State", "Urban-Partisan Lean", "Predicted Outcome"))
 ```
 
-However, a partisan lean alone isn't enough to tell you what will happen; it only predicts results in a neutral national environment. Thankfully, there are ample polls at both the national and state levels available for public consumption. [270towin](https://www.270towin.com/2024-presidential-election-polls/) had the most state polls (relevant in a moment) available, so I took their national average, Harris +2.6% on the day of writing this. Now the model is giving real predictions. By and large they are reasonable, but there are some eye-raising outliers (Utah D+5? Vermont R+38???). In its current state, the model is just a representation of the national mood, and a fairly crude one at that. So I decided to take things a step further, and average the urban-partisan predictions with current state polling, which can hopefully account more for local trends. In turn, however, the polls are flawed in that they sometimes make incorrect assumptions about the overall environment. The urban-partisan lean can then be seen as adjusting the polls on the assumption that urbanization is the main plotline of the 2024 election (which could very well turn out not to be the case).
+However, a partisan lean alone isn't enough to tell you what will happen; it only predicts results in a neutral national environment. Thankfully, there are ample polls at both the national and state levels available for public consumption. [270towin](https://www.270towin.com/2024-presidential-election-polls/) had the most state polls (relevant in a moment) available, so I took their national average, Harris +0.8% on the day of writing this. Now the model is giving real predictions. By and large they are reasonable, but there are some eye-raising outliers (Utah D+6? Vermont R+33???). In its current state, the model is just a representation of the national mood, and a fairly crude one at that. So I decided to take things a step further, and average the urban-partisan predictions with current state polling, which can hopefully account more for local trends. In turn, however, the polls are flawed in that they sometimes make incorrect assumptions about the overall environment. The urban-partisan lean can then be seen as adjusting the polls on the assumption that urbanization is the main plotline of the 2024 election (which could very well turn out not to be the case).
 
 ```{r, echo=FALSE}
 polls <- tibble(
   state = c("Georgia", "Florida", "Pennsylvania", "Arizona", "Michigan", "Nevada", "North Carolina", "Wisconsin", "California", "Montana", "Ohio", "Texas", "Maryland", "Massachusetts", "Minnesota", "Virginia", "New Hampshire", "Iowa", "North Dakota", "South Carolina", "Alaska", "Indiana", "Delaware", "New York", "Colorado", "New Mexico", "Connecticut", "Rhode Island", "Maine", "Missouri", "Arkansas", "Washington", "Oklahoma", "Nebraska", "West Virginia", "Utah", "Vermont", "Oregon", "Alabama", "Hawaii", "Idaho", "Illinois", "Kansas", "Kentucky", "Louisiana", "Mississippi", "New Jersey", "South Dakota", "Tennessee", "Wyoming"),
-  avg = c(-1.9, -6.6, -0.3, -1.7, 0.2, 0.3, -0.6, 0.4, 24.7, -19, -6.4, -5.6, 29.2, 28.5, 6.5, 7.6, 9, -5, -27, -10, -7, -16.5, 18.5, 16.5, 11, 7, 16, 16.5, 13, -11.5, -15, 20.6, -16, -17, -27, -16, 41, 12, -25.4, 29.4, -30.7, 16.9, -14.6, -26, -18.6, -16.5, 15.8, -25.8, -21, -43.3)
+  avg = c(-1.1, -6.6, -0.2, -1.4, 0.6, 0.3, -1.2, 0.2, 24.7, -19, -6.4, -5.6, 28.3, 28.5, 6.5, 7.6, 9, -5, -27, -10, -7, -16.5, 18.5, 16.5, 11, 7, 16, 16.5, 7, -11.5, -15, 20.6, -16, -17, -27, -16, 41, 12, -25.4, 29.4, -30.7, 16.9, -14.6, -26, -18.6, -16.5, 15.8, -26.5, -21, -43.3)
 )
 
 district_polls <- tibble(
   state = c("NE 01", "NE 02", "NE 03", "ME 01", "ME 02", "District of Columbia"),
-  avg = c(-15.1, 8.4, -53.2, 27, -1, 86.7)
+  avg = c(-15.1, 8.4, -53.2, 23, -9, 86.7)
 )
 
 polls <- polls %>% rbind(district_polls)
@@ -128,11 +141,11 @@ combined <- bind_cols(first_half, second_half)
 kable(combined, col.names = c("State", "Predicted Outcome", "State", "Predicted Outcome"))
 ```
 
-NOTE: polls last updated October 23
+NOTE: polls last updated October 24
 
 ## Analysis
 
-Incorporating 270towin's averages where available (and using 2020 results in the noncompetitive states where they aren't), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there's a lot to like. The model predicts Harris flipping the electoral-vote rich states of Florida and Texas, beating the polls in Pennsylvania, Nevada and Arizona and keeping surprisingly close in Ohio. There are silver linings for Republicans as well. The "Blue Wall" cracks, with Wisconsin and Michigan turning red and Minnesota almost joining them. Trump also flips Maine, New Hampshire and New Mexico, while keeping remarkably close in Vermont and Oregon. While the Vermont number is pure fantasy, and a reminder that these "predictions" are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it's often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 in 2020, two years ago the Democrat only won the governer's race by 3.5%, which is pretty in-line with what the model predicts. However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a decisive Kamala Harris victory.
+Incorporating 270towin's averages where available (and using 2020 results in the noncompetitive states where they aren't), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there's a lot to like. The model predicts Harris flipping the electoral-vote rich states of Florida and Texas, beating the polls in Pennsylvania, Nevada and Arizona and keeping surprisingly close in Ohio. There are silver linings for Republicans as well. The "Blue Wall" cracks, with Wisconsin turning red and Michigan and Minnesota within a point of following it. Trump also flips Maine, New Hampshire and New Mexico, while keeping remarkably close in Vermont and Oregon. While the Vermont number is pure fantasy, and a reminder that these "predictions" are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it's often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 in 2020, two years ago the Democrat only won the governer's race by 3.5%, which is pretty close to what the model predicts. However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a decisive Kamala Harris victory.
 
 ```{r, echo=FALSE, message=FALSE}
 ec <- read_csv("data/2024_Electoral_College.csv")
@@ -161,7 +174,7 @@ winner <- finalpreds %>%
 print(winner)
 ```
 
-However, in reality this is a much closer contest than it appears: a shift of just 1.55 points to the right nationally would flip Minnesota, Texas and, in the height of irony, Vermont, giving Trump exactly the 270 electoral votes needed to be the next President of the United States. If we ignore Vermont, a 2020-sized polling error of roughly 4 points in Trump's favor would be sufficient for him to retake Pennsylvania and Florida, as well as Maine's 1st district for good measure, enough for a comfortable Electoral College victory.
+However, in reality this is a much closer contest than it appears: a polling error of just 3 points to the right nationally, less than what is was in 2020, would flip 6 states and districts worth a combined 115 (!!) electoral votes, giving Trump a comfortable victory.
 
 ```{r, echo=FALSE}
 nowater <- read_sf(dsn = "cb_2018_us_state_500k", layer = "cb_2018_us_state_500k")
@@ -187,9 +200,9 @@ new_bounds <- new_bounds %>%
 new_bounds <- new_bounds %>% 
   mutate(pred_cat = case_when(
     prediction < -10 ~ "Safe R",
-    prediction < -4 & prediction >= -10 ~ "Lean R",
-    prediction >= -4 & prediction <= 4 ~ "Tossup",
-    prediction > 4 & prediction <= 10 ~ "Lean D",
+    prediction < -3.5 & prediction >= -10 ~ "Lean R",
+    prediction >= -3.5 & prediction <= 3.5 ~ "Tossup",
+    prediction > 3.5 & prediction <= 10 ~ "Lean D",
     prediction > 10 ~ "Safe D"
   ))
 
@@ -223,4 +236,4 @@ How seriously should these predictions be taken? Mostly, this was just an exerci
 
 ## Sources
 
-[Geographic data](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)<br> [Polls](https://www.270towin.com/2024-presidential-election-polls/) <br> [Electoral votes](https://www.kaggle.com/datasets/mikedelong/2024-electoral-college-votes-available?resource=download)<br> [Urbanization, and](https://github.com/fivethirtyeight/data/tree/master/district-urbanization-index-2022)<br> [Urbanization (for DC)](https://github.com/fivethirtyeight/data/tree/master/urbanization-index)<br> [Population data](https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html)
+[Geographic data](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)<br> [Polls](https://www.270towin.com/2024-presidential-election-polls/) <br> [Electoral votes](https://www.kaggle.com/datasets/mikedelong/2024-electoral-college-votes-available?resource=download) <br> [Partisan lean](https://github.com/fivethirtyeight/data/blob/master/partisan-lean/fivethirtyeight_partisan_lean_STATES.csv) <br> [Urbanization, and](https://github.com/fivethirtyeight/data/tree/master/district-urbanization-index-2022) <br> [Urbanization (for DC)](https://github.com/fivethirtyeight/data/tree/master/urbanization-index) <br> [Population data](https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html)
