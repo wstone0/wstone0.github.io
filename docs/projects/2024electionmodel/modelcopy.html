@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="methodology" class="level2">
 <h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
-<p>First, I retrieved urbanization numbers updated with 2020 census data from 538. Next, I computed the urbanization index for the US as a whole, to have a baseline to compare the states to. From these numbers, I obtained an “urban lean” for each state, showing how much more urban or rural it is than the country as a whole. This metric corresponds to the “partisan lean” calculated by 538, Cook, and others, which tells how much redder or bluer a state is from the baseline. So once I rescaled using 538’s partisan lean, I had an “urban-partisan lean” for each Electoral College “state” (negative numbers indicate Republican advantage).</p>
+<p>First, I retrieved urbanization numbers updated with 2020 census data from 538. Next, I computed the urbanization index for the US as a whole, to have a baseline to compare the states to. From these numbers, I obtained an “urban lean” for each state, showing how much more urban or rural it is than the country as a whole. This metric corresponds to the “partisan lean” calculated by 538, Cook, and others, which tells how much redder or bluer a state is from the baseline. So once I rescaled using 538’s partisan lean, I had an “urban-partisan lean” for each Electoral College “state.”</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -173,243 +173,243 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="header">
 <th style="text-align: left;">State</th>
-<th style="text-align: right;">Urban-Partisan Lean</th>
-<th style="text-align: right;">Predicted Outcome</th>
+<th style="text-align: left;">Urban-Partisan Lean</th>
+<th style="text-align: left;">Predicted Outcome</th>
 <th style="text-align: left;">State</th>
-<th style="text-align: right;">Urban-Partisan Lean</th>
-<th style="text-align: right;">Predicted Outcome</th>
+<th style="text-align: left;">Urban-Partisan Lean</th>
+<th style="text-align: left;">Predicted Outcome</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Alaska</td>
-<td style="text-align: right;">-40.63</td>
-<td style="text-align: right;">-39.83</td>
+<td style="text-align: left;">R+40.63</td>
+<td style="text-align: left;">R+39.83</td>
 <td style="text-align: left;">Nebraska</td>
-<td style="text-align: right;">-10.22</td>
-<td style="text-align: right;">-9.42</td>
+<td style="text-align: left;">R+10.22</td>
+<td style="text-align: left;">R+9.42</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Alabama</td>
-<td style="text-align: right;">-19.09</td>
-<td style="text-align: right;">-18.29</td>
+<td style="text-align: left;">R+19.09</td>
+<td style="text-align: left;">R+18.29</td>
 <td style="text-align: left;">New Hampshire</td>
-<td style="text-align: right;">-14.77</td>
-<td style="text-align: right;">-13.97</td>
+<td style="text-align: left;">R+14.77</td>
+<td style="text-align: left;">R+13.97</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Arkansas</td>
-<td style="text-align: right;">-25.21</td>
-<td style="text-align: right;">-24.41</td>
+<td style="text-align: left;">R+25.21</td>
+<td style="text-align: left;">R+24.41</td>
 <td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">24.93</td>
-<td style="text-align: right;">25.73</td>
+<td style="text-align: left;">D+24.93</td>
+<td style="text-align: left;">D+25.73</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Arizona</td>
-<td style="text-align: right;">9.65</td>
-<td style="text-align: right;">10.45</td>
+<td style="text-align: left;">D+9.65</td>
+<td style="text-align: left;">D+10.45</td>
 <td style="text-align: left;">New Mexico</td>
-<td style="text-align: right;">-14.54</td>
-<td style="text-align: right;">-13.74</td>
+<td style="text-align: left;">R+14.54</td>
+<td style="text-align: left;">R+13.74</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">California</td>
-<td style="text-align: right;">23.84</td>
-<td style="text-align: right;">24.64</td>
+<td style="text-align: left;">D+23.84</td>
+<td style="text-align: left;">D+24.64</td>
 <td style="text-align: left;">Nevada</td>
-<td style="text-align: right;">17.75</td>
-<td style="text-align: right;">18.55</td>
+<td style="text-align: left;">D+17.75</td>
+<td style="text-align: left;">D+18.55</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Colorado</td>
-<td style="text-align: right;">7.01</td>
-<td style="text-align: right;">7.81</td>
+<td style="text-align: left;">D+7.01</td>
+<td style="text-align: left;">D+7.81</td>
 <td style="text-align: left;">New York</td>
-<td style="text-align: right;">31.51</td>
-<td style="text-align: right;">32.31</td>
+<td style="text-align: left;">D+31.51</td>
+<td style="text-align: left;">D+32.31</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">8.79</td>
-<td style="text-align: right;">9.59</td>
+<td style="text-align: left;">D+8.79</td>
+<td style="text-align: left;">D+9.59</td>
 <td style="text-align: left;">Ohio</td>
-<td style="text-align: right;">0.43</td>
-<td style="text-align: right;">1.23</td>
+<td style="text-align: left;">D+0.43</td>
+<td style="text-align: left;">D+1.23</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Delaware</td>
-<td style="text-align: right;">2.19</td>
-<td style="text-align: right;">2.99</td>
+<td style="text-align: left;">D+2.19</td>
+<td style="text-align: left;">D+2.99</td>
 <td style="text-align: left;">Oklahoma</td>
-<td style="text-align: right;">-13.90</td>
-<td style="text-align: right;">-13.10</td>
+<td style="text-align: left;">R+13.9</td>
+<td style="text-align: left;">R+13.1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Florida</td>
-<td style="text-align: right;">11.58</td>
-<td style="text-align: right;">12.38</td>
+<td style="text-align: left;">D+11.58</td>
+<td style="text-align: left;">D+12.38</td>
 <td style="text-align: left;">Oregon</td>
-<td style="text-align: right;">-1.12</td>
-<td style="text-align: right;">-0.32</td>
+<td style="text-align: left;">R+1.12</td>
+<td style="text-align: left;">R+0.32</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Georgia</td>
-<td style="text-align: right;">-2.32</td>
-<td style="text-align: right;">-1.52</td>
+<td style="text-align: left;">R+2.32</td>
+<td style="text-align: left;">R+1.52</td>
 <td style="text-align: left;">Pennsylvania</td>
-<td style="text-align: right;">5.29</td>
-<td style="text-align: right;">6.09</td>
+<td style="text-align: left;">D+5.29</td>
+<td style="text-align: left;">D+6.09</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Hawaii</td>
-<td style="text-align: right;">4.83</td>
-<td style="text-align: right;">5.63</td>
+<td style="text-align: left;">D+4.83</td>
+<td style="text-align: left;">D+5.63</td>
 <td style="text-align: left;">Rhode Island</td>
-<td style="text-align: right;">15.40</td>
-<td style="text-align: right;">16.20</td>
+<td style="text-align: left;">D+15.4</td>
+<td style="text-align: left;">D+16.2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Iowa</td>
-<td style="text-align: right;">-21.21</td>
-<td style="text-align: right;">-20.41</td>
+<td style="text-align: left;">R+21.21</td>
+<td style="text-align: left;">R+20.41</td>
 <td style="text-align: left;">South Carolina</td>
-<td style="text-align: right;">-10.88</td>
-<td style="text-align: right;">-10.08</td>
+<td style="text-align: left;">R+10.88</td>
+<td style="text-align: left;">R+10.08</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Idaho</td>
-<td style="text-align: right;">-17.12</td>
-<td style="text-align: right;">-16.32</td>
+<td style="text-align: left;">R+17.12</td>
+<td style="text-align: left;">R+16.32</td>
 <td style="text-align: left;">South Dakota</td>
-<td style="text-align: right;">-36.27</td>
-<td style="text-align: right;">-35.47</td>
+<td style="text-align: left;">R+36.27</td>
+<td style="text-align: left;">R+35.47</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Illinois</td>
-<td style="text-align: right;">13.82</td>
-<td style="text-align: right;">14.62</td>
+<td style="text-align: left;">D+13.82</td>
+<td style="text-align: left;">D+14.62</td>
 <td style="text-align: left;">Tennessee</td>
-<td style="text-align: right;">-10.49</td>
-<td style="text-align: right;">-9.69</td>
+<td style="text-align: left;">R+10.49</td>
+<td style="text-align: left;">R+9.69</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Indiana</td>
-<td style="text-align: right;">-7.43</td>
-<td style="text-align: right;">-6.63</td>
+<td style="text-align: left;">R+7.43</td>
+<td style="text-align: left;">R+6.63</td>
 <td style="text-align: left;">Texas</td>
-<td style="text-align: right;">7.11</td>
-<td style="text-align: right;">7.91</td>
+<td style="text-align: left;">D+7.11</td>
+<td style="text-align: left;">D+7.91</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Kansas</td>
-<td style="text-align: right;">-13.13</td>
-<td style="text-align: right;">-12.33</td>
+<td style="text-align: left;">R+13.13</td>
+<td style="text-align: left;">R+12.33</td>
 <td style="text-align: left;">Utah</td>
-<td style="text-align: right;">4.90</td>
-<td style="text-align: right;">5.70</td>
+<td style="text-align: left;">D+4.9</td>
+<td style="text-align: left;">D+5.7</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Kentucky</td>
-<td style="text-align: right;">-16.32</td>
-<td style="text-align: right;">-15.52</td>
+<td style="text-align: left;">R+16.32</td>
+<td style="text-align: left;">R+15.52</td>
 <td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">2.24</td>
-<td style="text-align: right;">3.04</td>
+<td style="text-align: left;">D+2.24</td>
+<td style="text-align: left;">D+3.04</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Louisiana</td>
-<td style="text-align: right;">-10.36</td>
-<td style="text-align: right;">-9.56</td>
+<td style="text-align: left;">R+10.36</td>
+<td style="text-align: left;">R+9.56</td>
 <td style="text-align: left;">Vermont</td>
-<td style="text-align: right;">-34.72</td>
-<td style="text-align: right;">-33.92</td>
+<td style="text-align: left;">R+34.72</td>
+<td style="text-align: left;">R+33.92</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Massachusetts</td>
-<td style="text-align: right;">17.18</td>
-<td style="text-align: right;">17.98</td>
+<td style="text-align: left;">D+17.18</td>
+<td style="text-align: left;">D+17.98</td>
 <td style="text-align: left;">Washington</td>
-<td style="text-align: right;">6.06</td>
-<td style="text-align: right;">6.86</td>
+<td style="text-align: left;">D+6.06</td>
+<td style="text-align: left;">D+6.86</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Maryland</td>
-<td style="text-align: right;">15.12</td>
-<td style="text-align: right;">15.92</td>
+<td style="text-align: left;">D+15.12</td>
+<td style="text-align: left;">D+15.92</td>
 <td style="text-align: left;">Wisconsin</td>
-<td style="text-align: right;">-11.57</td>
-<td style="text-align: right;">-10.77</td>
+<td style="text-align: left;">R+11.57</td>
+<td style="text-align: left;">R+10.77</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Maine</td>
-<td style="text-align: right;">-31.57</td>
-<td style="text-align: right;">-30.77</td>
+<td style="text-align: left;">R+31.57</td>
+<td style="text-align: left;">R+30.77</td>
 <td style="text-align: left;">West Virginia</td>
-<td style="text-align: right;">-29.53</td>
-<td style="text-align: right;">-28.73</td>
+<td style="text-align: left;">R+29.53</td>
+<td style="text-align: left;">R+28.73</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Michigan</td>
-<td style="text-align: right;">-0.74</td>
-<td style="text-align: right;">0.06</td>
+<td style="text-align: left;">R+0.74</td>
+<td style="text-align: left;">D+0.06</td>
 <td style="text-align: left;">Wyoming</td>
-<td style="text-align: right;">-44.48</td>
-<td style="text-align: right;">-43.68</td>
+<td style="text-align: left;">R+44.48</td>
+<td style="text-align: left;">R+43.68</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Minnesota</td>
-<td style="text-align: right;">-5.46</td>
-<td style="text-align: right;">-4.66</td>
+<td style="text-align: left;">R+5.46</td>
+<td style="text-align: left;">R+4.66</td>
 <td style="text-align: left;">NE 01</td>
-<td style="text-align: right;">0.81</td>
-<td style="text-align: right;">1.61</td>
+<td style="text-align: left;">D+0.81</td>
+<td style="text-align: left;">D+1.61</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Missouri</td>
-<td style="text-align: right;">-9.66</td>
-<td style="text-align: right;">-8.86</td>
+<td style="text-align: left;">R+9.66</td>
+<td style="text-align: left;">R+8.86</td>
 <td style="text-align: left;">NE 02</td>
-<td style="text-align: right;">18.94</td>
-<td style="text-align: right;">19.74</td>
+<td style="text-align: left;">D+18.94</td>
+<td style="text-align: left;">D+19.74</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Mississippi</td>
-<td style="text-align: right;">-30.76</td>
-<td style="text-align: right;">-29.96</td>
+<td style="text-align: left;">R+30.76</td>
+<td style="text-align: left;">R+29.96</td>
 <td style="text-align: left;">NE 03</td>
-<td style="text-align: right;">-49.30</td>
-<td style="text-align: right;">-48.50</td>
+<td style="text-align: left;">R+49.3</td>
+<td style="text-align: left;">R+48.5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Montana</td>
-<td style="text-align: right;">-39.74</td>
-<td style="text-align: right;">-38.94</td>
+<td style="text-align: left;">R+39.74</td>
+<td style="text-align: left;">R+38.94</td>
 <td style="text-align: left;">ME 01</td>
-<td style="text-align: right;">-19.18</td>
-<td style="text-align: right;">-18.38</td>
+<td style="text-align: left;">R+19.18</td>
+<td style="text-align: left;">R+18.38</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">North Carolina</td>
-<td style="text-align: right;">-7.38</td>
-<td style="text-align: right;">-6.58</td>
+<td style="text-align: left;">R+7.38</td>
+<td style="text-align: left;">R+6.58</td>
 <td style="text-align: left;">ME 02</td>
-<td style="text-align: right;">-43.95</td>
-<td style="text-align: right;">-43.15</td>
+<td style="text-align: left;">R+43.95</td>
+<td style="text-align: left;">R+43.15</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">North Dakota</td>
-<td style="text-align: right;">-30.86</td>
-<td style="text-align: right;">-30.06</td>
+<td style="text-align: left;">R+30.86</td>
+<td style="text-align: left;">R+30.06</td>
 <td style="text-align: left;">District of Columbia</td>
-<td style="text-align: right;">46.49</td>
-<td style="text-align: right;">47.29</td>
+<td style="text-align: left;">D+46.49</td>
+<td style="text-align: left;">D+47.29</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>However, a partisan lean alone isn’t enough to tell you what will happen; it only predicts results in a neutral national environment. Thankfully, there are ample polls at both the national and state levels available for public consumption. <a href="https://www.270towin.com/2024-presidential-election-polls/">270towin</a> had the most state polls (relevant in a moment) available, so I took their national average, Harris +0.8% on the day of writing this. Now the model is giving real predictions. By and large they are reasonable, but there are some eye-raising outliers (Utah D+6? Vermont R+33???). In its current state, the model is just a representation of the national mood, and a fairly crude one at that. So I decided to take things a step further, and average the urban-partisan predictions with current state polling, which can hopefully account more for local trends. In turn, however, the polls are flawed in that they sometimes make incorrect assumptions about the overall environment. The urban-partisan lean can then be seen as adjusting the polls on the assumption that urbanization is the main plotline of the 2024 election (which could very well turn out not to be the case).</p>
+<p>However, a partisan lean alone isn’t enough to tell you what will happen; it only predicts the margin in a neutral national environment. Thankfully, there are ample polls at both the national and state levels available for public consumption. <a href="https://www.270towin.com/2024-presidential-election-polls/">270towin</a> had the most state polls (relevant in a moment) available, so I took their national average, Harris +0.8% on the day of writing this. Now the model is giving real predictions. By and large they are reasonable, but there are some eye-raising outliers (Utah D+6? Vermont R+33???). In its current state, the model is just a representation of the national mood, and a fairly crude one at that. So I decided to take things a step further, and average the urban-partisan predictions with current state polling, which can hopefully account more for local trends. In turn, however, the polls are flawed in that they sometimes make incorrect assumptions about the overall environment. The urban-partisan lean can then be seen as adjusting the polls on the assumption that urbanization is the main plotline of the 2024 election (which could very well turn out not to be the case).</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -422,179 +422,179 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="header">
 <th style="text-align: left;">State</th>
-<th style="text-align: right;">Predicted Outcome</th>
+<th style="text-align: left;">Predicted Outcome</th>
 <th style="text-align: left;">State</th>
-<th style="text-align: right;">Predicted Outcome</th>
+<th style="text-align: left;">Predicted Outcome</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">District of Columbia</td>
-<td style="text-align: right;">66.99</td>
+<td style="text-align: left;">D+66.99</td>
 <td style="text-align: left;">New Mexico</td>
-<td style="text-align: right;">-3.37</td>
+<td style="text-align: left;">R+3.37</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">California</td>
-<td style="text-align: right;">24.67</td>
+<td style="text-align: left;">D+24.67</td>
 <td style="text-align: left;">North Carolina</td>
-<td style="text-align: right;">-3.89</td>
+<td style="text-align: left;">R+3.89</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">New York</td>
-<td style="text-align: right;">24.41</td>
+<td style="text-align: left;">D+24.41</td>
 <td style="text-align: left;">Utah</td>
-<td style="text-align: right;">-5.15</td>
+<td style="text-align: left;">R+5.15</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Massachusetts</td>
-<td style="text-align: right;">23.24</td>
+<td style="text-align: left;">D+23.24</td>
 <td style="text-align: left;">Wisconsin</td>
-<td style="text-align: right;">-5.29</td>
+<td style="text-align: left;">R+5.29</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Maryland</td>
-<td style="text-align: right;">22.11</td>
+<td style="text-align: left;">D+22.11</td>
 <td style="text-align: left;">NE 01</td>
-<td style="text-align: right;">-6.75</td>
+<td style="text-align: left;">R+6.75</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">New Jersey</td>
-<td style="text-align: right;">20.77</td>
+<td style="text-align: left;">D+20.77</td>
 <td style="text-align: left;">South Carolina</td>
-<td style="text-align: right;">-10.04</td>
+<td style="text-align: left;">R+10.04</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Hawaii</td>
-<td style="text-align: right;">17.52</td>
+<td style="text-align: left;">D+17.52</td>
 <td style="text-align: left;">Missouri</td>
-<td style="text-align: right;">-10.18</td>
+<td style="text-align: left;">R+10.18</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Rhode Island</td>
-<td style="text-align: right;">16.35</td>
+<td style="text-align: left;">D+16.35</td>
 <td style="text-align: left;">Indiana</td>
-<td style="text-align: right;">-11.57</td>
+<td style="text-align: left;">R+11.57</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Illinois</td>
-<td style="text-align: right;">15.76</td>
+<td style="text-align: left;">D+15.76</td>
 <td style="text-align: left;">Maine</td>
-<td style="text-align: right;">-11.88</td>
+<td style="text-align: left;">R+11.88</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NE 02</td>
-<td style="text-align: right;">14.07</td>
+<td style="text-align: left;">D+14.07</td>
 <td style="text-align: left;">Iowa</td>
-<td style="text-align: right;">-12.71</td>
+<td style="text-align: left;">R+12.71</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Washington</td>
-<td style="text-align: right;">13.73</td>
+<td style="text-align: left;">D+13.73</td>
 <td style="text-align: left;">Nebraska</td>
-<td style="text-align: right;">-13.21</td>
+<td style="text-align: left;">R+13.21</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Connecticut</td>
-<td style="text-align: right;">12.80</td>
+<td style="text-align: left;">D+12.8</td>
 <td style="text-align: left;">Kansas</td>
-<td style="text-align: right;">-13.47</td>
+<td style="text-align: left;">R+13.47</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Delaware</td>
-<td style="text-align: right;">10.74</td>
+<td style="text-align: left;">D+10.74</td>
 <td style="text-align: left;">Louisiana</td>
-<td style="text-align: right;">-14.08</td>
+<td style="text-align: left;">R+14.08</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Nevada</td>
-<td style="text-align: right;">9.43</td>
+<td style="text-align: left;">D+9.43</td>
 <td style="text-align: left;">Oklahoma</td>
-<td style="text-align: right;">-14.55</td>
+<td style="text-align: left;">R+14.55</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Colorado</td>
-<td style="text-align: right;">9.41</td>
+<td style="text-align: left;">D+9.41</td>
 <td style="text-align: left;">Tennessee</td>
-<td style="text-align: right;">-15.35</td>
+<td style="text-align: left;">R+15.35</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Oregon</td>
-<td style="text-align: right;">5.84</td>
+<td style="text-align: left;">D+5.84</td>
 <td style="text-align: left;">Arkansas</td>
-<td style="text-align: right;">-19.71</td>
+<td style="text-align: left;">R+19.71</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Virginia</td>
-<td style="text-align: right;">5.32</td>
+<td style="text-align: left;">D+5.32</td>
 <td style="text-align: left;">Kentucky</td>
-<td style="text-align: right;">-20.76</td>
+<td style="text-align: left;">R+20.76</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Arizona</td>
-<td style="text-align: right;">4.53</td>
+<td style="text-align: left;">D+4.53</td>
 <td style="text-align: left;">Alabama</td>
-<td style="text-align: right;">-21.84</td>
+<td style="text-align: left;">R+21.84</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Vermont</td>
-<td style="text-align: right;">3.54</td>
+<td style="text-align: left;">D+3.54</td>
 <td style="text-align: left;">Mississippi</td>
-<td style="text-align: right;">-23.23</td>
+<td style="text-align: left;">R+23.23</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Pennsylvania</td>
-<td style="text-align: right;">2.94</td>
+<td style="text-align: left;">D+2.94</td>
 <td style="text-align: left;">Alaska</td>
-<td style="text-align: right;">-23.41</td>
+<td style="text-align: left;">R+23.41</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Florida</td>
-<td style="text-align: right;">2.89</td>
+<td style="text-align: left;">D+2.89</td>
 <td style="text-align: left;">Idaho</td>
-<td style="text-align: right;">-23.51</td>
+<td style="text-align: left;">R+23.51</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ME 01</td>
-<td style="text-align: right;">2.31</td>
+<td style="text-align: left;">D+2.31</td>
 <td style="text-align: left;">ME 02</td>
-<td style="text-align: right;">-26.08</td>
+<td style="text-align: left;">R+26.08</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Texas</td>
-<td style="text-align: right;">1.16</td>
+<td style="text-align: left;">D+1.16</td>
 <td style="text-align: left;">West Virginia</td>
-<td style="text-align: right;">-27.87</td>
+<td style="text-align: left;">R+27.87</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Minnesota</td>
-<td style="text-align: right;">0.92</td>
+<td style="text-align: left;">D+0.92</td>
 <td style="text-align: left;">North Dakota</td>
-<td style="text-align: right;">-28.53</td>
+<td style="text-align: left;">R+28.53</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Michigan</td>
-<td style="text-align: right;">0.33</td>
+<td style="text-align: left;">D+0.33</td>
 <td style="text-align: left;">Montana</td>
-<td style="text-align: right;">-28.97</td>
+<td style="text-align: left;">R+28.97</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Georgia</td>
-<td style="text-align: right;">-1.31</td>
+<td style="text-align: left;">R+1.31</td>
 <td style="text-align: left;">South Dakota</td>
-<td style="text-align: right;">-30.99</td>
+<td style="text-align: left;">R+30.99</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">New Hampshire</td>
-<td style="text-align: right;">-2.49</td>
+<td style="text-align: left;">R+2.49</td>
 <td style="text-align: left;">Wyoming</td>
-<td style="text-align: right;">-43.49</td>
+<td style="text-align: left;">R+43.49</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ohio</td>
-<td style="text-align: right;">-2.59</td>
+<td style="text-align: left;">R+2.59</td>
 <td style="text-align: left;">NE 03</td>
-<td style="text-align: right;">-50.85</td>
+<td style="text-align: left;">R+50.85</td>
 </tr>
 </tbody>
 </table>
