@@ -94,7 +94,7 @@ preds <- urban_table %>%
   mutate(zscore = scale(urbanlean)) %>% 
   mutate(predlean = (zscore * sd) + avg) %>% 
   select(state, predlean) %>% 
-  mutate(predoutcome = predlean + 0.8)
+  mutate(predoutcome = predlean + 1.2)
 
 cleanpreds <- preds %>%
   mutate(predlean = round(predlean, 2)) %>% 
@@ -115,12 +115,12 @@ However, a partisan lean alone isn't enough to tell you what will happen; it onl
 ```{r, echo=FALSE}
 polls <- tibble(
   state = c("Georgia", "Florida", "Pennsylvania", "Arizona", "Michigan", "Nevada", "North Carolina", "Wisconsin", "California", "Montana", "Ohio", "Texas", "Maryland", "Massachusetts", "Minnesota", "Virginia", "New Hampshire", "Iowa", "North Dakota", "South Carolina", "Alaska", "Indiana", "Delaware", "New York", "Colorado", "New Mexico", "Connecticut", "Rhode Island", "Maine", "Missouri", "Arkansas", "Washington", "Oklahoma", "Nebraska", "West Virginia", "Utah", "Vermont", "Oregon", "Alabama", "Hawaii", "Idaho", "Illinois", "Kansas", "Kentucky", "Louisiana", "Mississippi", "New Jersey", "South Dakota", "Tennessee", "Wyoming"),
-  avg = c(-1.1, -6.6, -0.2, -1.4, 0.6, 0.3, -1.2, 0.2, 24.7, -19, -6.4, -5.6, 28.3, 28.5, 6.5, 7.6, 9, -5, -27, -10, -7, -16.5, 18.5, 16.5, 11, 7, 16, 16.5, 7, -11.5, -15, 20.6, -16, -17, -27, -16, 41, 12, -25.4, 29.4, -30.7, 16.9, -14.6, -26, -18.6, -16.5, 15.8, -26.5, -21, -43.3)
+  avg = c(-1.2, -6.2, -0.0, -1.7, 1.8, -0.6, -1.3, 1.1, 24.8, -18, -7.7, -7.4, 27.2, 27.7, 6.2, 5.8, 5, -4.7, -27, -11.7, -8, -16.5, 18.5, 17.6, 10, 6, 16, 14, 8.6, -15, -15, 19.3, -16, -15, -27, -25.5, 32, 12, -25.4, 29.4, -30.7, 16.9, -5, -26, -18.6, -16.5, 16.4, -26.5, -21, -38.5)
 )
 
 district_polls <- tibble(
   state = c("NE 01", "NE 02", "NE 03", "ME 01", "ME 02", "District of Columbia"),
-  avg = c(-15.1, 8.4, -53.2, 23, -9, 86.7)
+  avg = c(-6, 10, -48, 22.7, -6, 86.7)
 )
 
 polls <- polls %>% rbind(district_polls)
@@ -143,11 +143,12 @@ combined <- bind_cols(first_half, second_half)
 
 kable(combined, col.names = c("State", "Predicted Outcome", "State", "Predicted Outcome"))
 ```
-NOTE: polls last updated October 24
+
+NOTE: polls last updated November 4
 
 ## Analysis
 
-Incorporating 270towin's averages where available (and using 2020 results in the noncompetitive states where they aren't), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there's a lot to like. The model predicts Harris flipping the electoral-vote rich states of Florida and Texas, beating the polls in Pennsylvania, Nevada and Arizona and keeping surprisingly close in Ohio. There are silver linings for Republicans as well. The "Blue Wall" cracks, with Wisconsin turning red and Michigan and Minnesota within a point of following it. Trump also flips Maine, New Hampshire and New Mexico, while keeping remarkably close in Vermont and Oregon. While the Vermont number is pure fantasy, and a reminder that these "predictions" are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it's often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 in 2020, two years ago the Democrat only won the governer's race by 3.5%, which is pretty close to what the model predicts. However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a decisive Kamala Harris victory.
+Incorporating 270towin's averages where available (and using 2020 results in the noncompetitive states where they aren't), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there's a lot to like. The model predicts Harris flipping the electoral-vote rich states of Florida and Texas, beating the polls in Pennsylvania, Nevada and Arizona and keeping surprisingly close in Ohio. There are silver linings for Republicans as well. The "Blue Wall" cracks, with Wisconsin turning red and Michigan and Minnesota within a point or two of following it. Trump also flips Maine, New Hampshire, Vermont and New Mexico, while keeping remarkably close in Oregon. While the Vermont number is pure fantasy, and a reminder that these "predictions" are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it's often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 in 2020, two years ago the Democrat only won the governer's race by 3.5%, which is pretty close to what the model predicts (note: a later poll shifted the number a couple points left; because the closer poll was a couple weeks old, it got kicked out of the average altogether). However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a decisive Kamala Harris victory.
 
 ```{r, echo=FALSE, message=FALSE}
 ec <- read_csv("data/2024_Electoral_College.csv")
@@ -176,7 +177,7 @@ winner <- finalpreds %>%
 print(winner)
 ```
 
-However, in reality this is a much closer contest than it appears: a polling error of just 3 points to the right nationally, less than what is was in 2020, would flip 6 states and districts worth a combined 115 (!!) electoral votes, giving Trump a comfortable victory.
+However, in reality this is a much closer contest than it appears: a polling error of just 1.14 points to the right nationally would flip Michigan, Texas and Minnesota, giving Trump exactly the 270 electoral votes he needs to become the 47th President of the United States. Of course, this path does rely on him winning Vermont, so more realistically, he would need about a 2020-level shift of around 4 points to add Florida, Pennsylvania and Maine's 1st district for good measure, which would ensure him a comfortable victory.
 
 ```{r, echo=FALSE}
 nowater <- read_sf(dsn = "cb_2018_us_state_500k", layer = "cb_2018_us_state_500k")
