@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Wesley Stone">
 
-<title>Projects – Wesley Stone</title>
+<title>Tidy Tuesday 11/26/2024 – Wesley Stone</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +67,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Wesley Stone</span>
     </a>
   </div>
@@ -149,11 +90,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -164,237 +105,83 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Projects</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Climate change">Climate change <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Politics">Politics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Tidy Tuesday">Tidy Tuesday <span class="quarto-category-count">(2)</span></div></div></div>
-<!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#driving-question" id="toc-driving-question" class="nav-link active" data-scroll-target="#driving-question">Driving Question</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
-</div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Climate change" data-listing-date-sort="1692072000000" data-listing-file-modified-sort="1727628896272" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="140">
-<a href="./projects/urbanheat/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/urbanheat/featured.png" class="thumbnail-image card-img" style="height: 150px;" alt="Screenshot of Shiny App.">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Human Heat Tolerance Index
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Climate change'); return false;">
-Climate change
-</div>
-</div>
-<div class="card-text listing-description">
-At a wet bulb (humidity-adjusted) temperature of 87°F, studies have shown that healthy young adults are at risk for severe symptoms with prolonged exposure. If this…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
+<!-- main -->
+<main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tidy Tuesday 11/26/2024</h1>
 </div>
-<div class="listing-date">
-Aug 15, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Politics" data-listing-date-sort="1714190400000" data-listing-file-modified-sort="1727647266614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1157">
-<a href="./projects/STAT155FP/urbanization.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/STAT155FP/urbanization_files/figure-html/unnamed-chunk-3-1.png" alt="Scatterplot of 538's state urbanization index versus Democratic vote share in the 2020 presidential election." style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-The Urban-Rural Divide in American Politics
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Politics'); return false;">
-Politics
-</div>
-</div>
-<div class="card-text listing-description">
-The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
 
-</div>
-<div class="listing-date">
-Apr 27, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Tidy Tuesday" data-listing-date-sort="1722916800000" data-listing-file-modified-sort="1732468019015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="526">
-<a href="./projects/TT8:6:2024/OlympicMedalTrends.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/TT8:6:2024/featured.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Which countries have historically had the most success at the summer Olympics?
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tidy Tuesday'); return false;">
-Tidy Tuesday
-</div>
-</div>
-<div class="card-text listing-description">
-In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
 
-</div>
-<div class="listing-date">
-Aug 6, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Tidy Tuesday" data-listing-date-sort="1727755200000" data-listing-file-modified-sort="1729194056524" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="593">
-<a href="./projects/TT10:1:2024/TT2 copy.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./projects/TT10:1:2024/featured.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Chess First Strike Capability
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tidy Tuesday'); return false;">
-Tidy Tuesday
-</div>
-</div>
-<div class="card-text listing-description">
-It’s a well-known fact that playing the white pieces brings a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
 
-</div>
-<div class="listing-date">
-Oct 1, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Politics" data-listing-date-sort="1729137600000" data-listing-file-modified-sort="1731295642673" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1744">
-<a href="./projects/2024electionmodel/modelcopy.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="projects/2024electionmodel/modelcopy_files/figure-html/unnamed-chunk-18-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-2024 Election Model
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Politics'); return false;">
-Politics
-</div>
-</div>
-<div class="card-text listing-description">
-For my Stat 155 final project last semester (which can also be found in the Projects menu), I examined the connection between urbanization and presidential elections. The…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Wesley Stone </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="driving-question" class="level2">
+<h2 class="anchored" data-anchor-id="driving-question">Driving Question</h2>
+<p>This week’s Tidy Tuesday dataset is about immigration statistics since 2020. This is a timely topic, as immigration was a major issue in the presidential election. A lot of border rhetoric was lobbed around during the campaign, but what does the data actually have to say?</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Tidytuesday11-26-24-copy_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<div class="listing-date">
-Oct 17, 2024
+</div>
+</div>
+<p>Simply plotting total encounters per year by region (“Other” largely referring to air/sea migrants) shows that the predominant narrative, of surging immigration at the southern border, is correct. However, the explanation is less clear. The past four years have been eventful, to say the least, with a global pandemic and two extremely consequential presidential elections. Especially because the pandemic pretty much coincides with the earliest data here, it could be that the x-axis is quite skewed, and if we zoomed out another four years or so, 2020 would be a big dip, rather than 2021-22 having big jumps. However, this is certainly not guaranteed, as President Biden’s border policies have generally been laxer than former President Trump’s. Another problem with this graph is that it doesn’t show how the encounters were handled. The number of migrants which come to the border is largely dependent on conditions in their home countries around the world. But coinciding with the surge, a new measure, Title 42, was introduced, which allowed Border Patrol agents to quickly expel some migrants on the basis of public health. So it might be that despite the sharp increase in encounters, the number of migrants admitted did not grow quite as much.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Tidytuesday11-26-24-copy_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
 </div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1732467769102" data-listing-reading-time-sort="3" data-listing-word-count-sort="583">
-<a href="./projects/TT11:26:2024/Tidytuesday11:26:24 copy.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Tidy Tuesday 11/26/2024
-</h5>
-<div class="card-text listing-description">
-This week’s Tidy Tuesday dataset is about immigration statistics since 2020. This is a timely topic, as immigration was a major issue in the presidential election. A lot of…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Wesley Stone
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<p>However, this largely does not appear to be the case. In this graph, the green line represents encounters handled under Title 42, which was an order allowing Border Patrol agents to expel some migrants without standard processing for public health concerns (the statute was allowed to expire in 2023). As far as I can tell from the not-very-informative codebook, inadmissibles are migrants that are quickly expelled under normal conditions, and apprehensions are those admitted. Especially in 2021, it looks like Title 42 expulsions largely increased at the expense of inadmissibles, while apprehensions climbed pretty steadily.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>So what does all this tell us? I think it would be dangerous to draw any sweeping conclusions without data for past years, which could tell us what levels of encounters are “normal.” However, the data does show a pretty clear increase in the number of migrants admitted over the past four years, and it’s probably fair to assign some amount of blame for that to the current administration’s policies. On the other hand, fewer migrants isn’t necessarily “better.” Most are fleeing pretty terrible conditions, and many end up doing pretty essential labor in our country. At the end of the day, immigration is too big and complex of an issue to be captured in just a couple graphs.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

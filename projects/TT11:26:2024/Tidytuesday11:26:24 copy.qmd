@@ -1,0 +1,52 @@
+---
+title: "Tidy Tuesday 11/26/2024"
+author: "Wesley Stone"
+format: html
+editor: visual
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(janitor)
+```
+
+```{r, echo=FALSE, message=FALSE}
+cbp_resp <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-11-26/cbp_resp.csv')
+cbp_state <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-11-26/cbp_state.csv')
+```
+
+## Driving Question
+
+This week's Tidy Tuesday dataset is about immigration statistics since 2020. This is a timely topic, as immigration was a major issue in the presidential election. A lot of border rhetoric was lobbed around during the campaign, but what does the data actually have to say?
+
+## Analysis
+
+```{r, echo=FALSE, message=FALSE}
+cbp_resp %>% 
+  group_by(fiscal_year, land_border_region) %>% 
+  summarize(total_encounters = sum(encounter_count)) %>% 
+  ggplot() +
+  geom_line(aes(x = fiscal_year, y = total_encounters, color = land_border_region)) +
+  labs(title = "Encounters Surged at the Southern Border", x = "", y = "") +
+  theme_classic() +
+  theme(legend.title = element_blank())
+```
+
+Simply plotting total encounters per year by region ("Other" largely referring to air/sea migrants) shows that the predominant narrative, of surging immigration at the southern border, is correct. However, the explanation is less clear. The past four years have been eventful, to say the least, with a global pandemic and two extremely consequential presidential elections. Especially because the pandemic pretty much coincides with the earliest data here, it could be that the x-axis is quite skewed, and if we zoomed out another four years or so, 2020 would be a big dip, rather than 2021-22 having big jumps. However, this is certainly not guaranteed, as President Biden's border policies have generally been laxer than former President Trump's. Another problem with this graph is that it doesn't show how the encounters were handled. The number of migrants which come to the border is largely dependent on conditions in their home countries around the world. But coinciding with the surge, a new measure, Title 42, was introduced, which allowed Border Patrol agents to quickly expel some migrants on the basis of public health. So it might be that despite the sharp increase in encounters, the number of migrants admitted did not grow quite as much.
+
+```{r, echo=FALSE, message=FALSE}
+cbp_resp %>% 
+  group_by(fiscal_year, encounter_type) %>% 
+  summarize(total_encounters = sum(encounter_count)) %>% 
+  ggplot() +
+  geom_line(aes(x = fiscal_year, y = total_encounters, color = encounter_type)) +
+  labs(title = "Title 42 Drove the Surge in Migrant Encounters", subtitle = "Apprehensions Still Increased Steadily", x = "", y = "") +
+  theme_classic() +
+  theme(legend.title = element_blank())
+```
+
+However, this largely does not appear to be the case. In this graph, the green line represents encounters handled under Title 42, which was an order allowing Border Patrol agents to expel some migrants without standard processing for public health concerns (the statute was allowed to expire in 2023). As far as I can tell from the not-very-informative codebook, inadmissibles are migrants that are quickly expelled under normal conditions, and apprehensions are those admitted. Especially in 2021, it looks like Title 42 expulsions largely increased at the expense of inadmissibles, while apprehensions climbed pretty steadily.
+
+## Conclusion
+
+So what does all this tell us? I think it would be dangerous to draw any sweeping conclusions without data for past years, which could tell us what levels of encounters are "normal." However, the data does show a pretty clear increase in the number of migrants admitted over the past four years, and it's probably fair to assign some amount of blame for that to the current administration's policies. On the other hand, fewer migrants isn't necessarily "better." Most are fleeing pretty terrible conditions, and many end up doing pretty essential labor in our country. At the end of the day, immigration is too big and complex of an issue to be captured in just a couple graphs. 
