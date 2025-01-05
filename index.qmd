@@ -11,7 +11,7 @@ about:
       href: https://github.com/wstone0
 ---
 
-:::{#intro-heading}
+::: {#intro-heading}
 ## Wesley Stone
 
 Hi! I'm a junior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration.
