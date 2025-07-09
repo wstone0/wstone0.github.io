@@ -9,6 +9,8 @@ about:
       href: mailto:wstone@macalester.edu
     - icon: github
       href: https://github.com/wstone0
+    - icon: substack
+      href: https://wesleystone.substack.com  
 ---
 
 ::: {#intro-heading}
