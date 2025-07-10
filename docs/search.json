@@ -1,10 +1,17 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Projects",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\nPolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChess First Strike Capability\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAnchoring Bias in the Stock Market\n\n\n\n\n\n\nAlan Schulz-Diaz and Wesley Stone\n\n\nDec 17, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "No matching items"
   },
   {
     "objectID": "index.html",
@@ -14,90 +21,6 @@
     "text": "Hi! I’m a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration.\n\n\n\nMacalester College | St. Paul MN  B.A. in DATA SCIENCE/PHILOSOPHY | Sept 2022 - May 2026"
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Wesley Stone",
-    "section": "",
-    "text": "Macalester College | St. Paul MN  B.A. in DATA SCIENCE/PHILOSOPHY | Sept 2022 - May 2026"
-  },
-  {
-    "objectID": "projects/STAT155FP/FinalProject.html",
-    "href": "projects/STAT155FP/FinalProject.html",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "",
-    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
-  },
-  {
-    "objectID": "projects/STAT155FP/FinalProject.html#introduction",
-    "href": "projects/STAT155FP/FinalProject.html#introduction",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "",
-    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
-  },
-  {
-    "objectID": "projects/STAT155FP/FinalProject.html#exploratory-analysis",
-    "href": "projects/STAT155FP/FinalProject.html#exploratory-analysis",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "Exploratory Analysis",
-    "text": "Exploratory Analysis\nTo answer these questions, I compared presidential election results, from MIT’s Election Data and Science Lab, to 538’s state urbanization index, calculated as the natural logarithm of the average number of people living within a five-mile radius of a given resident in each census tract in that state. This is a great dataset, because it is not sample data; it represents exactly what we are trying to study. Because of this, we can more confidently draw conclusions from analysis of the data. To start, let’s look at the most recent election. Here the conventional wisdom certainly holds up well.\n\n\n\n\n\n\n\n\n\nIn this graph, each dot is a state (or DC), and its position is determined by what percentage of the vote it gave to Joe Biden versus its urbanization score. The graph shows a pretty clear positive trend (r = 0.72); the more urban a state, the larger percentage of Democratic ballots, generally speaking. The only big outliers are Vermont, which despite being the fifth-most rural state gave Biden more than 65% of the vote, and DC, which is by far the most urban and most Democratic-leaning “state” (for the purposes of the electoral college). And since third parties are typically all but irrelevant, it’s unsurprising that the converse is true for Republican vote share, with nearly as strong of a negative relationship (r = -0.70)."
-  },
-  {
-    "objectID": "projects/STAT155FP/FinalProject.html#the-bigger-picture",
-    "href": "projects/STAT155FP/FinalProject.html#the-bigger-picture",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "The Bigger Picture",
-    "text": "The Bigger Picture\nSo we have a clear answer to our first question: the urban-rural divide is a very real phenomenon in today’s politics. The natural question, then, is how exactly this came about. To get a rough estimate, I calculated the r-values in a similar manner as above for each presidential election going back to 1976, the earliest year in the dataset. A higher r-value on the y-axis corresponds to a greater correlation between state urbanization and Democratic vote share in that year’s presidential election. Notably, this is an imperfect method because the urbanization index relies on data from the 2010 census. However, the numbers likely wouldn’t be that different. New York and New Jersey were still very urban fifty years ago, and Wyoming and Montana were (and are) almost entirely rural. Keeping this caveat in mind, the remarkable strength of the correlation (r = 0.93!) shown in the graph still tells a compelling story.\n\n\n\n\n\n\n\n\n\nEvidently America’s geographic divide is a relatively recent phenomenon. Why might this be? The Democratic party has long been the party of the big cities, but for a long time it was also the party of the rural south. In the wake of the civil rights movement, that began to change, and by the new milennium, southern states were solidly Republican. And more recently, the suburbs, long a bastion of conservative politics, have begun to shift more towards Democrats, motivated in part by dislike of President Trump and his policies. So now it is possible to say that, with few exceptions, rural states vote Republican and urban states vote Democratic."
-  },
-  {
-    "objectID": "projects/STAT155FP/FinalProject.html#conclusions",
-    "href": "projects/STAT155FP/FinalProject.html#conclusions",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "Conclusions",
-    "text": "Conclusions\nWhy is this analysis important? For one, it shows where both parties should look to gain an edge in future elections. Republicans should try to make inroads in cities, and Democrats should try to win back some rural constituencies. But more importantly, it poses a problem for the way our political system is set up. The electoral college made a lot of sense in 1788, when the states weren’t really so united at all, and small states were genuinely worried about being dominated by their larger neighbors. In 2024, state lines have mostly lost their significance, and no one talks about big states versus small states. Even for a long time after the electoral college became obsolete, its inequities didn’t matter much, because they didn’t translate to an advantage for one party or the other. But now Republican presidential candidates have a significant systemic advantage over their Democratic opponents before the campaigns even start (and even more so in the Senate). And twice in recent memory, 2000 (r = 0.70) and 2016 (r = 0.75), this advantage has been enough to swing the electoral college to a candidate who lost the popular vote. Of course this isn’t even considering the other big problem; that campaigns only need to worry about a few “swing” states which both parties have a chance of winning, and can ignore the rest of the country. The president represents all Americans equally. So why isn’t he elected by them all equally? The popular vote is simple, decisive, and takes no account of geography. This data should present compelling evidence that we should ditch the electoral college in favor of it."
-  },
-  {
-    "objectID": "projects/STAT155FP/FinalProject.html#data-sources",
-    "href": "projects/STAT155FP/FinalProject.html#data-sources",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "Data Sources",
-    "text": "Data Sources\nElection data: https://dataverse.harvard.edu/file.xhtml?fileId=4299753&version=7.0\nUrbanization index: https://github.com/fivethirtyeight/data/tree/master/urbanization-index"
-  },
-  {
-    "objectID": "projects/TT8:6:2024/index.html",
-    "href": "projects/TT8:6:2024/index.html",
-    "title": "Tidy Tuesday 8/6/2024",
-    "section": "",
-    "text": "For this tidy tuesday, I analyzed gold medal trends at the summer olympics to determine which country has historically been the most dominant. Check out the repo here."
-  },
-  {
-    "objectID": "projects/TT8:6:2024/TidyTuesday1.html",
-    "href": "projects/TT8:6:2024/TidyTuesday1.html",
-    "title": "Tidy Tuesday 1",
-    "section": "",
-    "text": "In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever metric you want to use: 126 medals overall, and tied with China with 40 golds, twice as many as any other country. But has this always been the case? And does this still hold for the Winter Games? Let’s dive into the data to find out.\n\n\n# A tibble: 10 × 2\n# Groups:   team [10]\n   team              n\n   &lt;chr&gt;         &lt;int&gt;\n 1 United States   997\n 2 Russia          545\n 3 Germany         376\n 4 Great Britain   243\n 5 France          221\n 6 Italy           213\n 7 China           207\n 8 Hungary         178\n 9 Australia       144\n10 Sweden          143"
-  },
-  {
-    "objectID": "projects/TT8:6:2024/TidyTuesday1.html#which-countries-have-historically-been-the-most-successful-at-the-olympics",
-    "href": "projects/TT8:6:2024/TidyTuesday1.html#which-countries-have-historically-been-the-most-successful-at-the-olympics",
-    "title": "Tidy Tuesday 1",
-    "section": "",
-    "text": "In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever metric you want to use: 126 medals overall, and tied with China with 40 golds, twice as many as any other country. But has this always been the case? And does this still hold for the Winter Games? Let’s dive into the data to find out.\n\n\n# A tibble: 10 × 2\n# Groups:   team [10]\n   team              n\n   &lt;chr&gt;         &lt;int&gt;\n 1 United States   997\n 2 Russia          545\n 3 Germany         376\n 4 Great Britain   243\n 5 France          221\n 6 Italy           213\n 7 China           207\n 8 Hungary         178\n 9 Australia       144\n10 Sweden          143"
-  },
-  {
-    "objectID": "projects/TT8:6:2024/TidyTuesday1.html#data-analysis",
-    "href": "projects/TT8:6:2024/TidyTuesday1.html#data-analysis",
-    "title": "Tidy Tuesday 1",
-    "section": "Data Analysis",
-    "text": "Data Analysis\nFirst, I wanted to identify the ten most dominant teams overall. To keep things simpler, I chose to only include gold medals (it hardly seems fair to count them the same as silvers and bronzes), and, also in the interest of fairness, I combined the Soviet Union with Russia and East Germany with Germany. Unsurprisingly, the US has far and away the most total gold medals; almost twice as many as its nearest competitor, Russia. But this is only part of the story. To get a fuller picture, we should examine how the medal counts play out over time."
-  },
-  {
-    "objectID": "projects/TT8:6:2024/TidyTuesday1.html#conclusion",
-    "href": "projects/TT8:6:2024/TidyTuesday1.html#conclusion",
-    "title": "Tidy Tuesday 1",
-    "section": "Conclusion",
-    "text": "Conclusion\nFirst, several contextual notes: no Games were held in 1916, 1940 or 1944, because of the World Wars, so the graph just treats those years as any other off years and passes right through them. Also, the medal counts in 1980 and 1984 are somewhat skewed by boycotts of the US and Soviet Union, respectively. But on the whole, this graph confirms the answer to our question: clearly the US has been the only truly dominant power in the Summer Olympics since its inception. Though we haven’t won the most gold medals every year, and at times other teams, such as Germany, Russia, and more recently, China, have been formidable rivals, only America has been near the top of the leaderboard pretty much invariably. It will be interesting to see if this lasts for future Olympics."
-  },
-  {
     "objectID": "index.html#wesley-stone",
     "href": "index.html#wesley-stone",
     "title": "Wesley Stone",
@@ -105,262 +28,17 @@
     "text": "Hi! I’m a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration."
   },
   {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Wesley Stone",
+    "section": "",
+    "text": "Macalester College | St. Paul MN  B.A. in DATA SCIENCE/PHILOSOPHY | Sept 2022 - May 2026"
+  },
+  {
     "objectID": "index.html#biography",
     "href": "index.html#biography",
     "title": "Wesley Stone",
     "section": "Biography",
     "text": "Biography\nI was born in Madison, Wisconsin, but I’d lived in Atlanta, Georgia nearly my entire life before returning to my Midwestern roots for college. I became interested in philosophy my first semester after taking an ethics class, and I soon decided to add data science to incorporate my diverse academic interests. This year, I spent a long semester in Amsterdam biking, museum-hopping and taking classes at the Vrije Universiteit, as well as exploring the rest of Europe, from Ireland to Istanbul. Since returning to the States, I’ve been working as a gardener, launching a Substack blog and thinking about my post-grad plan, as well as reading a lot and playing guitar in my spare time."
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\nPolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/urbanheat/index.html",
-    "href": "projects/urbanheat/index.html",
-    "title": "Human Heat Tolerance Index",
-    "section": "",
-    "text": "At a wet bulb (humidity-adjusted) temperature of 87°F, studies have shown that healthy young adults are at risk for severe symptoms with prolonged exposure. If this threshold were to be breached with any regularity, it would have profound implications for the way we could live our lives outdoors. For instance, municipal services, such as garbage collection, might have to be reduced or suspended in such a scenario. As such, Georgia Tech’s Urban Climate Lab set out to answer the obvious question: when may this critical limit be reached? I assisted the Urban Climate Lab in acquiring, cleaning and wrangling the data for the Human Heat Tolerance Index, which tracks wet bulb temperatures in the 25 largest cities in the US. According to the analysis, over a dozen major metropolises may be at risk of threshold heat events within the decade."
-  },
-  {
-    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html",
-    "href": "projects/TT8:6:2024/OlympicMedalTrends.html",
-    "title": "Which countries have historically had the most success at the summer Olympics?",
-    "section": "",
-    "text": "In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever metric you want to use: 126 medals overall, and tied with China with 40 golds, twice as many as any other country. But has this always been the case? And does this still hold for the Winter Games? Let’s dive into the data to find out.\n\n\n# A tibble: 10 × 2\n# Groups:   team [10]\n   team              n\n   &lt;chr&gt;         &lt;int&gt;\n 1 United States   997\n 2 Russia          545\n 3 Germany         376\n 4 Great Britain   243\n 5 France          221\n 6 Italy           213\n 7 China           207\n 8 Hungary         178\n 9 Australia       144\n10 Sweden          143"
-  },
-  {
-    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html#research-question",
-    "href": "projects/TT8:6:2024/OlympicMedalTrends.html#research-question",
-    "title": "Which countries have historically had the most success at the summer Olympics?",
-    "section": "",
-    "text": "In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever metric you want to use: 126 medals overall, and tied with China with 40 golds, twice as many as any other country. But has this always been the case? And does this still hold for the Winter Games? Let’s dive into the data to find out.\n\n\n# A tibble: 10 × 2\n# Groups:   team [10]\n   team              n\n   &lt;chr&gt;         &lt;int&gt;\n 1 United States   997\n 2 Russia          545\n 3 Germany         376\n 4 Great Britain   243\n 5 France          221\n 6 Italy           213\n 7 China           207\n 8 Hungary         178\n 9 Australia       144\n10 Sweden          143"
-  },
-  {
-    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html#data-analysis",
-    "href": "projects/TT8:6:2024/OlympicMedalTrends.html#data-analysis",
-    "title": "Which countries have historically had the most success at the summer Olympics?",
-    "section": "Data Analysis",
-    "text": "Data Analysis\nFirst, I wanted to identify the ten most dominant teams overall. To keep things simpler, I chose to only include gold medals (it hardly seems fair to count them the same as silvers and bronzes), and, also in the interest of fairness, I combined the Soviet Union with Russia and East Germany with Germany. Unsurprisingly, the US has far and away the most total gold medals; almost twice as many as its nearest competitor, Russia. But this is only part of the story. To get a fuller picture, we should examine how the medal counts play out over time."
-  },
-  {
-    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html#conclusion",
-    "href": "projects/TT8:6:2024/OlympicMedalTrends.html#conclusion",
-    "title": "Which countries have historically had the most success at the summer Olympics?",
-    "section": "Conclusion",
-    "text": "Conclusion\nFirst, several contextual notes: no Games were held in 1916, 1940 or 1944, because of the World Wars, so the graph just treats those years as any other off years and passes right through them. Also, the medal counts in 1980 and 1984 are somewhat skewed by boycotts of the US and Soviet Union, respectively. But on the whole, this graph confirms the answer to our question: clearly the US has been the only truly dominant power in the Summer Olympics since its inception. Though we haven’t won the most gold medals every year, and at times other teams, such as Germany, Russia, and more recently, China, have been formidable rivals, only America has been near the top of the leaderboard pretty much invariably. It will be interesting to see if this lasts for future Olympics."
-  },
-  {
-    "objectID": "projects/TT10:1:2024/TT2 copy.html",
-    "href": "projects/TT10:1:2024/TT2 copy.html",
-    "title": "Chess First Strike Capability",
-    "section": "",
-    "text": "It’s a well-known fact that playing the white pieces brings a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought to translate to winning about 55% of non-draws in reasonably competitive environments. But I was interested in how much this advantage varies given the skill level of the players.\n\n\n# A tibble: 6 × 16\n  game_id  rated  start_time end_time turns victory_status winner time_increment\n  &lt;chr&gt;    &lt;lgl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;         \n1 TZJHLljE FALSE     1.50e12  1.50e12    13 outoftime      white  15+2          \n2 l1NXvwaE TRUE      1.50e12  1.50e12    16 resign         black  5+10          \n3 mIICvQHh TRUE      1.50e12  1.50e12    61 mate           white  5+10          \n4 kWKvrqYL TRUE      1.50e12  1.50e12    61 mate           white  20+0          \n5 9tXo1AUZ TRUE      1.50e12  1.50e12    95 mate           white  30+3          \n6 MsoDV9wj FALSE     1.50e12  1.50e12     5 draw           draw   10+0          \n# ℹ 8 more variables: white_id &lt;chr&gt;, white_rating &lt;dbl&gt;, black_id &lt;chr&gt;,\n#   black_rating &lt;dbl&gt;, moves &lt;chr&gt;, opening_eco &lt;chr&gt;, opening_name &lt;chr&gt;,\n#   opening_ply &lt;dbl&gt;\n\n\nThis week’s dataset consists of 20,000 games collected from Lichess.org. To analyze it, I first filtered out unrated games, so that hopefully most of the games left would represent genuine effort rather than just testing or having fun. Next, I created four (somewhat arbitrary) rating categories: Beginner (&lt;1200), Intermediate (1200-1600), Advanced (1600-2000), and Expert (&gt;2000). Then, all that was left was to calculate the win rates and put them in a bar chart."
-  },
-  {
-    "objectID": "projects/TT10:1:2024/TT2 copy.html#how-does-the-advantage-of-playing-white-in-chess-change-with-skill",
-    "href": "projects/TT10:1:2024/TT2 copy.html#how-does-the-advantage-of-playing-white-in-chess-change-with-skill",
-    "title": "First-Move Advantage in Chess by Player Skill",
-    "section": "",
-    "text": "It’s a well-known fact that the white side has a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought to translate to winning about 55% of non-draws in reasonably competitive environments. But I was interested in how much this advantage varies given the skill level of the players.\n\n\n# A tibble: 6 × 16\n  game_id  rated  start_time end_time turns victory_status winner time_increment\n  &lt;chr&gt;    &lt;lgl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;         \n1 TZJHLljE FALSE     1.50e12  1.50e12    13 outoftime      white  15+2          \n2 l1NXvwaE TRUE      1.50e12  1.50e12    16 resign         black  5+10          \n3 mIICvQHh TRUE      1.50e12  1.50e12    61 mate           white  5+10          \n4 kWKvrqYL TRUE      1.50e12  1.50e12    61 mate           white  20+0          \n5 9tXo1AUZ TRUE      1.50e12  1.50e12    95 mate           white  30+3          \n6 MsoDV9wj FALSE     1.50e12  1.50e12     5 draw           draw   10+0          \n# ℹ 8 more variables: white_id &lt;chr&gt;, white_rating &lt;dbl&gt;, black_id &lt;chr&gt;,\n#   black_rating &lt;dbl&gt;, moves &lt;chr&gt;, opening_eco &lt;chr&gt;, opening_name &lt;chr&gt;,\n#   opening_ply &lt;dbl&gt;\n\n\nThis week’s dataset consists of 20,000 games collected from Lichess.org. To analyze it, I first filtered out unrated games, so that hopefully most of the games left would represent genuine effort rather than just testing or having fun. Next, I created four (somewhat arbitrary) rating categories: Beginner (&lt;1200), Intermediate (1200-1600), Advanced (1600-2000), and Expert (&gt;2000). Then, all that was left was to calculate the win rates and put them in a bar chart."
-  },
-  {
-    "objectID": "projects/TT10:1:2024/TT2 copy.html#conclusion",
-    "href": "projects/TT10:1:2024/TT2 copy.html#conclusion",
-    "title": "Chess First Strike Capability",
-    "section": "Conclusion",
-    "text": "Conclusion\nThe result was quite surprising. Initially, I expected the starting advantage to increase with rating, because beginners will typically squander it fairly early with a major mistake, whereas grandmasters quite often can convert that half-pawn edge into a decisive lead. But in fact, the opposite occurs: white players below 1600 have about a 3% advantage, but by the time they reach 2000, it all but disappears. Why might this be? My initial reaction was that perhaps the matching algorithm automatically assigned white to the lower-ranked player, or else tried to adjust for the starting advantage, but the data does not bear this out:\n\n\n[1] 1595\n\n\n[1] 1591\n\n\n[1] 2112\n\n\n[1] 2116\n\n\nThe first two numbers are the overall average ratings for both colors, and the second two represent the same for the experts; in both cases, they are practically identical. As the sample size is large, with over 15,000 games, there should be an explanation for even these modest differences in winrate. The only hypothesis I can come up with is that possibly at the highest levels, there’s more experimentation, which means the white player might intentionally choose openings which erase their advantage for a more interesting game. If this is the case, the solution would be to find a dataset of tournament matches where the players almost certainly gave it their all. But as it stands, this analysis is sufficient to show that if you’re queueing into Lichess at a ranking above 2000, you can’t complain about losing the coin flip."
-  },
-  {
-    "objectID": "projects/TT10:1:2024/TT2 copy.html#does-whites-advantage-change-with-skill",
-    "href": "projects/TT10:1:2024/TT2 copy.html#does-whites-advantage-change-with-skill",
-    "title": "Chess First Strike Capability",
-    "section": "",
-    "text": "It’s a well-known fact that playing the white pieces brings a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought to translate to winning about 55% of non-draws in reasonably competitive environments. But I was interested in how much this advantage varies given the skill level of the players.\n\n\n# A tibble: 6 × 16\n  game_id  rated  start_time end_time turns victory_status winner time_increment\n  &lt;chr&gt;    &lt;lgl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;         \n1 TZJHLljE FALSE     1.50e12  1.50e12    13 outoftime      white  15+2          \n2 l1NXvwaE TRUE      1.50e12  1.50e12    16 resign         black  5+10          \n3 mIICvQHh TRUE      1.50e12  1.50e12    61 mate           white  5+10          \n4 kWKvrqYL TRUE      1.50e12  1.50e12    61 mate           white  20+0          \n5 9tXo1AUZ TRUE      1.50e12  1.50e12    95 mate           white  30+3          \n6 MsoDV9wj FALSE     1.50e12  1.50e12     5 draw           draw   10+0          \n# ℹ 8 more variables: white_id &lt;chr&gt;, white_rating &lt;dbl&gt;, black_id &lt;chr&gt;,\n#   black_rating &lt;dbl&gt;, moves &lt;chr&gt;, opening_eco &lt;chr&gt;, opening_name &lt;chr&gt;,\n#   opening_ply &lt;dbl&gt;\n\n\nThis week’s dataset consists of 20,000 games collected from Lichess.org. To analyze it, I first filtered out unrated games, so that hopefully most of the games left would represent genuine effort rather than just testing or having fun. Next, I created four (somewhat arbitrary) rating categories: Beginner (&lt;1200), Intermediate (1200-1600), Advanced (1600-2000), and Expert (&gt;2000). Then, all that was left was to calculate the win rates and put them in a bar chart."
-  },
-  {
-    "objectID": "projects/STAT155FP/urbanization.html",
-    "href": "projects/STAT155FP/urbanization.html",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "",
-    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
-  },
-  {
-    "objectID": "projects/STAT155FP/urbanization.html#introduction",
-    "href": "projects/STAT155FP/urbanization.html#introduction",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "",
-    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
-  },
-  {
-    "objectID": "projects/STAT155FP/urbanization.html#exploratory-analysis",
-    "href": "projects/STAT155FP/urbanization.html#exploratory-analysis",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "Exploratory Analysis",
-    "text": "Exploratory Analysis\nTo answer these questions, I compared presidential election results, from MIT’s Election Data and Science Lab, to 538’s state urbanization index, calculated as the natural logarithm of the average number of people living within a five-mile radius of a given resident in each census tract in that state. This is a great dataset, because it is not sample data; it represents exactly what we are trying to study. Because of this, we can more confidently draw conclusions from analysis of the data. To start, let’s look at the most recent election. Here the conventional wisdom certainly holds up well.\n\n\n\n\n\n\n\n\n\nIn this graph, each dot is a state (or DC), and its position is determined by what percentage of the vote it gave to Joe Biden versus its urbanization score. The graph shows a pretty clear positive trend (r = 0.72); the more urban a state, the larger percentage of Democratic ballots, generally speaking. The only big outliers are Vermont, which despite being the fifth-most rural state gave Biden more than 65% of the vote, and DC, which is by far the most urban and most Democratic-leaning “state” (for the purposes of the electoral college). And since third parties are typically all but irrelevant, it’s unsurprising that the converse is true for Republican vote share, with nearly as strong of a negative relationship (r = -0.70)."
-  },
-  {
-    "objectID": "projects/STAT155FP/urbanization.html#the-bigger-picture",
-    "href": "projects/STAT155FP/urbanization.html#the-bigger-picture",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "The Bigger Picture",
-    "text": "The Bigger Picture\nSo we have a clear answer to our first question: the urban-rural divide is a very real phenomenon in today’s politics. The natural question, then, is how exactly this came about. To get a rough estimate, I calculated the r-values in a similar manner as above for each presidential election going back to 1976, the earliest year in the dataset. A higher r-value on the y-axis corresponds to a greater correlation between state urbanization and Democratic vote share in that year’s presidential election. Notably, this is an imperfect method because the urbanization index relies on data from the 2010 census. However, the numbers likely wouldn’t be that different. New York and New Jersey were still very urban fifty years ago, and Wyoming and Montana were (and are) almost entirely rural. Keeping this caveat in mind, the remarkable strength of the correlation (r = 0.93!) shown in the graph still tells a compelling story.\n\n\n\n\n\n\n\n\n\nEvidently America’s geographic divide is a relatively recent phenomenon. Why might this be? The Democratic party has long been the party of the big cities, but for a long time it was also the party of the rural south. In the wake of the civil rights movement, that began to change, and by the new milennium, southern states were solidly Republican. And more recently, the suburbs, long a bastion of conservative politics, have begun to shift more towards Democrats, motivated in part by dislike of President Trump and his policies. So now it is possible to say that, with few exceptions, rural states vote Republican and urban states vote Democratic."
-  },
-  {
-    "objectID": "projects/STAT155FP/urbanization.html#conclusions",
-    "href": "projects/STAT155FP/urbanization.html#conclusions",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "Conclusions",
-    "text": "Conclusions\nWhy is this analysis important? For one, it shows where both parties should look to gain an edge in future elections. Republicans should try to make inroads in cities, and Democrats should try to win back some rural constituencies. But more importantly, it poses a problem for the way our political system is set up. The electoral college made a lot of sense in 1788, when the states weren’t really so united at all, and small states were genuinely worried about being dominated by their larger neighbors. In 2024, state lines have mostly lost their significance, and no one talks about big states versus small states. Even for a long time after the electoral college became obsolete, its inequities didn’t matter much, because they didn’t translate to an advantage for one party or the other. But now Republican presidential candidates have a significant systemic advantage over their Democratic opponents before the campaigns even start (and even more so in the Senate). And twice in recent memory, 2000 (r = 0.70) and 2016 (r = 0.75), this advantage has been enough to swing the electoral college to a candidate who lost the popular vote. Of course this isn’t even considering the other big problem; that campaigns only need to worry about a few “swing” states which both parties have a chance of winning, and can ignore the rest of the country. The president represents all Americans equally. So why isn’t he elected by them all equally? The popular vote is simple, decisive, and takes no account of geography. This data should present compelling evidence that we should ditch the electoral college in favor of it."
-  },
-  {
-    "objectID": "projects/STAT155FP/urbanization.html#data-sources",
-    "href": "projects/STAT155FP/urbanization.html#data-sources",
-    "title": "The Urban-Rural Divide in American Politics",
-    "section": "Data Sources",
-    "text": "Data Sources\nElection data\nUrbanization index"
-  },
-  {
-    "objectID": "projects/2024electionmodel/model copy.html",
-    "href": "projects/2024electionmodel/model copy.html",
-    "title": "2024 Election Model",
-    "section": "",
-    "text": "For my Stat 155 final project last semester (which can also be found in the Projects menu), I examined the connection between urbanization and presidential elections. The results were intriguing; there was both a strong correlation between the variables, and a nearly linear trend of increase in the past fifty years. With the 2024 election just around the corner, I thought it might be interesting to revisit these findings, and see what the implications could be for this pivotal race. To do so, I built a simple model meant to predict the outcome of the election, assuming a very strong correlation between urbanization and voting patterns."
-  },
-  {
-    "objectID": "projects/2024electionmodel/model copy.html#introduction",
-    "href": "projects/2024electionmodel/model copy.html#introduction",
-    "title": "2024 Election Model",
-    "section": "",
-    "text": "For my Stat 155 final project last semester (which can also be found in the Projects menu), I examined the connection between urbanization and presidential elections. The results were intriguing; there was both a strong correlation between the variables, and a nearly linear trend of increase in the past fifty years. With the 2024 election just around the corner, I thought it might be interesting to revisit these findings, and see what the implications could be for this pivotal race. To do so, I built a simple model meant to predict the outcome of the election, assuming a very strong correlation between urbanization and voting patterns."
-  },
-  {
-    "objectID": "projects/2024electionmodel/model copy.html#methodology",
-    "href": "projects/2024electionmodel/model copy.html#methodology",
-    "title": "2024 Election Model",
-    "section": "Methodology",
-    "text": "Methodology\nFirst, I retrieved urbanization numbers updated with 2020 census data from 538. Next, I computed the urbanization index for the US as a whole, to have a baseline to compare the states to. From these numbers, I obtained an “urban lean” for each state, showing how much more urban or rural it is than the country as a whole. This metric corresponds to the “partisan lean” calculated by 538, Cook, and others, which tells how much redder or bluer a state is from the baseline. So once I rescaled using 538’s partisan lean, I had an “urban-partisan lean” for each Electoral College “state” (negative numbers indicate Republican advantage).\n\n\n\n\n\n\n\n\n\n\n\n\n\nState\nUrban-Partisan Lean\nPredicted Outcome\nState\nUrban-Partisan Lean\nPredicted Outcome\n\n\n\n\nAlaska\n-40.63\n-39.23\nNebraska\n-10.22\n-8.82\n\n\nAlabama\n-19.09\n-17.69\nNew Hampshire\n-14.77\n-13.37\n\n\nArkansas\n-25.21\n-23.81\nNew Jersey\n24.93\n26.33\n\n\nArizona\n9.65\n11.05\nNew Mexico\n-14.54\n-13.14\n\n\nCalifornia\n23.84\n25.24\nNevada\n17.75\n19.15\n\n\nColorado\n7.01\n8.41\nNew York\n31.51\n32.91\n\n\nConnecticut\n8.79\n10.19\nOhio\n0.43\n1.83\n\n\nDelaware\n2.19\n3.59\nOklahoma\n-13.90\n-12.50\n\n\nFlorida\n11.58\n12.98\nOregon\n-1.12\n0.28\n\n\nGeorgia\n-2.32\n-0.92\nPennsylvania\n5.29\n6.69\n\n\nHawaii\n4.83\n6.23\nRhode Island\n15.40\n16.80\n\n\nIowa\n-21.21\n-19.81\nSouth Carolina\n-10.88\n-9.48\n\n\nIdaho\n-17.12\n-15.72\nSouth Dakota\n-36.27\n-34.87\n\n\nIllinois\n13.82\n15.22\nTennessee\n-10.49\n-9.09\n\n\nIndiana\n-7.43\n-6.03\nTexas\n7.11\n8.51\n\n\nKansas\n-13.13\n-11.73\nUtah\n4.90\n6.30\n\n\nKentucky\n-16.32\n-14.92\nVirginia\n2.24\n3.64\n\n\nLouisiana\n-10.36\n-8.96\nVermont\n-34.72\n-33.32\n\n\nMassachusetts\n17.18\n18.58\nWashington\n6.06\n7.46\n\n\nMaryland\n15.12\n16.52\nWisconsin\n-11.57\n-10.17\n\n\nMaine\n-31.57\n-30.17\nWest Virginia\n-29.53\n-28.13\n\n\nMichigan\n-0.74\n0.66\nWyoming\n-44.48\n-43.08\n\n\nMinnesota\n-5.46\n-4.06\nNE 01\n0.81\n2.21\n\n\nMissouri\n-9.66\n-8.26\nNE 02\n18.94\n20.34\n\n\nMississippi\n-30.76\n-29.36\nNE 03\n-49.30\n-47.90\n\n\nMontana\n-39.74\n-38.34\nME 01\n-19.18\n-17.78\n\n\nNorth Carolina\n-7.38\n-5.98\nME 02\n-43.95\n-42.55\n\n\nNorth Dakota\n-30.86\n-29.46\nDistrict of Columbia\n46.49\n47.89\n\n\n\n\n\nHowever, a partisan lean alone isn’t enough to tell you what will happen; it only predicts results in a neutral national environment. Thankfully, there are ample polls at both the national and state levels available for public consumption. 270towin had the most state polls (relevant in a moment) available, so I took their national average, Harris +2.6% on the day of writing this. Now the model is giving real predictions. By and large they are reasonable, but there are some eye-raising outliers (Utah D+5? Vermont R+38???). In its current state, the model is just a representation of the national mood, and a fairly crude one at that. So I decided to take things a step further, and average the urban-partisan predictions with current state polling, which can hopefully account more for local trends. In turn, however, the polls are flawed in that they sometimes make incorrect assumptions about the overall environment. The urban-partisan lean can then be seen as adjusting the polls on the assumption that urbanization is the main plotline of the 2024 election (which could very well turn out not to be the case).\n\n\n\n\n\n\n\n\n\n\n\nState\nPredicted Outcome\nState\nPredicted Outcome\n\n\n\n\nDistrict of Columbia\n67.29\nNew Mexico\n-3.07\n\n\nCalifornia\n24.97\nNorth Carolina\n-3.29\n\n\nNew York\n24.71\nUtah\n-4.85\n\n\nMassachusetts\n23.54\nWisconsin\n-4.89\n\n\nMaryland\n22.86\nNE 01\n-6.45\n\n\nNew Jersey\n21.07\nMaine\n-8.58\n\n\nHawaii\n17.82\nSouth Carolina\n-9.74\n\n\nRhode Island\n16.65\nMissouri\n-9.88\n\n\nIllinois\n16.06\nIndiana\n-11.27\n\n\nNE 02\n14.37\nIowa\n-12.41\n\n\nWashington\n14.03\nNebraska\n-12.91\n\n\nConnecticut\n13.10\nKansas\n-13.17\n\n\nDelaware\n11.04\nLouisiana\n-13.78\n\n\nNevada\n9.73\nOklahoma\n-14.25\n\n\nColorado\n9.71\nTennessee\n-15.05\n\n\nOregon\n6.14\nArkansas\n-19.41\n\n\nVirginia\n5.62\nKentucky\n-20.46\n\n\nArizona\n4.68\nAlabama\n-21.54\n\n\nME 01\n4.61\nME 02\n-21.78\n\n\nVermont\n3.84\nMississippi\n-22.93\n\n\nFlorida\n3.19\nAlaska\n-23.11\n\n\nPennsylvania\n3.19\nIdaho\n-23.21\n\n\nTexas\n1.46\nWest Virginia\n-27.57\n\n\nMinnesota\n1.22\nNorth Dakota\n-28.23\n\n\nMichigan\n0.43\nMontana\n-28.67\n\n\nGeorgia\n-1.41\nSouth Dakota\n-30.34\n\n\nNew Hampshire\n-2.19\nWyoming\n-43.19\n\n\nOhio\n-2.29\nNE 03\n-50.55\n\n\n\n\n\nNOTE: polls last updated October 23"
-  },
-  {
-    "objectID": "projects/2024electionmodel/model copy.html#analysis",
-    "href": "projects/2024electionmodel/model copy.html#analysis",
-    "title": "2024 Election Model",
-    "section": "Analysis",
-    "text": "Analysis\nIncorporating 270towin’s averages where available (and using 2020 results in the noncompetitive states where they aren’t), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there’s a lot to like. The model predicts Harris flipping the electoral-vote rich states of Florida and Texas, beating the polls in Pennsylvania, Nevada and Arizona and keeping surprisingly close in Ohio. There are silver linings for Republicans as well. The “Blue Wall” cracks, with Wisconsin and Michigan turning red and Minnesota almost joining them. Trump also flips Maine, New Hampshire and New Mexico, while keeping remarkably close in Vermont and Oregon. While the Vermont number is pure fantasy, and a reminder that these “predictions” are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it’s often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 in 2020, two years ago the Democrat only won the governer’s race by 3.5%, which is pretty in-line with what the model predicts. However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a decisive Kamala Harris victory.\n\n\n# A tibble: 2 × 2\n  Candidate Votes\n  &lt;chr&gt;     &lt;dbl&gt;\n1 Harris      336\n2 Trump       202\n\n\nHowever, in reality this is a much closer contest than it appears: a shift of just 1.55 points to the right nationally would flip Minnesota, Texas and, in the height of irony, Vermont, giving Trump exactly the 270 electoral votes needed to be the next President of the United States. If we ignore Vermont, a 2020-sized polling error of roughly 4 points in Trump’s favor would be sufficient for him to retake Pennsylvania and Florida, as well as Maine’s 1st district for good measure, enough for a comfortable Electoral College victory."
-  },
-  {
-    "objectID": "projects/2024electionmodel/model copy.html#conclusion",
-    "href": "projects/2024electionmodel/model copy.html#conclusion",
-    "title": "2024 Election Model",
-    "section": "Conclusion",
-    "text": "Conclusion\nHow seriously should these predictions be taken? Mostly, this was just an exercise to satisfy my curiosity, and I wouldn’t put too much weight in the exact numbers. However, there are some reasons to think that it might be more accurate than it seems. For one, there’s my previous project, which showed that urbanization is a strong predictor of election results. It also has an advantage over other commonly-used predictors, such as race, gender or education, in that where you live is something you can change. But no one explanatory variable can possibly capture the collective consciousness of 330 million Americans. At the end of the day, the only way to know for sure who will win is to wait for all the votes to be cast and counted."
-  },
-  {
-    "objectID": "projects/2024electionmodel/model copy.html#sources",
-    "href": "projects/2024electionmodel/model copy.html#sources",
-    "title": "2024 Election Model",
-    "section": "Sources",
-    "text": "Sources\nGeographic data Polls  Electoral votes  Partisan lean (for standardization)  Urbanization, and  Urbanization (for DC)  Population data"
-  },
-  {
-    "objectID": "projects/2024electionmodel/modelcopy.html",
-    "href": "projects/2024electionmodel/modelcopy.html",
-    "title": "2024 Election Model",
-    "section": "",
-    "text": "For my Stat 155 final project last semester (which can also be found in the Projects menu), I examined the connection between urbanization and presidential elections. The results were intriguing; there was both a strong correlation between the variables, and a nearly linear trend of increase in the past fifty years. With the 2024 election just around the corner, I thought it might be interesting to revisit these findings, and see what the implications could be for this pivotal race. To do so, I built a simple model meant to predict the outcome of the election, assuming a very strong correlation between urbanization and voting patterns."
-  },
-  {
-    "objectID": "projects/2024electionmodel/modelcopy.html#introduction",
-    "href": "projects/2024electionmodel/modelcopy.html#introduction",
-    "title": "2024 Election Model",
-    "section": "",
-    "text": "For my Stat 155 final project last semester (which can also be found in the Projects menu), I examined the connection between urbanization and presidential elections. The results were intriguing; there was both a strong correlation between the variables, and a nearly linear trend of increase in the past fifty years. With the 2024 election just around the corner, I thought it might be interesting to revisit these findings, and see what the implications could be for this pivotal race. To do so, I built a simple model meant to predict the outcome of the election, assuming a very strong correlation between urbanization and voting patterns."
-  },
-  {
-    "objectID": "projects/2024electionmodel/modelcopy.html#methodology",
-    "href": "projects/2024electionmodel/modelcopy.html#methodology",
-    "title": "2024 Election Model",
-    "section": "Methodology",
-    "text": "Methodology\nFirst, I retrieved urbanization numbers updated with 2020 census data from 538. Next, I computed the urbanization index for the US as a whole, to have a baseline to compare the states to. From these numbers, I obtained an “urban lean” for each state, showing how much more urban or rural it is than the country as a whole. This metric corresponds to the “partisan lean” calculated by 538, Cook, and others, which tells how much redder or bluer a state is from the baseline. So once I rescaled using 538’s partisan lean, I had an “urban-partisan lean” for each Electoral College “state.”\n\n\n\n\n\n\n\n\n\n\n\n\n\nState\nUrban-Partisan Lean\nPredicted Outcome\nState\nUrban-Partisan Lean\nPredicted Outcome\n\n\n\n\nAlaska\nR+40.63\nR+39.43\nNebraska\nR+10.22\nR+9.02\n\n\nAlabama\nR+19.09\nR+17.89\nNew Hampshire\nR+14.77\nR+13.57\n\n\nArkansas\nR+25.21\nR+24.01\nNew Jersey\nD+24.93\nD+26.13\n\n\nArizona\nD+9.65\nD+10.85\nNew Mexico\nR+14.54\nR+13.34\n\n\nCalifornia\nD+23.84\nD+25.04\nNevada\nD+17.75\nD+18.95\n\n\nColorado\nD+7.01\nD+8.21\nNew York\nD+31.51\nD+32.71\n\n\nConnecticut\nD+8.79\nD+9.99\nOhio\nD+0.43\nD+1.63\n\n\nDelaware\nD+2.19\nD+3.39\nOklahoma\nR+13.9\nR+12.7\n\n\nFlorida\nD+11.58\nD+12.78\nOregon\nR+1.12\nD+0.08\n\n\nGeorgia\nR+2.32\nR+1.12\nPennsylvania\nD+5.29\nD+6.49\n\n\nHawaii\nD+4.83\nD+6.03\nRhode Island\nD+15.4\nD+16.6\n\n\nIowa\nR+21.21\nR+20.01\nSouth Carolina\nR+10.88\nR+9.68\n\n\nIdaho\nR+17.12\nR+15.92\nSouth Dakota\nR+36.27\nR+35.07\n\n\nIllinois\nD+13.82\nD+15.02\nTennessee\nR+10.49\nR+9.29\n\n\nIndiana\nR+7.43\nR+6.23\nTexas\nD+7.11\nD+8.31\n\n\nKansas\nR+13.13\nR+11.93\nUtah\nD+4.9\nD+6.1\n\n\nKentucky\nR+16.32\nR+15.12\nVirginia\nD+2.24\nD+3.44\n\n\nLouisiana\nR+10.36\nR+9.16\nVermont\nR+34.72\nR+33.52\n\n\nMassachusetts\nD+17.18\nD+18.38\nWashington\nD+6.06\nD+7.26\n\n\nMaryland\nD+15.12\nD+16.32\nWisconsin\nR+11.57\nR+10.37\n\n\nMaine\nR+31.57\nR+30.37\nWest Virginia\nR+29.53\nR+28.33\n\n\nMichigan\nR+0.74\nD+0.46\nWyoming\nR+44.48\nR+43.28\n\n\nMinnesota\nR+5.46\nR+4.26\nNE 01\nD+0.81\nD+2.01\n\n\nMissouri\nR+9.66\nR+8.46\nNE 02\nD+18.94\nD+20.14\n\n\nMississippi\nR+30.76\nR+29.56\nNE 03\nR+49.3\nR+48.1\n\n\nMontana\nR+39.74\nR+38.54\nME 01\nR+19.18\nR+17.98\n\n\nNorth Carolina\nR+7.38\nR+6.18\nME 02\nR+43.95\nR+42.75\n\n\nNorth Dakota\nR+30.86\nR+29.66\nDistrict of Columbia\nD+46.49\nD+47.69\n\n\n\n\n\nHowever, a partisan lean alone isn’t enough to tell you what will happen; it only predicts the margin in a neutral national environment. Thankfully, there are ample polls at both the national and state levels available for public consumption. 270towin had the most state polls (relevant in a moment) available, so I took their national average, Harris +0.8% on the day of writing this. Now the model is giving real predictions. By and large they are reasonable, but there are some eye-raising outliers (Utah D+6? Vermont R+33???). In its current state, the model is just a representation of the national mood, and a fairly crude one at that. So I decided to take things a step further, and average the urban-partisan predictions with current state polling, which can hopefully account more for local trends. In turn, however, the polls are flawed in that they sometimes make incorrect assumptions about the overall environment. The urban-partisan lean can then be seen as adjusting the polls on the assumption that urbanization is the main plotline of the 2024 election (which could very well turn out not to be the case).\n\n\n\n\n\n\n\n\n\n\n\nState\nPredicted Outcome\nState\nPredicted Outcome\n\n\n\n\nDistrict of Columbia\nD+67.19\nNew Mexico\nR+3.67\n\n\nNew York\nD+25.16\nNorth Carolina\nR+3.74\n\n\nCalifornia\nD+24.92\nNew Hampshire\nR+4.29\n\n\nMassachusetts\nD+23.04\nWisconsin\nR+4.64\n\n\nMaryland\nD+21.76\nKansas\nR+8.47\n\n\nNew Jersey\nD+21.27\nUtah\nR+9.7\n\n\nHawaii\nD+17.72\nSouth Carolina\nR+10.69\n\n\nIllinois\nD+15.96\nMaine\nR+10.88\n\n\nRhode Island\nD+15.3\nIndiana\nR+11.37\n\n\nNE 02\nD+15.07\nMissouri\nR+11.73\n\n\nWashington\nD+13.28\nNebraska\nR+12.01\n\n\nConnecticut\nD+13\nIowa\nR+12.36\n\n\nDelaware\nD+10.94\nLouisiana\nR+13.88\n\n\nNevada\nD+9.18\nOklahoma\nR+14.35\n\n\nColorado\nD+9.11\nTennessee\nR+15.15\n\n\nOregon\nD+6.04\nArkansas\nR+19.51\n\n\nVirginia\nD+4.62\nKentucky\nR+20.56\n\n\nArizona\nD+4.58\nAlabama\nR+21.64\n\n\nFlorida\nD+3.29\nMississippi\nR+23.03\n\n\nPennsylvania\nD+3.24\nIdaho\nR+23.31\n\n\nME 01\nD+2.36\nAlaska\nR+23.71\n\n\nMichigan\nD+1.13\nME 02\nR+24.38\n\n\nMinnesota\nD+0.97\nWest Virginia\nR+27.67\n\n\nTexas\nD+0.46\nMontana\nR+28.27\n\n\nVermont\nR+0.76\nNorth Dakota\nR+28.33\n\n\nGeorgia\nR+1.16\nSouth Dakota\nR+30.79\n\n\nNE 01\nR+2\nWyoming\nR+40.89\n\n\nOhio\nR+3.04\nNE 03\nR+48.05\n\n\n\n\n\nNOTE: polls last updated November 4"
-  },
-  {
-    "objectID": "projects/2024electionmodel/modelcopy.html#analysis",
-    "href": "projects/2024electionmodel/modelcopy.html#analysis",
-    "title": "2024 Election Model",
-    "section": "Analysis",
-    "text": "Analysis\nIncorporating 270towin’s averages where available (and using 2020 results in the noncompetitive states where they aren’t), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there’s a lot to like. The model predicts Harris flipping the electoral-vote rich states of Florida and Texas, beating the polls in Pennsylvania, Nevada and Arizona and keeping surprisingly close in Ohio. There are silver linings for Republicans as well. The “Blue Wall” cracks, with Wisconsin turning red and Michigan and Minnesota within a point or two of following it. Trump also flips Maine, New Hampshire, Vermont and New Mexico, while keeping remarkably close in Oregon. While the Vermont number is pure fantasy, and a reminder that these “predictions” are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it’s often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 in 2020, two years ago the Democrat only won the governer’s race by 3.5%, which is pretty close to what the model predicts (note: a later poll shifted the number a couple points left; because the closer poll was a couple weeks old, it got kicked out of the average altogether). However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a decisive Kamala Harris victory.\n\n\n# A tibble: 2 × 2\n  Candidate Votes\n  &lt;chr&gt;     &lt;dbl&gt;\n1 Harris      333\n2 Trump       205\n\n\nHowever, in reality this is a much closer contest than it appears: a polling error of just 1.14 points to the right nationally would flip Michigan, Texas and Minnesota, giving Trump exactly the 270 electoral votes he needs to become the 47th President of the United States. Of course, this path does rely on him winning Vermont, so more realistically, he would need about a 2020-level shift of around 4 points to add Florida, Pennsylvania and Maine’s 1st district for good measure, which would ensure him a comfortable victory."
-  },
-  {
-    "objectID": "projects/2024electionmodel/modelcopy.html#conclusion",
-    "href": "projects/2024electionmodel/modelcopy.html#conclusion",
-    "title": "2024 Election Model",
-    "section": "Conclusion",
-    "text": "Conclusion\nHow seriously should these predictions be taken? Mostly, this was just an exercise to satisfy my curiosity, and I wouldn’t put too much weight in the exact numbers. However, there are some reasons to think that it might be more accurate than it seems. For one, there’s my previous project, which showed that urbanization is a strong predictor of election results. It also has an advantage over other commonly-used predictors, such as race, gender or education, in that where you live is something you can change. But no one explanatory variable can possibly capture the collective consciousness of 330 million Americans. At the end of the day, the only way to know for sure who will win is to wait for all the votes to be cast and counted."
-  },
-  {
-    "objectID": "projects/2024electionmodel/modelcopy.html#sources",
-    "href": "projects/2024electionmodel/modelcopy.html#sources",
-    "title": "2024 Election Model",
-    "section": "Sources",
-    "text": "Sources\nGeographic data Polls  Electoral votes  Partisan lean  2020 results  Urbanization, and  Urbanization (for DC)  Population data"
-  },
-  {
-    "objectID": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html",
-    "href": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html",
-    "title": "Tidy Tuesday 11/26/2024",
-    "section": "",
-    "text": "This week’s Tidy Tuesday dataset is about immigration statistics since 2020. This is a timely topic, as immigration was a major issue in the presidential election. A lot of border rhetoric was lobbed around during the campaign, but what does the data actually have to say?"
-  },
-  {
-    "objectID": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html#driving-question",
-    "href": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html#driving-question",
-    "title": "Tidy Tuesday 11/26/2024",
-    "section": "",
-    "text": "This week’s Tidy Tuesday dataset is about immigration statistics since 2020. This is a timely topic, as immigration was a major issue in the presidential election. A lot of border rhetoric was lobbed around during the campaign, but what does the data actually have to say?"
-  },
-  {
-    "objectID": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html#analysis",
-    "href": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html#analysis",
-    "title": "Tidy Tuesday 11/26/2024",
-    "section": "Analysis",
-    "text": "Analysis\n\n\n\n\n\n\n\n\n\nSimply plotting total encounters per year by region (“Other” largely referring to air/sea migrants) shows that the predominant narrative, of surging immigration at the southern border, is correct. However, the explanation is less clear. The past four years have been eventful, to say the least, with a global pandemic and two extremely consequential presidential elections. Especially because the pandemic pretty much coincides with the earliest data here, it could be that the x-axis is quite skewed, and if we zoomed out another four years or so, 2020 would be a big dip, rather than 2021-22 having big jumps. However, this is certainly not guaranteed, as President Biden’s border policies have generally been laxer than former President Trump’s. Another problem with this graph is that it doesn’t show how the encounters were handled. The number of migrants which come to the border is largely dependent on conditions in their home countries around the world. But coinciding with the surge, a new measure, Title 42, was introduced, which allowed Border Patrol agents to quickly expel some migrants on the basis of public health. So it might be that despite the sharp increase in encounters, the number of migrants admitted did not grow quite as much.\n\n\n\n\n\n\n\n\n\nHowever, this largely does not appear to be the case. In this graph, the green line represents encounters handled under Title 42, which was an order allowing Border Patrol agents to expel some migrants without standard processing for public health concerns (the statute was allowed to expire in 2023). As far as I can tell from the not-very-informative codebook, inadmissibles are migrants that are quickly expelled under normal conditions, and apprehensions are those admitted. Especially in 2021, it looks like Title 42 expulsions largely increased at the expense of inadmissibles, while apprehensions climbed pretty steadily."
-  },
-  {
-    "objectID": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html#conclusion",
-    "href": "projects/TT11:26:2024/Tidytuesday11:26:24 copy.html#conclusion",
-    "title": "Tidy Tuesday 11/26/2024",
-    "section": "Conclusion",
-    "text": "Conclusion\nSo what does all this tell us? I think it would be dangerous to draw any sweeping conclusions without data for past years, which could tell us what levels of encounters are “normal.” However, the data does show a pretty clear increase in the number of migrants admitted over the past four years, and it’s probably fair to assign some amount of blame for that to the current administration’s policies. On the other hand, fewer migrants isn’t necessarily “better.” Most are fleeing pretty terrible conditions, and many end up doing pretty essential labor in our country. At the end of the day, immigration is too big and complex of an issue to be captured in just a couple graphs."
-  },
-  {
-    "objectID": "projects/212_final_project_copy/code/FinalBlog.html",
-    "href": "projects/212_final_project_copy/code/FinalBlog.html",
-    "title": "Anchoring Bias in the Stock Market",
-    "section": "",
-    "text": "We came to this project with one simple question: are there cognitive biases that impact the daily highs and lows in which stocks are traded? In theory, stock prices should be random, as traders’ valuations depend on a multitude of factors that are impossible to predict.\nHowever, humans execute transactions and we wondered if there is a tendency for daily high and low prices to cluster around rounded numbers. At first, we thought the best approach would be to investigate the nominal value of a stock. But quickly, we realized stocks’ tendency to trade in values less than 5 dollars was simply because there are more small companies listed in the stock market than larger ones. Then, we came up with the idea of investigating if the last two decimal places of a stock, essentially, its ending cent value, clustered around rounded numbers.\nWe extracted data from yahoo finance from 2019 to 2024 and plotted graphs to depict what were the most common ending cent values in which daily lows (Figure 1) and daily highs (Figure 2) encountered."
-  },
-  {
-    "objectID": "projects/212_final_project_copy/code/FinalBlog.html#driving-question",
-    "href": "projects/212_final_project_copy/code/FinalBlog.html#driving-question",
-    "title": "Anchoring Bias in the Stock Market",
-    "section": "",
-    "text": "We came to this project with one simple question: are there cognitive biases that impact the daily highs and lows in which stocks are traded? In theory, stock prices should be random, as traders’ valuations depend on a multitude of factors that are impossible to predict.\nHowever, humans execute transactions and we wondered if there is a tendency for daily high and low prices to cluster around rounded numbers. At first, we thought the best approach would be to investigate the nominal value of a stock. But quickly, we realized stocks’ tendency to trade in values less than 5 dollars was simply because there are more small companies listed in the stock market than larger ones. Then, we came up with the idea of investigating if the last two decimal places of a stock, essentially, its ending cent value, clustered around rounded numbers.\nWe extracted data from yahoo finance from 2019 to 2024 and plotted graphs to depict what were the most common ending cent values in which daily lows (Figure 1) and daily highs (Figure 2) encountered."
-  },
-  {
-    "objectID": "projects/212_final_project_copy/code/FinalBlog.html#analysis",
-    "href": "projects/212_final_project_copy/code/FinalBlog.html#analysis",
-    "title": "Anchoring Bias in the Stock Market",
-    "section": "Analysis",
-    "text": "Analysis\nThese graphs present compelling evidence of anchoring bias. There are high peaks at 0 and 50 cents, as well as other round numbers such as multiples of 10 and 25.\nIf we look closer, another insight we get from these graphs is highs and lows both peak at rounded cent values, but they behave slightly different on how they approach to that peak. When approaching a daily high, traders keep buying until it reaches the 0 value, with lots of trades ending at 99 cents. Instead, when approaching a daily low, traders will buy at .01 and stop buying at .99. This behavior further reinforces the trend, as these barriers act as as support and tension price points.\nHowever, one of the concerns we had was that low volume stocks were driving this behavior. For example, some stocks can be as pricey as $200,000, and those stocks are usually traded at rounded numbers and by very few individuals. So we created two interactive shiny apps to allow users to view the trends of their choice.\nFirst, we divided all stocks into five categories according to their median volume of daily trades. The user can explore the company size, metric and date of their choice.\n\n\n\n\n\nWhatever volume you look at, the trend generally maintains. People like rounded numbers and particularly .00 and .50.\nThe second shiny is for individual stocks. To keep the dropdown manageable, we limited the options to stocks from the S&P 500, minus the seven companies that did not appear in our dataset.\n\n\n\n\n\nThanks for checking out our project! We hope you found it as interesting as we did."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\nPolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChess First Strike Capability\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nAnchoring Bias in the Stock Market\n\n\n\n\n\n\nAlan Schulz-Diaz and Wesley Stone\n\n\nDec 17, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
