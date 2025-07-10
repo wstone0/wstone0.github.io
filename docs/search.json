@@ -4,14 +4,112 @@
     "href": "about.html",
     "title": "Projects",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\nPolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nChess First Strike Capability\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nHuman Heat Tolerance Index\n\n\n\nClimate change\n\n\n\n\n\n\n\n\n\n\nAug 15, 2023\n\n\n\n\n\n\n\n\n\n\n\nThe Urban-Rural Divide in American Politics\n\n\n\nPolitics\n\n\n\n\n\n\n\n\n\n\nApr 27, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich countries have historically had the most success at the summer Olympics?\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nChess First Strike Capability\n\n\n\nTidy Tuesday\n\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/urbanheat/index.html",
+    "href": "projects/urbanheat/index.html",
+    "title": "Human Heat Tolerance Index",
+    "section": "",
+    "text": "At a wet bulb (humidity-adjusted) temperature of 87°F, studies have shown that healthy young adults are at risk for severe symptoms with prolonged exposure. If this threshold were to be breached with any regularity, it would have profound implications for the way we could live our lives outdoors. For instance, municipal services, such as garbage collection, might have to be reduced or suspended in such a scenario. As such, Georgia Tech’s Urban Climate Lab set out to answer the obvious question: when may this critical limit be reached? I assisted the Urban Climate Lab in acquiring, cleaning and wrangling the data for the Human Heat Tolerance Index, which tracks wet bulb temperatures in the 25 largest cities in the US. According to the analysis, over a dozen major metropolises may be at risk of threshold heat events within the decade."
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html",
+    "href": "projects/STAT155FP/urbanization.html",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "",
+    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html#introduction",
+    "href": "projects/STAT155FP/urbanization.html#introduction",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "",
+    "text": "The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural areas are considered right-wing and Republican. But are we actually as divided as we seem? And if so, how did we get here?"
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html#exploratory-analysis",
+    "href": "projects/STAT155FP/urbanization.html#exploratory-analysis",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "Exploratory Analysis",
+    "text": "Exploratory Analysis\nTo answer these questions, I compared presidential election results, from MIT’s Election Data and Science Lab, to 538’s state urbanization index, calculated as the natural logarithm of the average number of people living within a five-mile radius of a given resident in each census tract in that state. This is a great dataset, because it is not sample data; it represents exactly what we are trying to study. Because of this, we can more confidently draw conclusions from analysis of the data. To start, let’s look at the most recent election. Here the conventional wisdom certainly holds up well.\n\n\n\n\n\n\n\n\n\nIn this graph, each dot is a state (or DC), and its position is determined by what percentage of the vote it gave to Joe Biden versus its urbanization score. The graph shows a pretty clear positive trend (r = 0.72); the more urban a state, the larger percentage of Democratic ballots, generally speaking. The only big outliers are Vermont, which despite being the fifth-most rural state gave Biden more than 65% of the vote, and DC, which is by far the most urban and most Democratic-leaning “state” (for the purposes of the electoral college). And since third parties are typically all but irrelevant, it’s unsurprising that the converse is true for Republican vote share, with nearly as strong of a negative relationship (r = -0.70)."
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html#the-bigger-picture",
+    "href": "projects/STAT155FP/urbanization.html#the-bigger-picture",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "The Bigger Picture",
+    "text": "The Bigger Picture\nSo we have a clear answer to our first question: the urban-rural divide is a very real phenomenon in today’s politics. The natural question, then, is how exactly this came about. To get a rough estimate, I calculated the r-values in a similar manner as above for each presidential election going back to 1976, the earliest year in the dataset. A higher r-value on the y-axis corresponds to a greater correlation between state urbanization and Democratic vote share in that year’s presidential election. Notably, this is an imperfect method because the urbanization index relies on data from the 2010 census. However, the numbers likely wouldn’t be that different. New York and New Jersey were still very urban fifty years ago, and Wyoming and Montana were (and are) almost entirely rural. Keeping this caveat in mind, the remarkable strength of the correlation (r = 0.93!) shown in the graph still tells a compelling story.\n\n\n\n\n\n\n\n\n\nEvidently America’s geographic divide is a relatively recent phenomenon. Why might this be? The Democratic party has long been the party of the big cities, but for a long time it was also the party of the rural south. In the wake of the civil rights movement, that began to change, and by the new milennium, southern states were solidly Republican. And more recently, the suburbs, long a bastion of conservative politics, have begun to shift more towards Democrats, motivated in part by dislike of President Trump and his policies. So now it is possible to say that, with few exceptions, rural states vote Republican and urban states vote Democratic."
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html#conclusions",
+    "href": "projects/STAT155FP/urbanization.html#conclusions",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "Conclusions",
+    "text": "Conclusions\nWhy is this analysis important? For one, it shows where both parties should look to gain an edge in future elections. Republicans should try to make inroads in cities, and Democrats should try to win back some rural constituencies. But more importantly, it poses a problem for the way our political system is set up. The electoral college made a lot of sense in 1788, when the states weren’t really so united at all, and small states were genuinely worried about being dominated by their larger neighbors. In 2024, state lines have mostly lost their significance, and no one talks about big states versus small states. Even for a long time after the electoral college became obsolete, its inequities didn’t matter much, because they didn’t translate to an advantage for one party or the other. But now Republican presidential candidates have a significant systemic advantage over their Democratic opponents before the campaigns even start (and even more so in the Senate). And twice in recent memory, 2000 (r = 0.70) and 2016 (r = 0.75), this advantage has been enough to swing the electoral college to a candidate who lost the popular vote. Of course this isn’t even considering the other big problem; that campaigns only need to worry about a few “swing” states which both parties have a chance of winning, and can ignore the rest of the country. The president represents all Americans equally. So why isn’t he elected by them all equally? The popular vote is simple, decisive, and takes no account of geography. This data should present compelling evidence that we should ditch the electoral college in favor of it."
+  },
+  {
+    "objectID": "projects/STAT155FP/urbanization.html#data-sources",
+    "href": "projects/STAT155FP/urbanization.html#data-sources",
+    "title": "The Urban-Rural Divide in American Politics",
+    "section": "Data Sources",
+    "text": "Data Sources\nElection data\nUrbanization index"
+  },
+  {
+    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html",
+    "href": "projects/TT8:6:2024/OlympicMedalTrends.html",
+    "title": "Which countries have historically had the most success at the summer Olympics?",
+    "section": "",
+    "text": "In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever metric you want to use: 126 medals overall, and tied with China with 40 golds, twice as many as any other country. But has this always been the case? And does this still hold for the Winter Games? Let’s dive into the data to find out.\n\n\n# A tibble: 10 × 2\n# Groups:   team [10]\n   team              n\n   &lt;chr&gt;         &lt;int&gt;\n 1 United States   997\n 2 Russia          545\n 3 Germany         376\n 4 Great Britain   243\n 5 France          221\n 6 Italy           213\n 7 China           207\n 8 Hungary         178\n 9 Australia       144\n10 Sweden          143"
+  },
+  {
+    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html#research-question",
+    "href": "projects/TT8:6:2024/OlympicMedalTrends.html#research-question",
+    "title": "Which countries have historically had the most success at the summer Olympics?",
+    "section": "",
+    "text": "In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever metric you want to use: 126 medals overall, and tied with China with 40 golds, twice as many as any other country. But has this always been the case? And does this still hold for the Winter Games? Let’s dive into the data to find out.\n\n\n# A tibble: 10 × 2\n# Groups:   team [10]\n   team              n\n   &lt;chr&gt;         &lt;int&gt;\n 1 United States   997\n 2 Russia          545\n 3 Germany         376\n 4 Great Britain   243\n 5 France          221\n 6 Italy           213\n 7 China           207\n 8 Hungary         178\n 9 Australia       144\n10 Sweden          143"
+  },
+  {
+    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html#data-analysis",
+    "href": "projects/TT8:6:2024/OlympicMedalTrends.html#data-analysis",
+    "title": "Which countries have historically had the most success at the summer Olympics?",
+    "section": "Data Analysis",
+    "text": "Data Analysis\nFirst, I wanted to identify the ten most dominant teams overall. To keep things simpler, I chose to only include gold medals (it hardly seems fair to count them the same as silvers and bronzes), and, also in the interest of fairness, I combined the Soviet Union with Russia and East Germany with Germany. Unsurprisingly, the US has far and away the most total gold medals; almost twice as many as its nearest competitor, Russia. But this is only part of the story. To get a fuller picture, we should examine how the medal counts play out over time."
+  },
+  {
+    "objectID": "projects/TT8:6:2024/OlympicMedalTrends.html#conclusion",
+    "href": "projects/TT8:6:2024/OlympicMedalTrends.html#conclusion",
+    "title": "Which countries have historically had the most success at the summer Olympics?",
+    "section": "Conclusion",
+    "text": "Conclusion\nFirst, several contextual notes: no Games were held in 1916, 1940 or 1944, because of the World Wars, so the graph just treats those years as any other off years and passes right through them. Also, the medal counts in 1980 and 1984 are somewhat skewed by boycotts of the US and Soviet Union, respectively. But on the whole, this graph confirms the answer to our question: clearly the US has been the only truly dominant power in the Summer Olympics since its inception. Though we haven’t won the most gold medals every year, and at times other teams, such as Germany, Russia, and more recently, China, have been formidable rivals, only America has been near the top of the leaderboard pretty much invariably. It will be interesting to see if this lasts for future Olympics."
+  },
+  {
+    "objectID": "projects/TT10:1:2024/TT2 copy.html",
+    "href": "projects/TT10:1:2024/TT2 copy.html",
+    "title": "Chess First Strike Capability",
+    "section": "",
+    "text": "It’s a well-known fact that playing the white pieces brings a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought to translate to winning about 55% of non-draws in reasonably competitive environments. But I was interested in how much this advantage varies given the skill level of the players.\n\n\n# A tibble: 6 × 16\n  game_id  rated  start_time end_time turns victory_status winner time_increment\n  &lt;chr&gt;    &lt;lgl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;         \n1 TZJHLljE FALSE     1.50e12  1.50e12    13 outoftime      white  15+2          \n2 l1NXvwaE TRUE      1.50e12  1.50e12    16 resign         black  5+10          \n3 mIICvQHh TRUE      1.50e12  1.50e12    61 mate           white  5+10          \n4 kWKvrqYL TRUE      1.50e12  1.50e12    61 mate           white  20+0          \n5 9tXo1AUZ TRUE      1.50e12  1.50e12    95 mate           white  30+3          \n6 MsoDV9wj FALSE     1.50e12  1.50e12     5 draw           draw   10+0          \n# ℹ 8 more variables: white_id &lt;chr&gt;, white_rating &lt;dbl&gt;, black_id &lt;chr&gt;,\n#   black_rating &lt;dbl&gt;, moves &lt;chr&gt;, opening_eco &lt;chr&gt;, opening_name &lt;chr&gt;,\n#   opening_ply &lt;dbl&gt;\n\n\nThis week’s dataset consists of 20,000 games collected from Lichess.org. To analyze it, I first filtered out unrated games, so that hopefully most of the games left would represent genuine effort rather than just testing or having fun. Next, I created four (somewhat arbitrary) rating categories: Beginner (&lt;1200), Intermediate (1200-1600), Advanced (1600-2000), and Expert (&gt;2000). Then, all that was left was to calculate the win rates and put them in a bar chart."
+  },
+  {
+    "objectID": "projects/TT10:1:2024/TT2 copy.html#does-whites-advantage-change-with-skill",
+    "href": "projects/TT10:1:2024/TT2 copy.html#does-whites-advantage-change-with-skill",
+    "title": "Chess First Strike Capability",
+    "section": "",
+    "text": "It’s a well-known fact that playing the white pieces brings a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought to translate to winning about 55% of non-draws in reasonably competitive environments. But I was interested in how much this advantage varies given the skill level of the players.\n\n\n# A tibble: 6 × 16\n  game_id  rated  start_time end_time turns victory_status winner time_increment\n  &lt;chr&gt;    &lt;lgl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;         \n1 TZJHLljE FALSE     1.50e12  1.50e12    13 outoftime      white  15+2          \n2 l1NXvwaE TRUE      1.50e12  1.50e12    16 resign         black  5+10          \n3 mIICvQHh TRUE      1.50e12  1.50e12    61 mate           white  5+10          \n4 kWKvrqYL TRUE      1.50e12  1.50e12    61 mate           white  20+0          \n5 9tXo1AUZ TRUE      1.50e12  1.50e12    95 mate           white  30+3          \n6 MsoDV9wj FALSE     1.50e12  1.50e12     5 draw           draw   10+0          \n# ℹ 8 more variables: white_id &lt;chr&gt;, white_rating &lt;dbl&gt;, black_id &lt;chr&gt;,\n#   black_rating &lt;dbl&gt;, moves &lt;chr&gt;, opening_eco &lt;chr&gt;, opening_name &lt;chr&gt;,\n#   opening_ply &lt;dbl&gt;\n\n\nThis week’s dataset consists of 20,000 games collected from Lichess.org. To analyze it, I first filtered out unrated games, so that hopefully most of the games left would represent genuine effort rather than just testing or having fun. Next, I created four (somewhat arbitrary) rating categories: Beginner (&lt;1200), Intermediate (1200-1600), Advanced (1600-2000), and Expert (&gt;2000). Then, all that was left was to calculate the win rates and put them in a bar chart."
+  },
+  {
+    "objectID": "projects/TT10:1:2024/TT2 copy.html#conclusion",
+    "href": "projects/TT10:1:2024/TT2 copy.html#conclusion",
+    "title": "Chess First Strike Capability",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe result was quite surprising. Initially, I expected the starting advantage to increase with rating, because beginners will typically squander it fairly early with a major mistake, whereas grandmasters quite often can convert that half-pawn edge into a decisive lead. But in fact, the opposite occurs: white players below 1600 have about a 3% advantage, but by the time they reach 2000, it all but disappears. Why might this be? My initial reaction was that perhaps the matching algorithm automatically assigned white to the lower-ranked player, or else tried to adjust for the starting advantage, but the data does not bear this out:\n\n\n[1] 1595\n\n\n[1] 1591\n\n\n[1] 2112\n\n\n[1] 2116\n\n\nThe first two numbers are the overall average ratings for both colors, and the second two represent the same for the experts; in both cases, they are practically identical. As the sample size is large, with over 15,000 games, there should be an explanation for even these modest differences in winrate. The only hypothesis I can come up with is that possibly at the highest levels, there’s more experimentation, which means the white player might intentionally choose openings which erase their advantage for a more interesting game. If this is the case, the solution would be to find a dataset of tournament matches where the players almost certainly gave it their all. But as it stands, this analysis is sufficient to show that if you’re queueing into Lichess at a ranking above 2000, you can’t complain about losing the coin flip."
   },
   {
     "objectID": "index.html",

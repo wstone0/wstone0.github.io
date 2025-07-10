@@ -1,0 +1,67 @@
+---
+title: "Which countries have historically had the most success at the summer Olympics?"
+date: "2024-08-06"
+image: featured.png
+categories: "Tidy Tuesday"
+format: html
+editor: visual
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+library(readr)
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+```
+
+## Research Question
+
+In light of this summer's Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever metric you want to use: 126 medals overall, and tied with China with 40 golds, twice as many as any other country. But has this always been the case? And does this still hold for the Winter Games? Let's dive into the data to find out.
+
+```{r, echo=FALSE, message=FALSE}
+olympics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-08-06/olympics.csv')
+```
+
+```{r, echo=FALSE, message=FALSE}
+olympics %>% 
+  filter(season == "Summer") %>% 
+  filter(medal == "Gold") %>% 
+  mutate(team = ifelse(team == "East Germany", "Germany", team)) %>%
+  mutate(team = ifelse(team == "Soviet Union", "Russia", team)) %>%
+  distinct(event, team, year, .keep_all = TRUE) %>% # the table multi-counts team events for each person on the team, this corrects that
+  group_by(team) %>%
+  count() %>%
+  arrange(desc(n)) %>% 
+  head(10)
+```
+
+## Data Analysis
+
+First, I wanted to identify the ten most dominant teams overall. To keep things simpler, I chose to only include gold medals (it hardly seems fair to count them the same as silvers and bronzes), and, also in the interest of fairness, I combined the Soviet Union with Russia and East Germany with Germany. Unsurprisingly, the US has far and away the most total gold medals; almost twice as many as its nearest competitor, Russia. But this is only part of the story. To get a fuller picture, we should examine how the medal counts play out over time.
+
+```{r, echo=FALSE}
+colors <- brewer.pal(n = 10, name = "Paired")
+
+olympics %>% 
+  filter(season == "Summer") %>% 
+  filter(medal == "Gold") %>%
+  mutate(team = ifelse(team == "East Germany", "Germany", team)) %>%
+  mutate(team = ifelse(team == "Soviet Union", "Russia", team)) %>%
+  filter(team %in% c("United States", "Germany", "Russia", "Italy", "Great Britain", "Hungary", "France", "Australia", "Sweden", "China")) %>%
+  distinct(event, team, year, .keep_all = TRUE) %>%
+  group_by(team, year) %>%
+  count() %>%
+  ggplot(aes(x = year, y = n, color = team)) +
+  geom_line() +
+  scale_color_manual(values = colors) +
+  labs(title = "Gold Medals by Country (Summer Olympics)", 
+       x = "Year", 
+       y = "Number of Gold Medals", 
+       color = "Country") +
+  theme_minimal() 
+```
+
+## Conclusion
+
+First, several contextual notes: no Games were held in 1916, 1940 or 1944, because of the World Wars, so the graph just treats those years as any other off years and passes right through them. Also, the medal counts in 1980 and 1984 are somewhat skewed by boycotts of the US and Soviet Union, respectively. But on the whole, this graph confirms the answer to our question: clearly the US has been the only truly dominant power in the Summer Olympics since its inception. Though we haven't won the most gold medals every year, and at times other teams, such as Germany, Russia, and more recently, China, have been formidable rivals, only America has been near the top of the leaderboard pretty much invariably. It will be interesting to see if this lasts for future Olympics.

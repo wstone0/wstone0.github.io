@@ -1,10 +1,20 @@
 [
   {
     "listing": "/about.html",
-    "items": []
+    "items": [
+      "/projects/urbanheat/index.html",
+      "/projects/STAT155FP/urbanization.html",
+      "/projects/TT8:6:2024/OlympicMedalTrends.html",
+      "/projects/TT10:1:2024/TT2 copy.html"
+    ]
   },
   {
     "listing": "/projects.html",
-    "items": []
+    "items": [
+      "/projects/urbanheat/index.html",
+      "/projects/STAT155FP/urbanization.html",
+      "/projects/TT8:6:2024/OlympicMedalTrends.html",
+      "/projects/TT10:1:2024/TT2 copy.html"
+    ]
   }
 ]
