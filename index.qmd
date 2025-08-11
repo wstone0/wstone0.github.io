@@ -3,7 +3,7 @@ title: ""
 about:
   id: intro-heading
   template: trestles
-  image: images/2024-01-13 12.11.18.jpg
+  image: images/lighthouse.jpg
   links:
     - icon: envelope
       href: mailto:wstone@macalester.edu
