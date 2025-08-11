@@ -35,6 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -72,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -108,40 +109,54 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Human Heat Tolerance Index</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Climate change</div>
+    <div class="quarto-category">Climate Change</div>
   </div>
   </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
       <p class="date">August 15, 2023</p>
     </div>
   </div>
+  
+    
   </div>
-</header> 
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>At a wet bulb (humidity-adjusted) temperature of 87°F, studies have shown that healthy young adults are at risk for severe symptoms with prolonged exposure. If this threshold were to be breached with any regularity, it would have profound implications for the way we could live our lives outdoors. For instance, municipal services, such as garbage collection, might have to be reduced or suspended in such a scenario. As such, Georgia Tech’s Urban Climate Lab set out to answer the obvious question: when may this critical limit be reached? I assisted the Urban Climate Lab in acquiring, cleaning and wrangling the data for the Human Heat Tolerance Index, which tracks wet bulb temperatures in the 25 largest cities in the US. According to the <a href="https://urbanclimate.gatech.edu/heat-risk/">analysis</a>, over a dozen major metropolises may be at risk of threshold heat events within the decade.</p>
+  
 
 
-</main></div>
-    </div>
-    <img src="featured.png" alt="Screenshot of Shiny App." class="about-image
-  rounded " style="width: 15em;">
-  </div>
-</div>
- <!-- /main -->
+</header>
+
+
+<p><br> <img src="featured.png" class="img-fluid"> <br> At a wet bulb (humidity-adjusted) temperature of 87°F, studies have shown that healthy young adults are at risk for severe symptoms with prolonged exposure. If this threshold were to be breached with any regularity, it would have profound implications for the way we could live our lives outdoors. For instance, municipal services, such as garbage collection, might have to be reduced or suspended in such a scenario. As such, Georgia Tech’s Urban Climate Lab set out to answer the obvious question: when may this critical limit be reached? I assisted the Urban Climate Lab in acquiring, cleaning and wrangling the data for the Human Heat Tolerance Index, which tracks wet bulb temperatures in the 25 largest cities in the US. According to the <a href="https://urbanclimate.gatech.edu/heat-risk/">analysis</a>, over a dozen major metropolises may be at risk of threshold heat events within the decade.</p>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
