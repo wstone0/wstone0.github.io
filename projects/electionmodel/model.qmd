@@ -130,6 +130,7 @@ combined <- bind_cols(first_half, second_half)
 
 kable(combined, col.names = c("State", "Predicted Outcome", "State", "Predicted Outcome"))
 ```
+
 ## Analysis
 
 Incorporating 270towin's averages where available (and using 2020 results in the noncompetitive states where they aren't), the model spits out predictions more in the realm of plausibility, but still has plenty of hot takes. For Democrats, there's a lot to like. The model predicts Harris retaining the crucial states of Arizona, Nevada and Pennsylvania, and snatching Florida back, coming tantalizingly close in vote-rich Texas and Ohio as well. There are silver linings for Republicans as well. The "Blue Wall" cracks, with Wisconsin turning red and Michigan and Minnesota essentially tied. Trump also flips Georgia, Maine, New Hampshire, New Mexico and Vermont, while keeping remarkably close in Oregon. While the Vermont number is pure fantasy, and a reminder that these "predictions" are meant to be held with a certain degree of skepticism, Oregon is a spicy pick which I like quite a bit. Though it's often lumped in with its more urban neighbors, Washington and California, as a West Coast liberal haven, in reality Oregon is much more rural, and its major metropolis, Portland, has suffered the past four years from ultra-liberal policies implemented in the wake of 2020. As a result, although Biden won it by 16 points in 2020, two years ago the Democrat only won the governer's race by 3.5%, which is pretty in-line with what the model predicts. However, overall the unavoidable problem for Republicans is that these states are all pocket change compared to the electoral behemoths of Florida, Texas and Ohio, worth a combined 89 votes, and which are critical parts of any winning Republican coalition. And sure enough, when we plug in electoral votes, the model predicts a Kamala Harris victory. 
@@ -251,8 +252,9 @@ cor(newresults_clean$urbanindex, newresults_clean$pct_dem_2024)
 The major story of the 2024 election was minority groups, especially Hispanics, swinging sharply rightward, and as minorities tend to live in urban areas, decreased racial polarization led to decreased urban-rural polarization. So my future as a political prognosticator may be limited. However, this was still a valuable coding challenge, and it's given me firsthand experience with an important lesson: past performance is not a guarantee of future results.
 
 ## Sources
+
 [Geographic data](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)<br>
-[Polls](https://www.270towin.com/2024-presidential-election-polls/) (accessed on October 15)<br>
+[Polls](https://www.270towin.com/2024-presidential-election-polls/) (accessed November 4)<br>
 [Electoral votes](https://www.kaggle.com/datasets/mikedelong/2024-electoral-college-votes-available?resource=download)<br>
 [Urbanization](https://github.com/fivethirtyeight/data/tree/master/district-urbanization-index-2022)<br>
 [Urbanization (for DC)](https://github.com/fivethirtyeight/data/tree/master/urbanization-index)<br>
