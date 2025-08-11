@@ -4,6 +4,7 @@ author: "Wesley Stone and Alan Schulz Diaz"
 date: "12-17-2024"
 format: html
 editor: visual
+categories: Finance
 ---
 
 ```{r setup, message=FALSE, echo=FALSE}
@@ -15,12 +16,12 @@ library(tidyquant)
 ```
 
 ```{r data, message=FALSE, echo=FALSE}
-finished_data <- read_csv("data/finished_data.csv")
+finished_data <- read_rds("short_stocks.rds")
 ```
 
 ## Driving Question
 
-We came to this project with one simple question: are there cognitive biases that impact the daily highs and lows in which stocks are traded? In theory, stock prices should be random, as traders' valuations depend on a multitude of factors that are impossible to predict.
+We came to this project with a simple question: are there cognitive biases that impact the daily highs and lows in which stocks are traded? In theory, stock prices should be random, as traders' valuations depend on a multitude of factors that are impossible to predict.
 
 However, humans execute transactions and we wondered if there is a tendency for daily high and low prices to cluster around rounded numbers. At first, we thought the best approach would be to investigate the nominal value of a stock. But quickly, we realized stocks' tendency to trade in values less than \$5 was simply because there are more small companies listed in the stock market than larger ones. Then, we came up with the idea of investigating if the last two decimal places of a stock, essentially, its ending cent value, clustered around rounded numbers.
 
@@ -92,12 +93,12 @@ However, one of the concerns we had was that low volume stocks were driving this
 
 First, we divided all stocks into five categories according to their median volume of daily trades. The user can explore the company size, metric and date of their choice.
 
-[link](https://wesleystone.shinyapps.io/aggregate_shiny/)
+[aggregate shiny](https://wesleystone.shinyapps.io/aggregate_shiny/)
 
 Whatever volume you look at, the trend generally maintains. People like rounded numbers and particularly .00 and .50.
 
 The second shiny is for individual stocks. To keep the dropdown manageable, we limited the options to stocks from the S&P 500, minus the nine companies that did not appear in our dataset.
 
-[link](https://wesleystone.shinyapps.io/individual_shiny/)
+[s&p 500 shiny](https://wesleystone.shinyapps.io/individual_shiny/)
 
 Thanks for checking out our project! We hope you found it as interesting as we did.
