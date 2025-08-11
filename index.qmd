@@ -16,7 +16,7 @@ about:
 ::: {#intro-heading}
 ## Wesley Stone
 
-Hi! I'm a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration. I'm primarily interested in the ethical problems posed by AI which lie at the confluence of these three fields, as well as metaethics, data analysis and politics.
+Hi! I'm a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration. I'm primarily interested in the ethical problems posed by AI which lie at the confluence of these three fields, as well as metaethics, politics, and using data to answer interesting questions.
 
 ## Education
 
