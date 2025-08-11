@@ -3,6 +3,7 @@ title: "The Urban-Rural Divide in American Politics"
 date: "2024-04-27"
 categories: Politics
 output: pdf_document
+theme: cosmo
 ---
 
 ```{r setup, include=FALSE}

@@ -5,6 +5,7 @@ date: "12-17-2024"
 format: html
 editor: visual
 categories: Finance
+theme: cosmo
 ---
 
 ```{r setup, message=FALSE, echo=FALSE}

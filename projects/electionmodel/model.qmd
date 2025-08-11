@@ -4,6 +4,7 @@ date: "10/17/2024"
 categories: Politics
 image: featured.png
 output: pdf_document
+theme: cosmo
 ---
 
 ```{r, echo=FALSE, message=FALSE}

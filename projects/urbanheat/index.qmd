@@ -3,6 +3,7 @@ title: "Human Heat Tolerance Index"
 date: "2023-08-15"
 image: featured.png
 categories: Climate Change
+theme: cosmo
 ---
 
 ![](featured.png)

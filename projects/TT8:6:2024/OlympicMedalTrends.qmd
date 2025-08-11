@@ -5,6 +5,7 @@ image: featured.png
 categories: "Tidy Tuesday"
 format: html
 editor: visual
+theme: cosmo
 ---
 
 ```{r, echo=FALSE, message=FALSE}

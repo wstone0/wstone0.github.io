@@ -5,6 +5,7 @@ categories: Tidy Tuesday
 image: featured.png
 format: html
 editor: visual
+theme: cosmo
 ---
 
 ```{r libraries, echo=FALSE, message=FALSE}
