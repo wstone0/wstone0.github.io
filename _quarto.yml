@@ -20,7 +20,7 @@ page-footer:
 
 format:
   html:
-    theme: cyborg
+    theme: cosmo
     css: styles.css
     toc: true
 
