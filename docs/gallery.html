@@ -136,26 +136,36 @@ ul.task-list li input[type="checkbox"] {
 
 
 <style>
-/* Override Quarto's container constraints */
-.quarto-container {
+/* Remove container limits for full-width layout */
+.quarto-container, 
+#quarto-content,
+.quarto-layout-panel,
+.column-page,
+.column-body {
   max-width: none !important;
-  padding-left: 1em !important;
-  padding-right: 1em !important;
+  width: 100% !important;
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-#quarto-content {
-  max-width: none !important;
+body {
+  margin: 0 !important;
 }
 
-.grid.three {
+.grid.two {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5em;
-  margin: 2em 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4em; /* smaller gap between photos */
+  margin: 1em auto;
   width: 100%;
+  max-width: 1200px; /* keeps content centered on large screens */
+  box-sizing: border-box;
+  padding: 0 0.5em; /* even left/right padding */
 }
 
-.grid.three .column img {
+.grid.two .column img {
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -163,13 +173,13 @@ ul.task-list li input[type="checkbox"] {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.grid.three .column img:hover {
+.grid.two .column img:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-.grid.three .column p,
-.grid.three .column figcaption {
+.grid.two .column p,
+.grid.two .column figcaption {
   text-align: center;
   font-size: 0.9em;
   color: #666;
@@ -177,26 +187,18 @@ ul.task-list li input[type="checkbox"] {
   font-weight: 500;
 }
 
-.grid.three .column {
+.grid.two .column {
   padding: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .grid.three {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.4em;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid.three {
+/* Mobile adjustments */
+@media (max-width: 700px) {
+  .grid.two {
     grid-template-columns: 1fr;
-    gap: 0.3em;
   }
 }
 </style>
-<div class="grid three">
+<div class="grid two">
 <div class="column">
 <p><img src="gallery/ADAM.jpg" class="img-fluid" alt="Amsterdam, Netherlands"> Amsterdam, Netherlands</p>
 </div>
