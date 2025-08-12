@@ -3,22 +3,85 @@ title: "Photo Gallery"
 format: html
 editor: visual
 theme: cosmo
+toc: false
+page-layout: full
 ---
+```{=html}
+<style>
+.grid.three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  margin: 1em 0;
+}
 
-::::::: grid
+.grid.three .column img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid.three .column img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.grid.three .column p,
+.grid.three .column figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.8em;
+  font-weight: 500;
+}
+
+.grid.three .column {
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .grid.three {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2em;
+  }
+  
+  .grid.three .column img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid.three {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  
+  .grid.three .column img {
+    height: 200px;
+  }
+}
+</style>
+```
+
+::::::: {.grid .three}
 ::: column
-![Alt text for image 1](gallery/ADAM.jpg){.lightbox} <!-- Amsterdam, Netherlands -->
+![Amsterdam, Netherlands](gallery/ADAM.jpg)
+Amsterdam, Netherlands
 :::
-
 ::: column
-![Alt text for image 2](gallery/keizersgracht.jpg){.lightbox} <!-- Keizersgracht, Amsterdam -->
+![Keizersgracht, Amsterdam](gallery/keizersgracht.jpg)
+Keizersgracht, Amsterdam
 :::
-
 ::: column
-![Alt text for image 3](gallery/haarlem.jpg){.lightbox} <!-- Haarlem, Netherlands -->
+![Haarlem, Netherlands](gallery/haarlem.jpg)
+Haarlem, Netherlands
 :::
-
 ::: column
-![Alt text for image 4](gallery/amstelkanaal.jpg){.lightbox} <!-- Amstelkanaal, Amsterdam -->
+![Amstelkanaal, Amsterdam](gallery/amstelkanaal.jpg)
+Amstelkanaal, Amsterdam
 :::
 :::::::

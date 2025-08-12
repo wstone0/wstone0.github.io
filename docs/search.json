@@ -116,14 +116,14 @@
     "href": "index.html",
     "title": "Wesley Stone",
     "section": "",
-    "text": "Hi! I’m a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration. I’m primarily interested in the ethical problems posed by AI which lie at the confluence of these three fields, as well as metaethics, politics, and using data to answer interesting questions.\n\n\n\nMacalester College | St. Paul MN  B.A. in DATA SCIENCE/PHILOSOPHY | Sept 2022 - May 2026"
+    "text": "Hi! I’m a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration. I’m primarily interested in the ethical problems posed by AI which lie at the confluence of these three fields, as well as metaethics, politics, and using data to answer important questions.\n\n\n\nMacalester College | St. Paul MN  B.A. in DATA SCIENCE/PHILOSOPHY | Sept 2022 - May 2026"
   },
   {
     "objectID": "index.html#wesley-stone",
     "href": "index.html#wesley-stone",
     "title": "Wesley Stone",
     "section": "",
-    "text": "Hi! I’m a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration. I’m primarily interested in the ethical problems posed by AI which lie at the confluence of these three fields, as well as metaethics, politics, and using data to answer interesting questions."
+    "text": "Hi! I’m a senior at Macalester College in St. Paul studying data science and philosophy, with a cognitive science concentration. I’m primarily interested in the ethical problems posed by AI which lie at the confluence of these three fields, as well as metaethics, politics, and using data to answer important questions."
   },
   {
     "objectID": "index.html#education",
@@ -208,5 +208,12 @@
     "title": "Anchoring Bias in the Stock Market",
     "section": "Analysis",
     "text": "Analysis\nThese graphs present compelling evidence of anchoring bias. There are high peaks at 0 and 50 cents, as well as other round numbers such as multiples of 10 and 25.\nIf we look closer, another insight we get from these graphs is highs and lows both peak at rounded cent values, but they behave slightly different on how they approach to that peak. When approaching a daily high, traders keep buying until it reaches the 0 value, with lots of trades ending at 99 cents. Instead, when approaching a daily low, traders will buy at .01 and stop buying at .99. This behavior further reinforces the trend, as these barriers act as as support and tension price points.\nHowever, one of the concerns we had was that low volume stocks were driving this behavior. For example, some stocks can be as pricey as $200,000, and those stocks are usually traded at rounded numbers and by very few individuals. So we created two interactive shiny apps to allow users to view the trends of their choice. Unfortunately, Github will not host shinys, but we were able to host them remotely using shinyapps.io, and they can be accessed with the links below.\nFirst, we divided all stocks into five categories according to their median volume of daily trades. The user can explore the company size, metric and date of their choice.\naggregate shiny\nWhatever volume you look at, the trend generally maintains. People like rounded numbers and particularly .00 and .50.\nThe second shiny is for individual stocks. To keep the dropdown manageable, we limited the options to stocks from the S&P 500, minus the nine companies that did not appear in our dataset.\ns&p 500 shiny\nThanks for checking out our project! We hope you found it as interesting as we did."
+  },
+  {
+    "objectID": "gallery.html",
+    "href": "gallery.html",
+    "title": "Photo Gallery",
+    "section": "",
+    "text": "Amsterdam, Netherlands\n\n\n Keizersgracht, Amsterdam\n\n\n Haarlem, Netherlands\n\n\n Amstelkanaal, Amsterdam"
   }
 ]

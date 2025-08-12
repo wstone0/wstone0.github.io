@@ -1,0 +1,21 @@
+/* Make sure 3-per-row grid images are nicely sized */
+.grid.three .column img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Center captions and make them lighter */
+.grid.three .column p,
+.grid.three .column figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.4em;
+}
+
+/* Slightly increase spacing between grid items */
+.grid.three .column {
+  padding: 0.5em;
+}

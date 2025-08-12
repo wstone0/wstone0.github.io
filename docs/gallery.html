@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wesley Stone</title>
+<title>Photo Gallery – Wesley Stone</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,6 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -71,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./gallery.html"> 
+    <a class="nav-link active" href="./gallery.html" aria-current="page"> 
 <span class="menu-text">Photography</span></a>
   </li>  
 </ul>
@@ -111,64 +112,114 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#biography" id="toc-biography" class="nav-link active" data-scroll-target="#biography">Biography</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/lighthouse.jpg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block"></header>
-    <div class="about-links">
-  <a href="mailto:wstone@macalester.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://www.linkedin.com/in/wesley-stone-49b5372aa/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://wesleystone.substack.com" class="about-link" rel="" target="">
-    <i class="bi bi-substack"></i>
-     <span class="about-link-text"></span>
-  </a>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Photo Gallery</h1>
 </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-  <div class="about-contents"><div id="intro-heading">
-<section id="wesley-stone" class="level2">
-<h2 data-anchor-id="wesley-stone">Wesley Stone</h2>
-<p>Hi! I’m a senior at Macalester College in St.&nbsp;Paul studying data science and philosophy, with a cognitive science concentration. I’m primarily interested in the ethical problems posed by AI which lie at the confluence of these three fields, as well as metaethics, politics, and using data to answer important questions.</p>
-</section>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<p>Macalester College | St.&nbsp;Paul MN <br> B.A. in DATA SCIENCE/PHILOSOPHY | Sept 2022 - May 2026</p>
-</section>
-</div></div>
+  
+
+
+</header>
+
+
+<style>
+.grid.three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  margin: 1em 0;
+}
+
+.grid.three .column img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid.three .column img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.grid.three .column p,
+.grid.three .column figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.8em;
+  font-weight: 500;
+}
+
+.grid.three .column {
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .grid.three {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2em;
+  }
+  
+  .grid.three .column img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid.three {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  
+  .grid.three .column img {
+    height: 200px;
+  }
+}
+</style>
+<div class="grid three">
+<div class="column">
+<p><img src="gallery/ADAM.jpg" class="img-fluid" alt="Amsterdam, Netherlands"> Amsterdam, Netherlands</p>
+</div>
+<div class="column">
+<p><img src="gallery/keizersgracht.jpg" class="img-fluid" alt="Keizersgracht, Amsterdam"> Keizersgracht, Amsterdam</p>
+</div>
+<div class="column">
+<p><img src="gallery/haarlem.jpg" class="img-fluid" alt="Haarlem, Netherlands"> Haarlem, Netherlands</p>
+</div>
+<div class="column">
+<p><img src="gallery/amstelkanaal.jpg" class="img-fluid" alt="Amstelkanaal, Amsterdam"> Amstelkanaal, Amsterdam</p>
+</div>
 </div>
 
-<section id="biography" class="level2">
-<h2 data-anchor-id="biography">Biography</h2>
-<p>I was born in Madison, Wisconsin, but I’d lived in Atlanta, Georgia nearly my entire life before returning to my Midwestern roots for college. I became interested in philosophy my first semester after taking an ethics class, and I soon decided to add data science to learn about the foundations of machine learning and artificial intelligence. This year, I spent a long semester in Amsterdam biking, museum-hopping and taking classes at the Vrije Universiteit, as well as exploring the rest of Europe, from Ireland (pictured above!) to Istanbul. Since returning to the States, I’ve been working as a gardener, launching a Substack blog and thinking about my post-grad plan, as well as reading a lot and playing guitar in my spare time.</p>
 
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
