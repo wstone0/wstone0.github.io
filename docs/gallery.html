@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,12 +109,12 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -136,17 +136,28 @@ ul.task-list li input[type="checkbox"] {
 
 
 <style>
+/* Override Quarto's container constraints */
+.quarto-container {
+  max-width: none !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}
+
+#quarto-content {
+  max-width: none !important;
+}
+
 .grid.three {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5em;
-  margin: 1em 0;
+  gap: 0.5em;
+  margin: 2em 0;
+  width: 100%;
 }
 
 .grid.three .column img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -174,22 +185,14 @@ ul.task-list li input[type="checkbox"] {
 @media (max-width: 900px) {
   .grid.three {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.2em;
-  }
-  
-  .grid.three .column img {
-    height: 250px;
+    gap: 0.4em;
   }
 }
 
 @media (max-width: 600px) {
   .grid.three {
     grid-template-columns: 1fr;
-    gap: 1em;
-  }
-  
-  .grid.three .column img {
-    height: 200px;
+    gap: 0.3em;
   }
 }
 </style>
