@@ -1,0 +1,24 @@
+---
+title: "Photo Gallery"
+format: html
+editor: visual
+theme: cosmo
+---
+
+::::::: grid
+::: column
+![Alt text for image 1](gallery/ADAM.jpg){.lightbox} <!-- Amsterdam, Netherlands -->
+:::
+
+::: column
+![Alt text for image 2](gallery/keizersgracht.jpg){.lightbox} <!-- Keizersgracht, Amsterdam -->
+:::
+
+::: column
+![Alt text for image 3](gallery/haarlem.jpg){.lightbox} <!-- Haarlem, Netherlands -->
+:::
+
+::: column
+![Alt text for image 4](gallery/amstelkanaal.jpg){.lightbox} <!-- Amstelkanaal, Amsterdam -->
+:::
+:::::::
