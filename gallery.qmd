@@ -1,61 +1,103 @@
 ---
-title: "Photo Gallery"
+title: "Amsterdam Spring 2025"
 format: html
+lightbox: auto
 editor: visual
 theme: cosmo
 toc: false
 page-layout: full
 ---
+
 ```{=html}
 <style>
-.grid.two {
+.photo-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.2em; /* tighter gap */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1em;
+  padding: 0em;
+  max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
-  padding: 0; /* remove container padding */
 }
 
-.grid.two .column {
-  padding: 0;
-  margin: 0;
-}
-
-.grid.two .column img {
-  display: block;
+.photo-gallery img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
 
-.grid.two .column p,
-.grid.two .column figcaption {
-  text-align: center;
+.photo-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.photo-gallery figcaption {
   margin-top: 0.5em;
+  text-align: center;
   font-size: 0.9em;
   color: #666;
 }
 </style>
-
 ```
 
-:::::: {.grid .two}
-::: column
-![Amsterdam, Netherlands](gallery/ADAM.jpg)
-Amsterdam, Netherlands
+::: {.photo-gallery}
+
+![Amsterdam, Netherlands](gallery/ADAM.jpg){group="gallery"}
+
+![Kasteel de Haar, Netherlands](gallery/kasteeldehaar.jpg){group="gallery"}  
+
+![Nieuwe Gracht, Haarlem](gallery/haarlem.jpg){group="gallery"}
+
+![Heidelberg, Germany](gallery/heidelberg_castle.jpg){group="gallery"}
+
+![Amstelkanaal, Amsterdam](gallery/amstelkanaal.jpg){group="gallery"}
+
+![The Grund, Luxembourg](gallery/thegrund.jpg){group="gallery"}
+
+![Utrecht, Netherlands](gallery/utrecht.jpg){group="gallery"}
+
+![Glendalough, Ireland](gallery/glendalough.jpg){group="gallery"}
+
+![Wicklow Gap, Ireland](gallery/wicklow_gap.jpg){group="gallery"}
+
+![Prinsengracht, Amsterdam](gallery/prinsengracht.jpg){group="gallery"}
+
+![Guinness Storehouse, Dublin](gallery/guinness_storehouse.jpg){group="gallery"}
+
+![Rotterdam, Netherlands](gallery/rotterdam.jpg){group="gallery"}
+
+![Istanbul, Turkey](gallery/istanbul.jpg){group="gallery"}
+
+![Mars Gate, Reims, France](gallery/marsgate.jpg){group="gallery"}
+
+![Trinity College, Dublin](gallery/trinitycollege.jpg){group="gallery"}
+
+![Bosphorus Strait, Turkey](gallery/bosphorus_better.jpg){group="gallery"}
+
+![Kilkenny, Ireland](gallery/kilkenny.jpg){group="gallery"}
+
+![Bruges, Belgium](gallery/brugesatnight.jpg){group="gallery"}
+
+![Cologne, Germany](gallery/cologne.jpg){group="gallery"}
+
+![Konigspaleis, Amsterdam](gallery/konigspaleis.jpg){group="gallery"}
+
+![Tulip field, Netherlands](gallery/tulips.jpg){group="gallery"}
+
+![Haarlem, Netherlands](gallery/haarlem2.jpg){group="gallery"}
+
+![Hagia Sophia, Istanbul](gallery/hagiasophia.jpg){group="gallery"}
+
+![Blue Mosque, Istanbul](gallery/bluemosque.jpg){group="gallery"}
+
+![Royal Palace, Belgium](gallery/royalpalace.jpg){group="gallery"}
+
+![Rumeli Fortress, Istanbul](gallery/rumelifortress.jpg){group="gallery"}
+
+![Cologne Cathedral, Germany](gallery/cologne_cathedral.jpg){group="gallery"}
+
+![Grote Markt, Bruges](gallery/grotemarkt.jpg){group="gallery"}
+
+![Waterloo, Belgium](gallery/waterloo.jpg){group="gallery"}
 :::
-::: column
-![Keizersgracht, Amsterdam](gallery/keizersgracht.jpg)
-Keizersgracht, Amsterdam
-:::
-::: column
-![Haarlem, Netherlands](gallery/haarlem.jpg)
-Haarlem, Netherlands
-:::
-::: column
-![Amstelkanaal, Amsterdam](gallery/amstelkanaal.jpg)
-Amstelkanaal, Amsterdam
-:::
-::::::
