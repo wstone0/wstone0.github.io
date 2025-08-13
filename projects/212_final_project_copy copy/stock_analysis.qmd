@@ -39,7 +39,7 @@ label <- str_c(chosen_metric, "_cat")
 high <- finished_data %>%
   group_by(!!sym(label)) %>%
   count() %>%
-  mutate(cent_price = as.numeric(!!sym(label)) / 100) %>%  # Convert to cent price
+  mutate(cent_price = as.numeric(as.character(!!sym(label))) / 100) %>%  # Convert to cent price
   ggplot() +
   geom_bar(aes(x = cent_price, y = n), stat = "identity", fill="darkgreen") +
   labs(
@@ -67,7 +67,7 @@ label <- str_c(chosen_metric, "_cat")
 low <- finished_data %>%
   group_by(!!sym(label)) %>%
   count() %>%
-  mutate(cent_price = as.numeric(!!sym(label)) / 100) %>%  # Convert to cent price
+  mutate(cent_price = as.numeric(as.character(!!sym(label))) / 100) %>%  # Convert to cent price
   ggplot() +
   geom_bar(aes(x = cent_price, y = n), stat = "identity", fill="darkred") +
   labs(
