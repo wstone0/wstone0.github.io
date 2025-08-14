@@ -45,59 +45,77 @@ page-layout: full
 
 ![Amsterdam, Netherlands](gallery/ADAM.jpg){group="gallery"}
 
+![Haarlem, Netherlands](gallery/haarlem2.jpg){group="gallery"}
+
 ![Kasteel de Haar, Netherlands](gallery/kasteeldehaar.jpg){group="gallery"}  
+
+![Kasteel de Haar interior, Netherlands](gallery/kasteeldehaar_interior.jpg){group="gallery"}
 
 ![Nieuwe Gracht, Haarlem](gallery/haarlem.jpg){group="gallery"}
 
 ![Heidelberg, Germany](gallery/heidelberg_castle.jpg){group="gallery"}
 
-![Amstelkanaal, Amsterdam](gallery/amstelkanaal.jpg){group="gallery"}
-
-![The Grund, Luxembourg](gallery/thegrund.jpg){group="gallery"}
+![Luxembourg City, Luxembourg](gallery/thegrund.jpg){group="gallery"}
 
 ![Utrecht, Netherlands](gallery/utrecht.jpg){group="gallery"}
 
+![Bruges, Belgium](gallery/brugesatnight.jpg){group="gallery"}
+
+![Basilica of the Holy Blood, Bruges](gallery/holyblood.jpg){group="gallery"}
+
 ![Glendalough, Ireland](gallery/glendalough.jpg){group="gallery"}
 
-![Wicklow Gap, Ireland](gallery/wicklow_gap.jpg){group="gallery"}
-
-![Prinsengracht, Amsterdam](gallery/prinsengracht.jpg){group="gallery"}
+![Dublin, Ireland](gallery/dublin.jpg){group="gallery"}
 
 ![Guinness Storehouse, Dublin](gallery/guinness_storehouse.jpg){group="gallery"}
 
+![Trinity College, Dublin](gallery/trinitycollege.jpg){group="gallery"}
+
 ![Rotterdam, Netherlands](gallery/rotterdam.jpg){group="gallery"}
+
+
+![Heidelberg, Germany](gallery/heidelberg_street.jpg){group="gallery"}
 
 ![Istanbul, Turkey](gallery/istanbul.jpg){group="gallery"}
 
 ![Mars Gate, Reims, France](gallery/marsgate.jpg){group="gallery"}
 
-![Trinity College, Dublin](gallery/trinitycollege.jpg){group="gallery"}
+![Prinsengracht, Amsterdam](gallery/prinsengracht.jpg){group="gallery"}
 
 ![Bosphorus Strait, Turkey](gallery/bosphorus_better.jpg){group="gallery"}
 
 ![Kilkenny, Ireland](gallery/kilkenny.jpg){group="gallery"}
 
-![Bruges, Belgium](gallery/brugesatnight.jpg){group="gallery"}
-
 ![Cologne, Germany](gallery/cologne.jpg){group="gallery"}
+
+![Cologne Cathedral](gallery/cologne_cathedral.jpg){group="gallery"}
+
+
+![Cologne Cathedral interior](gallery/cologne_cathedral_interior.jpg){group="gallery"}
+
+![Notre-Dame Cathedral, Reims](gallery/reims_cathedral.jpg){group="gallery"}
+
+
+![Notre-Dame Cathedral interior, Reims](gallery/reims_cathedral_interior.jpg){group="gallery"}
+
+
+![Notre-Dame Cathedral, Luxembourg](gallery/notre_dame.jpg){group="gallery"}
 
 ![Konigspaleis, Amsterdam](gallery/konigspaleis.jpg){group="gallery"}
 
 ![Tulip field, Netherlands](gallery/tulips.jpg){group="gallery"}
 
-![Haarlem, Netherlands](gallery/haarlem2.jpg){group="gallery"}
+![Amstelkanaal, Amsterdam](gallery/amstelkanaal.jpg){group="gallery"}
 
 ![Hagia Sophia, Istanbul](gallery/hagiasophia.jpg){group="gallery"}
 
 ![Blue Mosque, Istanbul](gallery/bluemosque.jpg){group="gallery"}
 
-![Royal Palace, Belgium](gallery/royalpalace.jpg){group="gallery"}
+![Royal Palace, Brussels, Belgium](gallery/royalpalace.jpg){group="gallery"}
 
-![Rumeli Fortress, Istanbul](gallery/rumelifortress.jpg){group="gallery"}
+![Delft, Netherlands](gallery/delft.jpg){group="gallery"}
 
-![Cologne Cathedral, Germany](gallery/cologne_cathedral.jpg){group="gallery"}
-
-![Grote Markt, Bruges](gallery/grotemarkt.jpg){group="gallery"}
+![Grote Markt, Haarlem](gallery/grote_markt_haarlem.jpg){group="gallery"}
 
 ![Waterloo, Belgium](gallery/waterloo.jpg){group="gallery"}
 :::
