@@ -9,8 +9,6 @@ about:
       href: mailto:wstone@macalester.edu
     - icon: linkedin
       href: https://www.linkedin.com/in/wesley-stone-49b5372aa/ 
-    - icon: substack
-      href: https://wesleystone.substack.com
 ---
 
 ::: {#intro-heading}
