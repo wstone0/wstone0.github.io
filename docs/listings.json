@@ -2,6 +2,7 @@
   {
     "listing": "/about.html",
     "items": [
+      "/projects/portland/portland.html",
       "/projects/212_final_project_copy copy/stock_analysis.html",
       "/projects/electionmodel/model.html",
       "/projects/TT10:1:2024/TT2 copy.html",
@@ -13,6 +14,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/portland/portland.html",
       "/projects/212_final_project_copy copy/stock_analysis.html",
       "/projects/electionmodel/model.html",
       "/projects/TT10:1:2024/TT2 copy.html",

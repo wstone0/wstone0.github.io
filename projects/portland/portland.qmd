@@ -1,0 +1,641 @@
+---
+title: "Evaluating U.S. Zoning Policy Shifts: A Case Study in Portland, OR "
+author: "Wesley Stone, Sam Anthony and Neel Thakurdas"
+date: "12-15-2025"
+image: "featured.png"
+categories: [Economics, Politics, Housing]
+format: 
+  html:
+    code-tools: 
+      source: true    # Shows "View Source"
+      toggle: false   # Hides the options to show/hide code chunks
+      caption: none   # Removes the "Code" caption (optional)
+    downloads: [source]
+    toc: true
+    toc-depth: 2
+    embed-resources: true
+bibliography: Library.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warnings=FALSE)
+```
+
+## Introduction
+
+Cities have struggled for decades to build affordable housing. Now, after home prices soared during the pandemic, many young people feel increasingly locked out of homeownership. The ascendant “YIMBY” (Yes In My BackYard) movement has tried to address this issue by advocating for a variety of reforms, usually at the local level, intended to increase housing supply. In particular, YIMBYs have focused on rewriting the byzantine zoning codes which have long been a favored tool of “NIMBY” (Not In My BackYard) residents, who organize to stifle new development in their neighborhoods, citing concerns about traffic, noise and blocked views [@YIMBY].
+
+Recently, YIMBYs have scored notable successes in convincing several large cities to abolish exclusive single-family zoning, which only permits the construction of land-intensive single-family homes. By opening certain areas to “missing middle” housing – duplexes, triplexes, fourplexes and accessory dwelling units – the hope is that more homes can be built in desirable neighborhoods, lowering prices for buyers, without disrupting current owners’ lives too much.
+
+With several years’ worth of data behind us, we can begin to draw conclusions about the effectiveness of these reforms. The ultimate goal of our project is to determine whether these reforms will serve as a model for the rest of the country, or a failed experiment.
+
+Initially, we intended to focus on Minneapolis and its landmark 2040 Plan, adopted in 2019 [@2040_minneapolisWebsite]. But we decided this was not a viable option after speaking with a local housing expert. He informed us that key portions of the plan had been held up in court for several years, and as such there was not enough time for measurable outcomes to emerge.
+
+This led us to shift our attention to Portland, Oregon. Also in 2019, Oregon made history by becoming the first state to ban exclusive single-family zoning in many areas with the passage of HB 2001 [@oregonHB2001]. This policy was intended to have an outsize effect on the state's largest city, Portland, where it's easiest to increase housing density, and the city went along with the passage of its own Residential Infill Project the next year [@rip_portlandWebsite]. With 5 years of data behind us, we can begin to evaluate whether these policies are meeting their goals.
+
+What exactly are those goals? From HB 2001: “The purposes of the Oregon Housing Needs Analysis are to further the: (a) Production of housing to meet the need of Oregonians at all levels of affordability; and (b) Production of housing in a way that creates more housing choice by affirmatively furthering fair housing, as defined in ORS 197.290”. Essentially, affordable housing and fair housing.
+
+While fair housing is an interesting question of its own, we wanted to focus on affordability, and with this policy context in hand, we turned to Portland to evaluate how these reforms have actually reshaped housing. We aim to assess whether and to what extent Portland has met this first goal.
+
+## Data
+
+This project draws on three primary sources of information. Housing market indicators come from Zillow [@zillowData], providing estimates of home values and rents across Portland neighborhoods. Demographic and socioeconomic variables are obtained through the U.S. Census Bureau’s American Community Survey, accessed via the *tidycensus* R package [@tidycensus2025]. Finally, zoning, permitting, and land-use information is sourced from the City of Portland’s Open Data portal [@portlandopendata2025]. Together, these datasets allow us to examine these zoning changes effects on housing in Portland.
+
+For the full data cleaning and visualization generation process to replicate or iterate on this work readers can copy the source code from this html report by clicking the </> logo in the header. Once source code is copied into its own script, readers can download the data following the links and instructions below. Once downloaded readers should replace the file paths relative to their own machine in the code chunk named 'setUp' and all code should be runable.
+
+The first set of files can be accessed through the Portland GIS Open Data Portal. No outside cleaning was performed on these datasets beyond the new forms generated within this QMD. Each file can be downloaded either by using the direct links below or by searching for them on the Portland Open Data ArcGIS server ([General Portland GIS Link](https://gis-pdx.opendata.arcgis.com/datasets)). To download a dataset, click the “Explore the Data” page, then select the shapefile option from the download menu on the left. After downloading, extract the ZIP file and insert the files into your project using the appropriate file paths.
+
+Direct Links: <br>
+[City Boundaries](https://gis-pdx.opendata.arcgis.com/datasets/city-boundaries/explore) <br>
+[Residential Demolition Permits](https://gis-pdx.opendata.arcgis.com/datasets/6e7e1ea24d254e93b010ebb9eaa2ae4b_126/explore) <br>
+[Residential Building Permits](https://gis-pdx.opendata.arcgis.com/datasets/02d99db039e0428da88262bff513056a_89/explore) <br>
+[Portland Zones](https://gis-pdx.opendata.arcgis.com/datasets/9e97018d1efd424aa52cb6ad031486a6_16/explore?location=45.516463%2C-122.630895%2C11.76) <br>
+[Portland Neighborhoods](https://gis-pdx.opendata.arcgis.com/datasets/1e95d9b9076742ed9a71de0535ac255c_3/explore) <br>
+
+The second set of files housing data can be found on [Zillow's Research Data](https://www.zillow.com/research/data/). Three files are needed. The first file is under home values as "ZHVI All Homes (SFR, Condo/Co-op) Time Series, Smoothed Seasonally Adjusted" this should be downloaded with the city geography. The second file is also under home values as "ZHVI Condo/Co-op Time Series", again at the city level. The final file is "ZHVI All Homes (SFR, Condo/Co-op) Time Series, Smoothed Seasonally Adjusted" with the ZIP code geography. Readers should replace the filepaths in the code with their own respective paths should they choose reproduce this work.
+
+Dependencies for the code are listed below and readers should download the listed packages if they intend to replicate the work.
+
+- `tidyverse`
+- `ggplot2`
+- `dplyr`
+- `sf`
+- `tidycensus`
+- `gganimate`
+- `kableExtra`
+
+## Results
+
+
+```{r setUp, results = "hide", echo = FALSE, warning = FALSE, message = FALSE}
+#echo = FALSE forces it to not show the code
+#results = "hide" hides the output but shows the code
+
+options(scipen = 999)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(tidycensus)
+library(gganimate)
+library(kableExtra)
+
+#getwd()
+portlandZones <- st_read("data/Zoning/Zoning.shp")
+pdx_ResBuildingPerm <- st_read("data/Residential_Building_Permits/Residential_Building_Permits.shp")
+pdx_ResDemoPerm <- st_read("data/Residential_Demolition_Permits/Residential_Demolition_Permits.shp")
+pdxNeighborhoods <- st_read("data/Neighborhood_Boundaries/Neighborhood_Boundaries.shp")
+pdxBoundary <- st_read("data/City_Boundaries/City_Boundaries.shp") %>% filter(CITYNAME == "Portland")
+
+
+#Zillow Data
+condos <- read_csv("data/City_zhvi_uc_condo_tier_0.33_0.67_sm_sa_month.csv")
+all_homes <- read_csv("data/City_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv")
+zipcode <- read_csv("data/Zip_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv")
+```
+
+To begin the analysis, we first need to understand which parts of the city were most affected by the Residential Infill Project (RIP) zoning changes. The formerly single-family-exclusive zones (R2, R5, R7, R10, and R20) impacted by RIP are shown in the map below.
+
+```{r echo = FALSE, message= FALSE, warning = FALSE, results = FALSE}
+#Setting up
+portland_race <- get_decennial(
+  geography = "tract",
+  variables = c(
+    total = "P1_001N",
+    white = "P1_003N",
+    black = "P1_004N",
+    native = "P1_005N",
+    asian = "P1_006N",
+    pacific = "P1_007N",
+    other = "P1_008N",
+    multiracial = "P1_009N"
+  ),
+  year = 2020,
+  state = "OR",
+  county = c("Multnomah", "Washington", "Clackamas"),  # Portland spans these
+  geometry = TRUE
+) %>%
+  mutate(NAME = str_remove(NAME, ", Oregon"))
+
+portland_race <- portland_race %>%
+  filter(str_detect(NAME, "Multnomah"))
+
+portland_race_share <- portland_race %>%
+  select(GEOID, variable, value) %>%
+  pivot_wider(names_from = variable, values_from = value) %>%
+  mutate(across(white:multiracial, ~ .x / total)) %>%
+  st_as_sf()
+
+#necessary changes to pdxBoundary, didn't change code above for ease can be changed as long as this still runs not touching for now.
+pdxBoundary_transf <- st_transform(pdxBoundary, st_crs(portland_race_share))
+pdxBoundary_transf <- st_make_valid(pdxBoundary_transf)
+```
+
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+pdxZoneSelected <- portlandZones %>%
+  filter(ZONE %in% c("R2", "R5", "R7", "R10", "R20"))
+  
+  pdxZoneSelected %>% 
+  ggplot() +
+  geom_sf(aes(fill = ZONE), color = "white", size = 0.2) +
+  geom_sf(data = pdxBoundary_transf, fill = NA, color = "black", size = 0.6) +
+  scale_fill_brewer(name = "Zone", palette = "Set3") +
+  labs(
+    title = "Residential Zones in Portland",
+    subtitle = "R2, R5, R7, R10, and R20 Areas"
+  ) +
+  theme_classic() +
+  theme(
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.line = element_blank(),
+    panel.grid.major = element_line(color = "transparent"),
+    plot.title = element_text(face = "bold"),
+    legend.position = "right"
+  )
+```
+
+From this map of affected areas within Portland city limits, it is clear that RIP influences a substantial portion of the city. Based on the spatial distribution, we might expect to see the most noticeable changes along the central east-west corridor and throughout the southeastern neighborhoods, where these zones are heavily concentrated. To explore this further, we plot the geographic distribution of building permit applications over time.
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+# portland_tracts_clipped <- st_intersection(
+#   portland_race_share,
+#   pdxBoundary_transf
+# )
+# 
+# base_map <- ggplot() +
+#   geom_sf(
+#     data = portland_tracts_clipped,
+#     fill = "gray90",
+#     color = "white",
+#     size = 0.2
+#   ) +
+#   theme_minimal() +
+#   theme(
+#     panel.grid.major = element_blank(),
+#     panel.grid.minor = element_blank(),
+#     axis.title = element_blank(),
+#     axis.text = element_blank()
+#   )
+# 
+# pdx_permit_gganimate <- pdx_ResBuildingPerm %>%
+#   filter(INDATE >= "2021-08-01")
+# 
+# permit_animation <- base_map +
+#   geom_sf(data = pdx_permit_gganimate, color = "red", size = 1, alpha = 0.7) +
+#   labs(
+#     title = "Construction Permit Applications in Portland (RIP–Present)",
+#     subtitle = "Date: {frame_time}"
+#   ) +
+#   transition_time(INDATE) +
+#   shadow_mark(alpha = 0.4, size = 0.8) +
+#   ease_aes('linear')
+# 
+# animate(permit_animation, duration = 7, fps = 10, renderer = gifski_renderer())
+# anim_save("permitsDeliv.gif", animation = permit_animation, renderer = gifski_renderer())
+
+knitr::include_graphics("permitsDeliv.gif")
+```
+
+Permit activity (construction) appears to cluster in many of the same areas highlighted above, which aligns with expectations—new construction and additions would logically occur in locations where zoning rules were recently relaxed. However, despite the spatial alignment, the total number of permit applications actually decreased following RIP’s implementation. This decline is likely tied to its overlap with the COVID-19 pandemic, which slowed construction activity nationwide.
+
+Given these dynamics, we next examine not only the volume and location of permits, but also the types of permits filed before and after RIP. The permit-share visualization below illustrates how the composition of permit applications shifted over time.
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+pdx_ResBuildingPerm_summary <- pdx_ResBuildingPerm %>%
+  filter(WORKDESC == "New Construction", YEAR_ >= 2000) %>%
+  group_by(YEAR_, SUB) %>%
+  summarise(n = n(), .groups = "drop_last") %>%
+  mutate(total_year = sum(n)) %>%
+  ungroup()
+
+pdx_ResBuildingPerm_summary <- pdx_ResBuildingPerm_summary %>%
+  mutate(share = n / total_year)
+
+
+pdx_ResBuildingPerm_summary_filtered <- pdx_ResBuildingPerm_summary %>%
+  filter(YEAR_ >= 2015 & YEAR_ <= 2025) %>%
+  group_by(SUB) %>%
+  filter(sum(n) >= 25) %>%
+  filter(SUB != "Business") %>% 
+  ungroup()
+
+ggplot(pdx_ResBuildingPerm_summary_filtered, 
+       aes(x = as.factor(YEAR_), y = share, fill = SUB)) +
+  geom_bar(stat = "identity", position = "stack") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_brewer(name = "Housing Type", palette = "Set3") +
+  labs(
+    title = "Share of New Construction Permits by Type",
+    x = "Year",
+    y = "Percent of New Construction"
+  ) +
+  theme_classic()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = 9),
+    panel.grid.major = element_line(color = "transparent"),
+    plot.title = element_text(face = "bold"),
+    legend.position = "right")
+```
+
+Post 2020 and 2021 (RIP's passing and implementation), we can see a significant shrinking in the share of single family homes in these new construction permits. We can also see the orange bars representing townhouses of 3 or more units grew substantially. This suggests that eliminating these exclusively single family zones may have had a large impact on the types of housing being invested in across the city. With multifamily housing supply increasing, we would expect slower housing price growth in accordance with the goal of the policy.
+
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+# Filter to Portland ZIPs and years 2015+
+id_cols <- c("RegionID","SizeRank","RegionName","RegionType",
+             "StateName","State","City","Metro","CountyName")
+
+portland_2015plus <- zipcode %>%
+  filter(City == "Portland", State == "OR") %>%
+  select(
+    all_of(id_cols),
+    matches("^(201[5-9]|202[0-9])-[0-9]{2}-[0-9]{2}$")
+  )
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+
+# Reshape to long
+portland_long <- portland_2015plus %>%
+  pivot_longer(
+    cols = -all_of(id_cols),
+    names_to = "DateStr",
+    values_to = "HomeValue"
+  ) %>%
+  mutate(
+    Date = ymd(DateStr),
+    RegionName = str_pad(as.character(RegionName), width = 5, pad = "0")
+  ) %>%
+  select(all_of(id_cols), Date, HomeValue) %>%
+  arrange(RegionName, Date)
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+# Add income
+acs_mhi <- purrr::map_dfr(
+  2015:2023,
+  ~ get_acs(
+      geography = "zcta",
+      variables = "B19013_001",  # median household income
+      year = .x,
+      survey = "acs5",
+      cache_table = TRUE
+    ) %>%
+    transmute(
+      RegionName = str_extract(NAME, "\\d{5}$"),
+      year       = as.integer(.x),
+      mhi        = estimate
+    )
+)
+
+my_zips   <- unique(portland_long$RegionName)
+mhi_annual <- acs_mhi %>% filter(RegionName %in% my_zips)
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+# Interpolate income to monthly
+months_df <- portland_long %>%
+  select(RegionName, Date) %>%
+  distinct() %>%
+  mutate(
+    year  = year(Date),
+    month = month(Date)
+  ) %>%
+  left_join(mhi_annual, by = c("RegionName","year")) %>%
+  mutate(mhi_points = ifelse(month == 1L, mhi, NA_real_)) %>%
+  group_by(RegionName) %>%
+  arrange(Date, .by_group = TRUE) %>%
+  mutate(income = zoo::na.approx(mhi_points, x = Date, na.rm = FALSE, rule = 2)) %>%
+  ungroup() %>%
+  select(RegionName, Date, income)
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+# Final analysis panel with affordability metric
+analysis_df <- portland_long %>%
+  left_join(months_df, by = c("RegionName","Date")) %>%
+  mutate(Affordability = income / HomeValue)
+
+# Policy dates
+announce_date      <- as.Date("2020-08-01")
+implementation_date <- as.Date("2021-08-01")
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+city_aff <- analysis_df %>%
+  group_by(Date) %>%
+  summarise(
+    mean_aff = mean(Affordability, na.rm = TRUE),
+    sd_aff   = sd(Affordability, na.rm = TRUE),
+    .groups  = "drop"
+  )
+```
+
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+
+ggplot(city_aff, aes(x = Date, y = mean_aff)) +
+  geom_line(color = "steelblue", linewidth = 1) +
+  geom_vline(xintercept = as.Date("2017-07-02"), color = "red", linewidth = 1) +
+  geom_vline(xintercept = as.Date("2020-08-12"), color = "blue", linewidth = 1) +
+  annotate("text", x = as.Date("2017-07-02"), y = 0.17, label = "Passage of HB 2001", hjust = 1.05, size = 2) +
+  annotate("text", x = as.Date("2020-08-12"), y = 0.17, label = "Passage of RIP Phase 1", hjust = -0.05, size = 2) +
+  labs(
+    title    = "Portland Housing Affordability Over Time",
+    subtitle = "Citywide average affordability across ZIP codes",
+    x        = "Year",
+    y        = "Affordability (Income / Home Value)"
+  ) +
+  theme_minimal()
+
+```
+
+This plot shows Portland’s average housing affordability over time, measured as the ratio of median household income to home values. Because a central goal of the policies was to expand housing supply and improve affordability, the figure helps assess whether conditions moved in that direction.
+
+Affordability declines sharply from 2015 to 2017 and reaches its lowest point just as HB 2001 is passed (red line). After that, affordability steadily improves for several years, suggesting a general easing of price pressures leading into 2020.
+
+Following the RIP announcement in August 2020 (blue line), affordability dips slightly again, potentially due to pandemic-era market dynamics. However, after the RIP’s implementation in August 2021, the trend reverses: affordability rises consistently and by 2025 returns to levels last seen in the mid-2010s.
+
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+## Plot 2: Percentile distribution over time
+aff_quantiles <- analysis_df %>%
+  group_by(Date) %>%
+  summarise(
+    p10 = quantile(Affordability, 0.10, na.rm = TRUE),
+    p25 = quantile(Affordability, 0.25, na.rm = TRUE),
+    p50 = quantile(Affordability, 0.50, na.rm = TRUE),
+    p75 = quantile(Affordability, 0.75, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+ggplot(aff_quantiles, aes(x = Date)) +
+  geom_line(aes(y = p10, color = "10th percentile"), linewidth = 1) +
+  geom_line(aes(y = p25, color = "25th percentile"), linewidth = 1) +
+  geom_line(aes(y = p50, color = "Median"),          linewidth = 1.2) +
+  geom_line(aes(y = p75, color = "75th percentile"), linewidth = 1) +
+  geom_vline(xintercept = as.Date("2017-07-02"), color = "red", linewidth = 1) +
+  geom_vline(xintercept = as.Date("2020-08-12"), color = "blue", linewidth = 1) +
+  annotate("text", x = as.Date("2017-07-02"), y = 0.2, label = "Passage of HB 2001", hjust = 1.05, size = 2) +
+  annotate("text", x = as.Date("2020-08-12"), y = 0.2, label = "Passage of RIP Phase 1", hjust = -0.05, size = 2) +
+  scale_color_manual(values = c(
+    "10th percentile" = "#d73027",
+    "25th percentile" = "#fc8d59",
+    "Median"          = "#4575b4",
+    "75th percentile" = "#91bfdb"
+  )) +
+  labs(
+    title    = "Affordability Distribution Across Portland ZIP Codes",
+    subtitle = "Lower percentiles reflect least-affordable neighborhoods",
+    x        = "Year",
+    y        = "Affordability",
+    color    = ""
+  ) +
+  theme_minimal()
+```
+
+Diving deeper into the decreasing ZIP-level variability observed in the previous plot, we examine whether improvements in affordability were shared across neighborhoods with different income and price levels. This figure tracks affordability at the 10th, 25th, 50th (median), and 75th percentiles of Portland ZIP codes.
+
+For the median and 75th percentiles, affordability was highest in 2015 before declining through 2017. Post-RIP, these measures gradually recover and approach their earlier levels. In contrast, the 10th and 25th percentiles, representing the least affordable neighborhoods, show a notably stronger upward trajectory after the RIP’s implementation. These lower percentiles not only recover but actually surpass their 2015 values, reaching the highest affordability levels observed in the entire series.
+
+This pattern indicates that recent improvements were not limited to already-advantaged areas, but the largest gains occurred in historically less affordable neighborhoods. While the analysis is descriptive and does not establish causality, the simultaneous upward shift across the distribution is consistent with a citywide easing of housing price pressures following the RIP.
+
+```{r echo = FALSE, message= FALSE, warning = FALSE, results = FALSE}
+## Zip-level 4-year pre/post means
+pre_start  <- implementation_date - years(4)   # 2017-08-01
+pre_end    <- implementation_date - days(1)    # 2021-07-31
+post_start <- implementation_date              # 2021-08-01
+post_end   <- implementation_date + years(4)   # 2025-07-31 (truncated by data)
+
+zip_change <- analysis_df %>%
+  group_by(RegionName) %>%
+    summarise(
+      pre_aff  = mean(Affordability[Date >= pre_start  & Date <= pre_end],  na.rm = TRUE),
+      post_aff = mean(Affordability[Date >= post_start & Date <= post_end], na.rm = TRUE),
+      pct_change = 100 * (post_aff - pre_aff) / pre_aff,
+      .groups = "drop"
+    )
+```
+
+
+```{r echo = FALSE, message= FALSE, warning = FALSE, results = FALSE}
+## Joining Zcta shapes
+zcta_sf <- tigris::zctas(year = 2020, cb = TRUE)
+
+# Standardize ID column
+if ("GEOID20" %in% names(zcta_sf)) {
+  zcta_sf <- zcta_sf %>% rename(ZCTA = GEOID20)
+} else if ("GEOID10" %in% names(zcta_sf)) {
+  zcta_sf <- zcta_sf %>% rename(ZCTA = GEOID10)
+} else {
+  zcta_sf <- zcta_sf %>% rename(ZCTA = GEOID)
+}
+
+portland_zcta_sf <- zcta_sf %>%
+  filter(ZCTA %in% zip_change$RegionName)
+
+zip_change_sf <- portland_zcta_sf %>%
+  left_join(zip_change, by = c("ZCTA" = "RegionName"))
+
+zip_change_sf <- st_transform(zip_change_sf, st_crs(pdxBoundary_transf))
+
+zip_change_sf_clipped <- st_intersection(
+  zip_change_sf,
+  pdxBoundary_transf
+)
+```
+
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+ggplot(zip_change_sf_clipped) +
+  geom_sf(aes(fill = pct_change)) +
+  scale_fill_gradient2(
+    name      = "% Change in Affordability",
+    low       = "red",
+    mid       = "white",
+    high      = "darkgreen",
+    midpoint  = 0
+  ) +
+  labs(
+    title    = "Percent Change in Housing Affordability by ZIP Code After RIP",
+    subtitle = "Based on four-year average affordability pre vs post implementation"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title = element_blank(),
+    axis.text  = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  )
+
+```
+
+To understand how affordability changed across neighborhoods rather than only citywide averages, we mapped ZIP-level percent changes in affordability before and after the RIP implementation. Viewing the data spatially helps reveal whether improvements were broad-based or concentrated in only a few areas.
+
+The map shows that most Portland ZIP codes experienced increases in affordability (shaded in green) when comparing the four-year period before RIP to the four years after implementation. Only a handful of ZIP codes show slight declines, and these are relatively small in magnitude. Several central ZIP codes stand out with large improvements exceeding 30%, indicating substantial relative gains in income-to-home-value ratios.
+
+Again, while this does not identify causality, the spatial pattern suggests that post-RIP affordability improvements were widespread rather than isolated, aligning with the policy’s intention to expand housing options across many neighborhoods instead of affecting only a narrow set of areas.
+
+Another important aspect of the affordability story is how Portland compares to other cities. Though HB 2001 affected the whole state, it was intended and expected to have an outsize impact on the major metro area. And indeed, so far the data bears this out.
+
+```{r echo = FALSE, message= FALSE, warning = FALSE, results = FALSE}
+#cleaning
+all_homes_long <- all_homes %>%
+  pivot_longer(
+    cols = matches("^\\d{4}-\\d{2}-\\d{2}$"), # only columns like "2015-01-31"
+    names_to = "Month",
+    values_to = "Value"
+  ) %>%
+  mutate(Month = ymd(Month))
+
+condos_long <- condos %>%
+  pivot_longer(
+    cols = matches("^\\d{4}-\\d{2}-\\d{2}$"), # only columns like "2015-01-31"
+    names_to = "Month",
+    values_to = "Value"
+  ) %>%
+  mutate(Month = ymd(Month))
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+all_homes_long %>%
+  filter(StateName == "OR" & SizeRank < 500) %>%
+  group_by(RegionName) %>%
+  mutate(last_value = Value[Month == max(Month)]) %>%
+  ungroup() %>%
+  mutate(RegionName = fct_reorder(RegionName, last_value, .desc = TRUE)) %>%
+  ggplot(aes(x = Month, y = Value, color = RegionName)) +
+  geom_line() +
+  geom_vline(xintercept = as.Date("2017-07-02"), color = "red", linewidth = 1) +
+  geom_vline(xintercept = as.Date("2020-08-12"), color = "blue", linewidth = 1) +
+  annotate("text", x = as.Date("2017-07-02"), y = 500000, label = "Passage of HB 2001", hjust = 1.05, size = 2) +
+  annotate("text", x = as.Date("2020-08-12"), y = 300000, label = "Passage of RIP Phase 1", hjust = -0.05, size = 2) +
+  labs(x = "", y = "Zillow Home Value Index ($)", title = "Oregon Home Values Since 2000", color = NULL) +
+  theme_classic()+
+  theme(plot.title = element_text(face = "bold"),
+    legend.position = "right")
+```
+
+Focusing on the olive-green line, we can see that Portland's home values/sale prices have risen less than those of other Oregonian cities, but the effect is not especially noticeable on the graph. However, in the raw numbers Portland's home values have only risen by 19% since the passage of HB 2001, while the other 7 cities average around a 60% increase. And if we ignore single-family homes and zero in on just condos, an even more striking trend emerges. 
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+condos_long %>%
+  filter(StateName == "OR" & SizeRank < 500) %>%
+  group_by(RegionName) %>%
+  mutate(last_value = Value[Month == max(Month)]) %>%
+  ungroup() %>%
+  mutate(RegionName = fct_reorder(RegionName, last_value, .desc = TRUE)) %>%
+  ggplot(aes(x = Month, y = Value, color = RegionName)) +
+  geom_line() +
+  geom_vline(xintercept = as.Date("2017-07-02"), color = "red", linewidth = 1) +
+  geom_vline(xintercept = as.Date("2020-08-12"), color = "blue", linewidth = 1) +
+  annotate("text", x = as.Date("2017-07-02"), y = 380000, label = "Passage of HB 2001", hjust = 1.05, size = 2) +
+  annotate("text", x = as.Date("2020-08-12"), y = 140000, label = "Passage of RIP Phase 1", hjust = -0.05, size = 2) +
+  labs(x = "", y = "Zillow Home Value Index ($)", title = "Oregon Condo Values Since 2000", color = NULL) +
+  theme_classic()+
+  theme(plot.title = element_text(face = "bold"),
+    legend.position = "right")
+```
+
+Where the values of condos elsewhere continued to rise sharply, Portland's have actually dropped since the passage of HB 2001. The simplest explanation seems to be that HB 2001 had an outsize impact on Portland, which was its intent. This also explains the discrepancy between single-family housing and condos, because the zoning reforms were targeted at increasing "missing middle" housing, which can be apartments for rent, but also includes condos for sale.
+
+However, an alternate explanation is that Portland has behaved differently from other cities in Oregon simply because it is much bigger - 4 times as populated as the next-largest (Salem and Eugene). And we discovered that large cities indeed had seen slower growth in home values than less urban areas.
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+Portland_change <- all_homes_long %>%
+  filter((RegionName == "Portland" | RegionName == "Salem" | RegionName == "Eugene" | RegionName == "Gresham" | RegionName == "Hillsboro" | RegionName == "Beaverton" | RegionName == "Bend" | RegionName == "Medford") & State == "OR") %>%
+  group_by(RegionName) %>% 
+  arrange(Month) %>% 
+  mutate(baseline_2017 = first(Value[Month == as.Date("2017-07-31")]), pct_change_2017 = ((Value - baseline_2017) / baseline_2017) * 100) %>%
+  mutate(baseline_2020 = first(Value[Month == as.Date("2020-08-31")]), pct_change_2020 = ((Value - baseline_2020) / baseline_2020) * 100) %>%
+  ungroup() %>%
+  filter(Month == max(Month)) %>% 
+  select(City = RegionName, `Home Values Since HB 2001` = pct_change_2017, `Home Values Since RIP` = pct_change_2020) %>%
+  mutate(`Home Values Since HB 2001` = round(`Home Values Since HB 2001`, 2), `Home Values Since RIP` = round(`Home Values Since RIP`, 2))
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+size_category_change <- all_homes_long %>%
+  group_by(RegionName) %>%
+  arrange(Month) %>% 
+  mutate(baseline_2017 = first(Value[Month == as.Date("2017-07-31")]),
+         pct_change_2017 = ((Value - baseline_2017) / baseline_2017) * 100) %>%
+  mutate(baseline_2020 = first(Value[Month == as.Date("2020-08-31")]),
+         pct_change_2020 = ((Value - baseline_2020) / baseline_2020) * 100) %>%
+  ungroup() %>%
+  filter(Month == max(Month)) %>%
+  arrange(desc(SizeRank)) %>% 
+  mutate(City = case_when(
+  SizeRank <= 50 ~ "Metropolis (Top 50)",
+  SizeRank <= 250 ~ "Large (51-250)",
+  SizeRank <= 1000 ~ "Medium (251-1000)",
+  TRUE ~ "Small (1001+)"
+)) %>% 
+  group_by(City) %>%
+  summarize(`Home Values Since HB 2001` = round(mean(pct_change_2017, na.rm = TRUE), 2), `Home Values Since RIP` = round(mean(pct_change_2020, na.rm = TRUE), 2))
+```
+
+```{r echo = FALSE, message= FALSE, warning = FALSE, results='asis'}
+combined_table <- bind_rows(Portland_change, size_category_change) %>%
+  mutate(City = factor(City, levels = c("Portland", "Salem", "Eugene", "Gresham", "Hillsboro", "Beaverton", "Bend", "Medford", "Metropolis (Top 50)", "Large (51-250)", "Medium (251-1000)", "Small (1001+)"))) %>%
+  arrange(City) %>%
+  mutate(`Home Values Since RIP` = paste0("+", `Home Values Since RIP`, "%"), `Home Values Since HB 2001` = paste0("+", `Home Values Since HB 2001`, "%"))
+
+combined_table %>%
+  kable(
+    format = "html",
+    caption = "Home Value Changes (%)",
+    align = "lrrr"
+  ) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "responsive"),
+    full_width = FALSE
+  )
+```
+
+This table gives us perhaps the most complete picture of the impact of HB 2001 and the RIP. Three major takeaways: one, Portland's home values (we're looking at all homes again) have risen much less than the rest of the state, and the country. Two, home values in Oregon generally have seen depressed growth compared to the rest of the country. Three, the gap between Portland and other Oregonian cities is far greater than that between the biggest cities in the US and everywhere else. Going back to all homes, we can clearly see that the gap between Portland and the other 50 biggest in the country is much larger than that between the top 50 and everywhere else, though the latter gap is notable. These are all trends we would expect if the zoning reform was working as intended.
+
+Finally, the ultimate test is a counterfactual assessment: what would Portland's home values have looked like without HB 2001 and the RIP? The best way to estimate this is by finding a control city, similar in many ways to Portland but without any major zoning reforms. And as it happens there’s a great candidate: Seattle. Seattle has a similar population, Pacific Northwest climate and progressive culture. While they're currently planning a big zoning reform, likely inspired by Portland, they've historically devoted the large majority of their residential area to single-family homes.
+
+```{r echo = FALSE, message= FALSE, warning = FALSE}
+all_homes_long %>%
+  filter((RegionName == "Portland" & StateName == "OR") | RegionName == "Seattle") %>%
+  group_by(RegionName) %>%
+  mutate(last_value = Value[Month == max(Month)]) %>%
+  ungroup() %>%
+  mutate(RegionName = fct_reorder(RegionName, last_value, .desc = TRUE)) %>%
+  ggplot(aes(x = Month, y = Value, color = RegionName)) +
+  geom_line() +
+  geom_vline(xintercept = as.Date("2017-07-02"), color = "red", linewidth = 1) +
+  geom_vline(xintercept = as.Date("2020-08-12"), color = "blue", linewidth = 1) +
+  annotate("text", x = as.Date("2017-07-02"), y = 660000, label = "Passage of HB 2001", hjust = 1.05, size = 2) +
+  annotate("text", x = as.Date("2020-08-12"), y = 400000, label = "Passage of RIP Phase 1", hjust = -0.05, size = 2) +
+  labs(x = "", y = "Zillow Home Value Index ($)", title = "Portland vs. Seattle", color = NULL) +
+  theme_classic()
+```
+
+And sure enough, their trends in home values mirror each other for 18 years, right up until we hit that red bar. This presents strong evidence that HB 2001 and the RIP have substantially contributed to keeping home values in Portland stable.
+
+## Conclusions
+
+This project set out to evaluate whether recent zoning reforms, specifically Oregon's HB 2001 and Portland’s Residential Infill Project (RIP), have meaningfully advanced the goal of housing affordability by increasing supply. While debates over zoning reform often hinge on theory, Portland offers a rare opportunity to assess outcomes using several years of post-implementation data.
+
+Our findings suggest that HB 2001 and the RIP have been associated with modest improvements in housing affordability and a change in supply. Although overall permit volumes declined after the policy’s adoption, likely due to pandemic-era disruptions rather than zoning itself, construction activity remained spatially concentrated in areas newly changed by RIP. This indicates that the reform did, at minimum, succeed in directing development toward neighborhoods where single-family exclusivity had previously constrained supply. Along with this multifamily housing construction share increased heavily indicating not just single family housing was being put up in these areas.
+
+Importantly, affordability and pricing show a shift following HB 2001 and the RIP. After years of declining affordability driven by rapidly rising home values, Portland experienced a improvement in our affordability metric: ratio of median household income to home values. To contextualize these trends, we compared Portland’s home values with those of other cities. Unlike other cities in Oregon and around the country, which experienced sharp pandemic-era price increases, Portland’s home values were relatively stable. And the side-by-side comparison with Seattle, whose home values tracked Portland's closely right up until the passage of HB 2001, presents strong evidence that the zoning change was a major factor.
+
+However, our findings are limited by the fact that real estate is a long-term game and we have relatively little data to work with. The past five years have been quite eventful, with a global pandemic, a volatile market and interest rates, macroeconomic policy changes, and much more, conditions that are difficult to control for. While we believe that HB 2001 and the RIP did have impact in tempering housing price growth in Portland, our analysis is largely descriptive rather than causal. We are optimistic about the impact of pro-density zoning reforms, but it is still too early for the YIMBY movement to declare victory.
+
+## Acknowledgements
+
+We would like to express our sincere gratitude to Professor Andy Babula of the University of St. Thomas for his time, insight, and support throughout this project. We also thank our course instructor, Professor Shilad Sen, and our preceptor, Kyle Suelflow, for their continued guidance and feedback. Finally, we appreciate the wide range of R packages, data sets, and open-source tools that made our project possible. 
+
+### Ethics and AI usage statements
+
+This project relies solely on publicly available and anonymized data sources to ensure privacy and confidentiality. We aim to approach the effects of the Residential Infill Project objectively, recognizing that zoning reforms may have unequal impacts across communities. Our analysis in some cases may touch on issues of housing equity and access and we interpret results with care to avoid stigmatizing or mischaracterizing neighborhoods.
+
+Large Language Models (LLM's) including ChatGPT, Claude and Gemini were consulted at various stages of work leading up to the production of this paper. ChatGPT and Claude were primarily used to adjust, create, and troubleshoot problems with R code to that helped to answer our research question. Gemini was used for brainstorming ideas to further our analysis and answer our question to the fullest.
+
+## References

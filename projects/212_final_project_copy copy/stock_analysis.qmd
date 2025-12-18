@@ -4,7 +4,7 @@ author: "Wesley Stone and Alan Schulz Diaz"
 date: "12-17-2024"
 format: html
 editor: visual
-categories: Finance
+categories: Economics
 theme: cosmo
 ---
 
