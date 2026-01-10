@@ -14,7 +14,7 @@ about:
 ::: {#intro-heading}
 ## Wesley Stone
 
-Hi! I'm a senior at Macalester College in St. Paul studying data science and philosophy. My interests are broad — ethics, politics, the rapid rise of AI — but most recently I've done deep dives into population ethics and the effect of YIMBY policies on Portland, OR.
+Hi! I'm a senior at Macalester College in St. Paul studying data science and philosophy. My interests are broad — ethics, politics, labor economics, the rapid rise of AI — but most recently I've done deep dives into population ethics and the effect of YIMBY policies on Portland, OR.
 
 ## Education
 
