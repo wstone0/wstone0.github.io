@@ -1,5 +1,6 @@
 ---
 title: "Which countries have historically had the most success at the summer Olympics?"
+author: "Wesley Stone"
 date: "2024-08-06"
 image: featured.png
 categories: "Tidy Tuesday"

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Wesley Stone">
 <meta name="dcterms.date" content="2024-10-17">
 
 <title>2024 Election Model – Wesley Stone</title>
@@ -177,6 +178,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Wesley Stone </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -193,6 +200,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.4.3</code></pre>
+</div>
+</div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>For my Stat 155 <a href="https://wstone0.github.io/projects/STAT155FP/urbanization.html">final project</a> last semester, I examined the connection between urbanization and presidential elections. The results were intriguing; there was both a strong correlation between the variables, and a nearly linear trend of increase in the past fifty years. With the 2024 election just around the corner, I thought it might be interesting to revisit these findings, and see what the implications could be for this pivotal race. To do so, I built a simple model meant to predict the outcome of the election, assuming a very strong correlation between urbanization and voting patterns.</p>
@@ -674,7 +686,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Well, these predictions did not hold up too well. The model correctly called 46 of 56 states and districts, but considering there were only about 10 “swing states” to begin with, any reasonably informed observer could’ve done better. And indeed, the much more intricate models at Silver Bulletin, 538, etc. were far more accurate.</p>
 <p>However, I can claim some prescience about why my model failed. These predictions were predicated on the continuance of the remarkably strong trend of increased urban-rural political polarization which I observed in “The Urban-Rural Divide in American Politics.” A simple linear regression predicted that the correlation coefficient between urbanization and Democratic vote share would jump to around 0.8 in 2024. Instead, the opposite happened.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(newresults_clean<span class="sc">$</span>urbanindex, newresults_clean<span class="sc">$</span>pct_dem_2024)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(newresults_clean<span class="sc">$</span>urbanindex, newresults_clean<span class="sc">$</span>pct_dem_2024)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6067998</code></pre>
 </div>

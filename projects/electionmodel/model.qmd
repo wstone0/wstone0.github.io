@@ -1,5 +1,6 @@
 ---
 title: "2024 Election Model"
+author: "Wesley Stone"
 date: "10/17/2024"
 categories: Politics
 image: featured.png

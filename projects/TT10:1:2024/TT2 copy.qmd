@@ -1,5 +1,6 @@
 ---
 title: "Chess First Strike Capability"
+author: "Wesley Stone"
 date: "2024-10-01"
 categories: Tidy Tuesday
 image: featured.png

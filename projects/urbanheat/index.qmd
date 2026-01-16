@@ -1,5 +1,6 @@
 ---
 title: "Human Heat Tolerance Index"
+author: "Wesley Stone, Urban Climate Lab"
 date: "2023-08-15"
 image: featured.png
 categories: Climate Change

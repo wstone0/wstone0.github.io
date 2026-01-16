@@ -1,5 +1,6 @@
 ---
 title: "The Urban-Rural Divide in American Politics"
+author: "Wesley Stone"
 date: "2024-04-27"
 categories: Politics
 output: pdf_document
