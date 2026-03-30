@@ -2,6 +2,7 @@
   {
     "listing": "/about.html",
     "items": [
+      "/projects/badmovies/badmovies.html",
       "/projects/portland/portland.html",
       "/projects/LASSO_guide/FP6.html",
       "/projects/212_final_project_copy copy/stock_analysis.html",
@@ -15,6 +16,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/badmovies/badmovies.html",
       "/projects/portland/portland.html",
       "/projects/LASSO_guide/FP6.html",
       "/projects/212_final_project_copy copy/stock_analysis.html",
