@@ -1,0 +1,9 @@
+---
+title: "Self-Replicating Robots in Minecraft"
+date: 2024-12-18
+categories: [AI]
+author: Gavin Davis, Henry Heyden, Wesley Stone
+image: minecraftrobots.png
+---
+
+[View on Google Docs](https://docs.google.com/document/d/1_cBz5hDW2czU15l9RP1SeNpP2RKPpy7DPQEAJgurfIQ/edit?usp=sharing)
