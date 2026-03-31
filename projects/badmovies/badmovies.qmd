@@ -2,7 +2,7 @@
 title: "Network Analysis of Bad Movies"
 date: 2026-03-27
 categories: [Network Science, Movies]
-author: Wesley Stone, Bethany Wang
+author: Wesley Stone and Bethany Wang
 image: genrenetwork.png
 ---
 
