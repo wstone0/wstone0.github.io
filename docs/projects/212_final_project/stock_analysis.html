@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Wesley Stone, Urban Climate Lab">
-<meta name="dcterms.date" content="2023-08-15">
+<meta name="author" content="Wesley Stone and Alan Schulz Diaz">
+<meta name="dcterms.date" content="2024-12-17">
 
-<title>Human Heat Tolerance Index – Wesley Stone</title>
+<title>Anchoring Bias in the Stock Market – Wesley Stone</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,17 +114,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#driving-question" id="toc-driving-question" class="nav-link active" data-scroll-target="#driving-question">Driving Question</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Human Heat Tolerance Index</h1>
+<h1 class="title">Anchoring Bias in the Stock Market</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Climate Change</div>
+    <div class="quarto-category">Economics</div>
   </div>
   </div>
 
@@ -135,14 +142,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Wesley Stone, Urban Climate Lab </p>
+             <p>Wesley Stone and Alan Schulz Diaz </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 15, 2023</p>
+      <p class="date">December 17, 2024</p>
     </div>
   </div>
   
@@ -154,10 +161,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="featured.png" class="img-fluid"></p>
-<p>At a wet bulb (humidity-adjusted) temperature of 87°F, studies have shown that healthy young adults are at risk for severe symptoms with prolonged exposure. If this threshold were to be breached with any regularity, it would have profound implications for the way we could live our lives outdoors. For instance, municipal services, such as garbage collection, might have to be reduced or suspended in such a scenario. As such, Georgia Tech’s Urban Climate Lab set out to answer the obvious question: when may this critical limit be reached? I assisted the Urban Climate Lab in acquiring, cleaning and wrangling the data for the Human Heat Tolerance Index, which tracks wet bulb temperatures in the 25 largest cities in the US. According to the <a href="https://urbanclimate.gatech.edu/heat-risk/">analysis</a>, over a dozen major metropolises may be at risk of threshold heat events within the decade.</p>
+<section id="driving-question" class="level2">
+<h2 class="anchored" data-anchor-id="driving-question">Driving Question</h2>
+<p>We came to this project with a simple question: are there cognitive biases that impact the daily highs and lows in which stocks are traded? In theory, stock prices should be random, as traders’ valuations depend on a multitude of factors that are impossible to predict.</p>
+<p>However, humans execute transactions and we wondered if there is a tendency for daily high and low prices to cluster around rounded numbers. At first, we thought the best approach would be to investigate the nominal value of a stock. But quickly, we realized stocks’ tendency to trade in values less than $5 was simply because there are more small companies listed in the stock market than larger ones. Then, we came up with the idea of investigating if the last two decimal places of a stock, essentially, its ending cent value, clustered around rounded numbers.</p>
+<p>We extracted data from yahoo finance from 2019 to 2024 and plotted graphs to depict what were the most common ending cent values in which daily highs (Figure 1) and daily lows (Figure 2) encountered.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="stock_analysis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="stock_analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>These graphs present compelling evidence of anchoring bias. There are high peaks at 0 and 50 cents, as well as other round numbers such as multiples of 10 and 25.</p>
+<p>If we look closer, another insight we get from these graphs is highs and lows both peak at rounded cent values, but they behave slightly different on how they approach to that peak. When approaching a daily high, traders keep buying until it reaches the 0 value, with lots of trades ending at 99 cents. Instead, when approaching a daily low, traders will buy at .01 and stop buying at .99. This behavior further reinforces the trend, as these barriers act as as support and tension price points.</p>
+<p>However, one of the concerns we had was that low volume stocks were driving this behavior. For example, some stocks can be as pricey as $200,000, and those stocks are usually traded at rounded numbers and by very few individuals. So we created two interactive shiny apps to allow users to view the trends of their choice. Unfortunately, Github will not host shinys, but we were able to host them remotely using shinyapps.io, and they can be accessed with the links below.</p>
+<p>First, we divided all stocks into five categories according to their median volume of daily trades. The user can explore the company size, metric and date of their choice.</p>
+<p><a href="https://wesleystone.shinyapps.io/aggregate_shiny/">aggregate shiny</a></p>
+<p>Whatever volume you look at, the trend generally maintains. People like rounded numbers and particularly .00 and .50.</p>
+<p>The second shiny is for individual stocks. To keep the dropdown manageable, we limited the options to stocks from the S&amp;P 500, minus the nine companies that did not appear in our dataset.</p>
+<p><a href="https://wesleystone.shinyapps.io/individual_shiny/">s&amp;p 500 shiny</a></p>
+<p>Thanks for checking out our project! We hope you found it as interesting as we did.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
