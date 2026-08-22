@@ -1,12 +1,13 @@
 ---
 title: ""
+toc: false
 about:
   id: intro-heading
   template: trestles
   image: images/lighthouse.jpg
   links:
     - icon: envelope
-      href: mailto:wstone@macalester.edu
+      href: mailto:wesley.stone@duke.edu
     - icon: linkedin
       href: https://www.linkedin.com/in/wesley-stone-49b5372aa/ 
 ---
@@ -14,16 +15,18 @@ about:
 ::: {#intro-heading}
 ## Wesley Stone
 
-Hi! I'm a senior at Macalester College in St. Paul studying data science and philosophy. My interests are broad — ethics, politics, economics, the rapid rise of AI — but most recently I've done deep dives into population ethics and the effect of YIMBY policy reforms. As I prepare for graduation, I'm weighing the question of how to make long-term plans in a world so rapidly shifting.
+Hi! I'm a first-year MA Economics student at Duke University currently studying microeconomics, econometrics and game theory. My interests are broad — economics, ethics, politics, the rapid rise of AI — and in the past year I've done research on YIMBY housing policy, population ethics and global warming. Outside of work, I enjoy a good book or TV show, playing guitar (electric and acoustic) and (very slowly) lowering my handicap on the golf course.
 
 ## Education
 
-Macalester College \| St. Paul MN <br> B.A. in DATA SCIENCE/PHILOSOPHY \| Sept 2022 - May 2026
+Duke University \| Durham, NC <br> M.A. in ECONOMICS \| Aug 2026 - May 2028
+
+Macalester College \| St. Paul, MN <br> B.A. in DATA SCIENCE/PHILOSOPHY \| Sept 2022 - May 2026
 
 Vrije Universiteit \| Amsterdam, Netherlands <br> continued B.A. \| Feb 2025 - Jun 2025
 :::
 
 ## Biography
 
-I was born in Madison, Wisconsin, but I'd lived in Atlanta, Georgia nearly my entire life before returning to my Midwestern roots for college. I became interested in philosophy my first semester after taking an ethics class, and I soon decided to add data science to explore the foundations of the machine learning and artificial intelligence technology taking the world by storm. Last spring, I spent a long semester in Amsterdam biking, museum-hopping and exploring the rest of Europe, from Ireland (pictured above!) to Istanbul (check out some more photos on the Photography page). This fall I was hard at work doing research and analysis for two capstone projects. For data science, I worked with a group to study the behavior of the Portland housing market after a statewide ban on exclusive single-family zoning. Our final paper is accessible on my website. And my philosophy capstone, entitled "A Risk-Sensitive Approach to Population Ethics," takes on the difficult question of how we should value a larger population. This paper is forthcoming in the journal [Dianoia](https://www.dianoiabc.org). In my final semester, I've taken on a quant-heavy schedule to prepare myself for postgrad work but have also returned to the class that sparked my philosophical interest as a preceptor (Macalester's version of a TA). 
+I was born in Madison, Wisconsin, but I'd lived in Atlanta, Georgia nearly my entire life before returning to my Midwestern roots for college. I became interested in philosophy my first semester after taking an ethics class, and I soon decided to add data science to explore the foundations of the machine learning and artificial intelligence technology taking the world by storm. After studying abroad in Amsterdam junior spring, I spent my senior year immersed in research capstones for my two majors. For data science, I worked with a group to study the behavior of the Portland housing market after a statewide ban on exclusive single-family zoning. Our final paper is accessible on my website. And my philosophy capstone, entitled "A Risk-Sensitive Approach to Population Ethics," takes on the difficult question of determining a social welfare function to measure the value of populations of varying sizes and quality of life. I published this paper in the journal [Dianoia](https://ejournals.bc.edu/index.php/dianoia/index), and presented my findings at a conference at Boston College. This summer, I returned to my role as an analyst at Georgia Tech's Urban Climate Lab, contributing to critical research on warming trends in the biggest US cities. Now I'm beginning my career as a Blue Devil and diving deep into the world of economics, as well as beginning to construct a vision of what the future looks like for me.
 

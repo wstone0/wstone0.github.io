@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gavin Davis, Henry Heyden and Wesley Stone">
-<meta name="dcterms.date" content="2024-12-18">
+<meta name="author" content="Wesley Stone">
+<meta name="dcterms.date" content="2026-08-22">
+<meta name="description" content="An interactive map of the highest wet-bulb temperature recorded each year in 56 U.S. cities from 2005 to 2025, how close each has come to the limit of human heat tolerance, and what crossing that limit would actually mean on the ground.">
 
-<title>Self-Replicating Robots in Minecraft – Wesley Stone</title>
+<title>Extreme Wet-Bulb Temperatures Across U.S. Cities – Wesley Stone</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,20 +115,33 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-it-shows" id="toc-what-it-shows" class="nav-link active" data-scroll-target="#what-it-shows">What it shows</a></li>
+  <li><a href="#method-notes" id="toc-method-notes" class="nav-link" data-scroll-target="#method-notes">Method notes</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Self-Replicating Robots in Minecraft</h1>
+<h1 class="title">Extreme Wet-Bulb Temperatures Across U.S. Cities</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Climate Change</div>
+    <div class="quarto-category">Data Visualization</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    <p>An interactive map of the highest wet-bulb temperature recorded each year in 56 U.S. cities from 2005 to 2025, how close each has come to the limit of human heat tolerance, and what crossing that limit would actually mean on the ground.</p>
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -135,14 +149,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Gavin Davis, Henry Heyden and Wesley Stone </p>
+             <p>Wesley Stone </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 18, 2024</p>
+      <p class="date">August 22, 2026</p>
     </div>
   </div>
   
@@ -154,10 +168,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this project, we created self-replicating robots in Minecraft, prioritizing independence and resilience against unexpected circumstances. We used turtles from the mod CC: Tweaked. A self-replicating turtle successfully gathers non-renewable resources from the environment and grows renewable resources from a limited starting supply. It then crafts those resources into a copy of itself, equips that copy with the necessary tools to self-replicate, and releases that copy into the world. We limited the scope of our project to ignore fuel consumption by the turtles, as well as continuity between loaded and unloaded parts of the world. At known critical points, the program has an estimated failure rate of 4.4%. Our program demonstrates the power of hard-coded environment-agnostic behaviors as part of a complex AI system interacting with an unknown, highly variable environment.</p>
-<p><a href="minecraftrobots.pdf" class="btn btn-primary">View Report</a></p>
+<p><a href="https://wstone0.github.io/us-wet-bulb/"><img src="featured.png" class="img-fluid"></a></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong><a href="https://wstone0.github.io/us-wet-bulb/">→ Open the interactive map</a></strong> · <a href="https://github.com/wstone0/us-wet-bulb">source on GitHub</a></p>
+</div>
+</div>
+</div>
+<p>Wet-bulb temperature — what a thermometer reads when wrapped in a wet cloth — folds humidity into the reading, and it is the number that actually governs whether the human body can shed heat. Past a critical wet-bulb value, sweat stops evaporating fast enough and core temperature climbs without limit. This project maps how close 56 U.S. cities have come to that limit.</p>
+<p>Building on my work with Georgia Tech’s Urban Climate Lab on the <a href="../urbanheat/">Human Heat Tolerance Index</a>, I pulled two decades of hourly NOAA NCEI Local Climatological Data — 2005 through 2025, one primary airport station per city — and extracted each city’s hottest wet-bulb hour of every year, along with the dry-bulb temperature, relative humidity and dew point that accompanied it. The result is an interactive D3 map: hover a city for its record peak, its warming trend and a projection toward its critical threshold; click for year-by-year detail with fitted trends.</p>
+<section id="what-it-shows" class="level3">
+<h3 class="anchored" data-anchor-id="what-it-shows">What it shows</h3>
+<p>The threshold follows the 2022 Penn State study (Vecellio et al., <em>Journal of Applied Physiology</em>), which tested the long-assumed 35 °C limit and found the real ceiling for healthy young adults is closer to <strong>31 °C (~87 °F)</strong> in humid conditions — and lower still, about <strong>28 °C (~82 °F)</strong>, in dry heat, where danger arrives through extreme dry-bulb temperature at low humidity. The map applies both, sorting cities into humid and arid regimes.</p>
+<p>Two arguments run through the piece. The first is about what the number would actually <em>mean</em>: 87 °F wet-bulb is not the point at which heat becomes unpleasant, it is the point at which a healthy adult doing almost nothing can no longer hold core temperature steady — so outdoor construction, trash collection, school sports, delivery work and emergency response all become unsafe well before it. The second is about how to read a trend line. The fitted slopes are noisy and mostly point past 2100, which invites the wrong conclusion. But these are annual <em>maxima</em> — spikes, not plateaus — and a threshold is crossed by a single hour, not an average year. Yearly peaks scatter about 1.4 °F around their own trend lines, every one of the 56 cities has recorded a peak above its current trend value, 23 are already within 3 °F of their threshold, and Phoenix has touched its 82 °F arid line. As the line rises beneath a scatter that stays just as wide, the odds of one dangerous hour climb far faster than any “projected year” suggests.</p>
+</section>
+<section id="method-notes" class="level3">
+<h3 class="anchored" data-anchor-id="method-notes">Method notes</h3>
+<ul>
+<li><strong>Data:</strong> NOAA NCEI LCD hourly <code>FM-15</code> observations, 2005–2025, cleaned and concatenated per city.</li>
+<li><strong>Trends:</strong> OLS slope of annual maxima against year, reported per decade with R². These fits are deliberately presented as illustrations of a current slope rather than forecasts — the R² values are low because year-to-year variation dwarfs the long-term signal.</li>
+<li><strong>Built with:</strong> R for the data pipeline, D3 and TopoJSON for the map. The site is a single self-contained HTML file with the city data and U.S. geometry inlined.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

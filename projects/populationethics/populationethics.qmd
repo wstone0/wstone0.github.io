@@ -1,0 +1,12 @@
+---
+title: "A Risk-Sensitive Approach to Population Ethics"
+format: html
+author: "Wesley Stone"
+categories: Ethics
+date: "04-23-2026"
+image: "repugnant_diagram.gif"
+---
+
+My philosophy capstone project was in the field of population ethics, defined by the Oxford Handbook of Population Ethics as "the investigation of various ethical issues that arise when we consider how our actions affect both who is born and how many people are born." Below is the abstract of "A Risk-Sensitive Approach to Population Ethics", and if interested, you can find the full paper [here](https://ejournals.bc.edu/index.php/dianoia/index).
+
+Is it better if more (or fewer) people live? Is it better to make people happy than to make happy people? How many people should there ever be? Answering these questions could help inform important decisions impacting the number of people in existence, from an individual’s decision to have children to a government’s decision to implement “natalist” policies to even a worldwide decision to colonize other planets in the not-too-distant future. Philosophers in the field of population ethics have taken on this weighty project, but have been stuck for decades on the dilemma posed by the “Repugnant Conclusion,” which there are many very compelling arguments for, but which also seems intuitively unacceptable. I argue that we can have our cake and eat it too if we recognize a key difference between abstract thought experiments and real-world decisions: while we can operate with certainty in the former, the latter involves considerable uncertainty, and the risk of something going badly wrong must be taken into account. My proposed “risk-sensitive” approach aims to preserve the theoretical strength of the Repugnant Conclusion while limiting the unintuitive consequences of accepting it, and, if successful in doing so, perhaps illuminates a way forward for the field.
