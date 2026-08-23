@@ -21,9 +21,9 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/portland/portland.html",
-      "/projects/populationethics/populationethics.html",
       "/projects/wetbulb/index.html",
+      "/projects/populationethics/populationethics.html",
+      "/projects/portland/portland.html",
       "/projects/seraphim/index.html",
       "/projects/kendrick_drake/code/report.html",
       "/projects/badmovies/badmovies.html",

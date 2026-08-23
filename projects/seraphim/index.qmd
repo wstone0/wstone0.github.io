@@ -4,6 +4,10 @@ author: "Wesley Stone"
 date: "2026-08-23"
 image: featured.png
 categories: [Games, Writing, History]
+description: |
+  A browser detective game set in St. Petersburg in the winter of 1879: read a
+  conspiracy’s intercepted letters, crack their ciphers, and work out who means
+  to kill the Tsar.
 ---
 
 [![](featured.png)](https://phron1mos.itch.io/the-seraphim-letters)

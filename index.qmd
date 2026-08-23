@@ -5,12 +5,13 @@ about:
   id: intro-heading
   template: trestles
   image: images/lighthouse.jpg
+  image-width: 26em
   links:
     - icon: envelope
       href: mailto:wesley.stone@duke.edu
     - icon: linkedin
       href: https://www.linkedin.com/in/wesley-stone-49b5372aa/
-    - icon: handshake
+    - icon: briefcase
       href: https://app.joinhandshake.com/profiles/82u68s
       
 ---

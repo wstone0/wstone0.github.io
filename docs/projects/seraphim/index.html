@@ -8,7 +8,7 @@
 
 <meta name="author" content="Wesley Stone">
 <meta name="dcterms.date" content="2026-08-23">
-<meta name="description" content="A browser detective game set in St.&nbsp;Petersburg in the winter of 1879: read the intercepted correspondence of a thirty-person conspiracy, pin the names to a map, and decide who hangs.">
+<meta name="description" content="A browser detective game set in St.&nbsp;Petersburg in the winter of 1879: read a conspiracy’s intercepted letters, crack their ciphers, and work out who means to kill the Tsar.">
 
 <title>The Seraphim Letters – Wesley Stone</title>
 <style>
@@ -115,15 +115,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#what-it-is" id="toc-what-it-is" class="nav-link active" data-scroll-target="#what-it-is">What it is</a></li>
-  <li><a href="#built-with" id="toc-built-with" class="nav-link" data-scroll-target="#built-with">Built with</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -140,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    <p>A browser detective game set in St.&nbsp;Petersburg in the winter of 1879: read the intercepted correspondence of a thirty-person conspiracy, pin the names to a map, and decide who hangs.</p>
+    <p>A browser detective game set in St.&nbsp;Petersburg in the winter of 1879: read a conspiracy’s intercepted letters, crack their ciphers, and work out who means to kill the Tsar.</p>
   </div>
 </div>
 
@@ -180,19 +173,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>St.&nbsp;Petersburg, December 1879. You are an unnamed Third Section investigator, installed in the private library of a retired censor whose collection has quietly been serving as a safe house. Somewhere in the Russian Empire, roughly thirty people who call themselves Seraphs intend to kill Tsar Alexander II at the Blessing of the Waters on the Feast of Theophany, 6 January 1880 — when the Tsar descends to the Neva ice before the Winter Palace. Their phrase for it: <em>when the waters are blessed, the fire will descend.</em></p>
-<p>You never leave the room. What you get is paper — intercepted letters, books pulled from the shelves, newspapers, a telephone line to people who may or may not tell you the truth — and a great map of the Empire on an easel with pins and blank cards laid ready beside it. The work is reading closely and deciding what a sentence is really doing: which alias belongs to which name, who recruited whom, which of the people in the correspondence are conspirators and which are innocents whose only crime is proximity.</p>
-<section id="what-it-is" class="level3">
-<h3 class="anchored" data-anchor-id="what-it-is">What it is</h3>
-<p>A self-contained detective game that runs in the browser, written and built from scratch — no engine. The conspiracy has a real internal structure rather than a scripted solution path: thirty conspirators across three tiers borrowed from Aquinas’s account of the seraphim (<em>ardor</em>, <em>flame</em>, <em>ember</em>), a recruitment tree, operational chains that deliberately do not match that tree, blood relations, mutual guarantors, and handlers running assets who do not know they are assets. Twelve innocents are woven through the same correspondence. The evidence is consistent because it was generated against a single answer key, so the deductions actually close — and the wrong ones are wrong for findable reasons.</p>
-<p>The history is real where it can be. Solovyov’s attempt on the Tsar in April 1879, the founding of Narodnaya Volya that August, the bombing of the imperial train outside Moscow that November — all present, all in the papers your character reads. The Seraphs are not Narodnaya Volya and hold them in contempt as godless; they are a heretical-mystical movement convinced the Tsar has usurped a sacrality belonging to God alone. The press of the day confuses the two, which is a mistake the game lets you make as well.</p>
-</section>
-<section id="built-with" class="level3">
-<h3 class="anchored" data-anchor-id="built-with">Built with</h3>
-<p>Plain HTML, CSS and JavaScript — no framework and no build step. The library, the map and the documents are all drawn as generated SVG, the type is self-hosted, and the score is public-domain Bach, Beethoven, Chopin and Mussorgsky. It ships as static files.</p>
+<p>December, 1879, St.&nbsp;Petersburg. You are an investigator for the Third Section of His Imperial Majesty’s Own Chancellery (known as the Department), tasked with exposing a religious conspiracy plotting the Tsar’s assassination. While the Seraphim are a fictitious group, the game incorporates real history and describes a plausible scenario (Alexander II was in fact assassinated in 1881 by a radical conspiracy, after numerous other attempts).</p>
+<p>The Department intercepts letters and has provided a library for you to work from, but the rest is up to you. That means reading carefully through those letters, often cracking ciphers first, and digging up old newspapers and classic literature from the archives. I wanted The Seraphim Letters to evoke the feeling of reading a classic Russian novel, which led to the black/white woodcut aesthetic and period music, but also (fair warning) tangled family trees and long names. All part of the fun!</p>
+<p>While I came up with the concept and narrative, I was curious whether Claude Fable was capable of coding it up for me. Ultimately, it was, though it took a lot more prompting and revision than I had anticipated. According to Claude, The Seraphim Letters uses Plain HTML, CSS and JavaScript — no framework and no build step. The library, the map and the documents are all drawn as generated SVG, the type is self-hosted, and the score is public-domain Bach, Beethoven, Chopin and Mussorgsky. It ships as static files.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
