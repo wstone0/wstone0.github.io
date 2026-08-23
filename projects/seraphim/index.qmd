@@ -1,0 +1,56 @@
+---
+title: "The Seraphim Letters"
+author: "Wesley Stone"
+date: "2026-08-23"
+image: featured.png
+description: |
+  A browser detective game set in St. Petersburg in the winter of 1879: read the
+  intercepted correspondence of a thirty-person conspiracy, pin the names to a map,
+  and decide who hangs.
+categories: [Games, Writing, History]
+theme: cosmo
+---
+
+[![](featured.png)](https://phron1mos.itch.io/the-seraphim-letters)
+
+::: {.callout-note appearance="simple"}
+**[→ Play it on itch.io](https://phron1mos.itch.io/the-seraphim-letters)**
+:::
+
+St. Petersburg, December 1879. You are an unnamed Third Section investigator, installed in
+the private library of a retired censor whose collection has quietly been serving as a safe
+house. Somewhere in the Russian Empire, roughly thirty people who call themselves Seraphs
+intend to kill Tsar Alexander II at the Blessing of the Waters on the Feast of Theophany,
+6 January 1880 — when the Tsar descends to the Neva ice before the Winter Palace. Their
+phrase for it: *when the waters are blessed, the fire will descend.*
+
+You never leave the room. What you get is paper — intercepted letters, books pulled from the
+shelves, newspapers, a telephone line to people who may or may not tell you the truth — and a
+great map of the Empire on an easel with pins and blank cards laid ready beside it. The work
+is reading closely and deciding what a sentence is really doing: which alias belongs to which
+name, who recruited whom, which of the people in the correspondence are conspirators and which
+are innocents whose only crime is proximity.
+
+### What it is
+
+A self-contained detective game that runs in the browser, written and built from scratch —
+no engine. The conspiracy has a real internal structure rather than a scripted solution path:
+thirty conspirators across three tiers borrowed from Aquinas's account of the seraphim
+(*ardor*, *flame*, *ember*), a recruitment tree, operational chains that deliberately do not
+match that tree, blood relations, mutual guarantors, and handlers running assets who do not
+know they are assets. Twelve innocents are woven through the same correspondence. The evidence
+is consistent because it was generated against a single answer key, so the deductions actually
+close — and the wrong ones are wrong for findable reasons.
+
+The history is real where it can be. Solovyov's attempt on the Tsar in April 1879, the
+founding of Narodnaya Volya that August, the bombing of the imperial train outside Moscow that
+November — all present, all in the papers your character reads. The Seraphs are not Narodnaya
+Volya and hold them in contempt as godless; they are a heretical-mystical movement convinced
+the Tsar has usurped a sacrality belonging to God alone. The press of the day confuses the two,
+which is a mistake the game lets you make as well.
+
+### Built with
+
+Plain HTML, CSS and JavaScript — no framework and no build step. The library, the map and the
+documents are all drawn as generated SVG, the type is self-hosted, and the score is public-domain
+Bach, Beethoven, Chopin and Mussorgsky. It ships as static files.

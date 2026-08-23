@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Wesley Stone and Alan Schulz Diaz">
-<meta name="dcterms.date" content="2024-12-17">
+<meta name="author" content="Wesley Stone">
+<meta name="dcterms.date" content="2026-08-23">
+<meta name="description" content="A browser detective game set in St.&nbsp;Petersburg in the winter of 1879: read the intercepted correspondence of a thirty-person conspiracy, pin the names to a map, and decide who hangs.">
 
-<title>Anchoring Bias in the Stock Market – Wesley Stone</title>
+<title>The Seraphim Letters – Wesley Stone</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,8 +120,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#driving-question" id="toc-driving-question" class="nav-link active" data-scroll-target="#driving-question">Driving Question</a></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#what-it-is" id="toc-what-it-is" class="nav-link active" data-scroll-target="#what-it-is">What it is</a></li>
+  <li><a href="#built-with" id="toc-built-with" class="nav-link" data-scroll-target="#built-with">Built with</a></li>
   </ul>
 </nav>
     </div>
@@ -129,12 +130,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Anchoring Bias in the Stock Market</h1>
+<h1 class="title">The Seraphim Letters</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Economics</div>
+    <div class="quarto-category">Games</div>
+    <div class="quarto-category">Writing</div>
+    <div class="quarto-category">History</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    <p>A browser detective game set in St.&nbsp;Petersburg in the winter of 1879: read the intercepted correspondence of a thirty-person conspiracy, pin the names to a map, and decide who hangs.</p>
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -142,14 +150,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Wesley Stone and Alan Schulz Diaz </p>
+             <p>Wesley Stone </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 17, 2024</p>
+      <p class="date">August 23, 2026</p>
     </div>
   </div>
   
@@ -161,41 +169,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="driving-question" class="level2">
-<h2 class="anchored" data-anchor-id="driving-question">Driving Question</h2>
-<p>We came to this project with a simple question: are there cognitive biases that impact the daily highs and lows in which stocks are traded? In theory, stock prices should be random, as traders’ valuations depend on a multitude of factors that are impossible to predict.</p>
-<p>However, humans execute transactions and we wondered if there is a tendency for daily high and low prices to cluster around rounded numbers. At first, we thought the best approach would be to investigate the nominal value of a stock. But quickly, we realized stocks’ tendency to trade in values less than $5 was simply because there are more small companies listed in the stock market than larger ones. Then, we came up with the idea of investigating if the last two decimal places of a stock, essentially, its ending cent value, clustered around rounded numbers.</p>
-<p>We extracted data from yahoo finance from 2019 to 2024 and plotted graphs to depict what were the most common ending cent values in which daily highs (Figure 1) and daily lows (Figure 2) encountered.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="stock_analysis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p><a href="https://phron1mos.itch.io/the-seraphim-letters"><img src="featured.png" class="img-fluid"></a></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong><a href="https://phron1mos.itch.io/the-seraphim-letters">→ Play it on itch.io</a></strong></p>
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="stock_analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>St.&nbsp;Petersburg, December 1879. You are an unnamed Third Section investigator, installed in the private library of a retired censor whose collection has quietly been serving as a safe house. Somewhere in the Russian Empire, roughly thirty people who call themselves Seraphs intend to kill Tsar Alexander II at the Blessing of the Waters on the Feast of Theophany, 6 January 1880 — when the Tsar descends to the Neva ice before the Winter Palace. Their phrase for it: <em>when the waters are blessed, the fire will descend.</em></p>
+<p>You never leave the room. What you get is paper — intercepted letters, books pulled from the shelves, newspapers, a telephone line to people who may or may not tell you the truth — and a great map of the Empire on an easel with pins and blank cards laid ready beside it. The work is reading closely and deciding what a sentence is really doing: which alias belongs to which name, who recruited whom, which of the people in the correspondence are conspirators and which are innocents whose only crime is proximity.</p>
+<section id="what-it-is" class="level3">
+<h3 class="anchored" data-anchor-id="what-it-is">What it is</h3>
+<p>A self-contained detective game that runs in the browser, written and built from scratch — no engine. The conspiracy has a real internal structure rather than a scripted solution path: thirty conspirators across three tiers borrowed from Aquinas’s account of the seraphim (<em>ardor</em>, <em>flame</em>, <em>ember</em>), a recruitment tree, operational chains that deliberately do not match that tree, blood relations, mutual guarantors, and handlers running assets who do not know they are assets. Twelve innocents are woven through the same correspondence. The evidence is consistent because it was generated against a single answer key, so the deductions actually close — and the wrong ones are wrong for findable reasons.</p>
+<p>The history is real where it can be. Solovyov’s attempt on the Tsar in April 1879, the founding of Narodnaya Volya that August, the bombing of the imperial train outside Moscow that November — all present, all in the papers your character reads. The Seraphs are not Narodnaya Volya and hold them in contempt as godless; they are a heretical-mystical movement convinced the Tsar has usurped a sacrality belonging to God alone. The press of the day confuses the two, which is a mistake the game lets you make as well.</p>
 </section>
-<section id="analysis" class="level2">
-<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
-<p>These graphs present compelling evidence of anchoring bias. There are high peaks at 0 and 50 cents, as well as other round numbers such as multiples of 10 and 25.</p>
-<p>If we look closer, another insight we get from these graphs is highs and lows both peak at rounded cent values, but they behave slightly different on how they approach to that peak. When approaching a daily high, traders keep buying until it reaches the 0 value, with lots of trades ending at 99 cents. Instead, when approaching a daily low, traders will buy at .01 and stop buying at .99. This behavior further reinforces the trend, as these barriers act as as support and tension price points.</p>
-<p>However, one of the concerns we had was that low volume stocks were driving this behavior. For example, some stocks can be as pricey as $200,000, and those stocks are usually traded at rounded numbers and by very few individuals. So we created two interactive shiny apps to allow users to view the trends of their choice. Unfortunately, Github will not host shinys, but we were able to host them remotely using shinyapps.io, and they can be accessed with the links below.</p>
-<p>First, we divided all stocks into five categories according to their median volume of daily trades. The user can explore the company size, metric and date of their choice.</p>
-<p><a href="https://wesleystone.shinyapps.io/aggregate_shiny/">aggregate shiny</a></p>
-<p>Whatever volume you look at, the trend generally maintains. People like rounded numbers and particularly .00 and .50.</p>
-<p>The second shiny is for individual stocks. To keep the dropdown manageable, we limited the options to stocks from the S&amp;P 500, minus the nine companies that did not appear in our dataset.</p>
-<p><a href="https://wesleystone.shinyapps.io/individual_shiny/">s&amp;p 500 shiny</a></p>
-<p>Thanks for checking out our project! We hope you found it as interesting as we did.</p>
+<section id="built-with" class="level3">
+<h3 class="anchored" data-anchor-id="built-with">Built with</h3>
+<p>Plain HTML, CSS and JavaScript — no framework and no build step. The library, the map and the documents are all drawn as generated SVG, the type is self-hosted, and the score is public-domain Bach, Beethoven, Chopin and Mussorgsky. It ships as static files.</p>
 
 
 </section>

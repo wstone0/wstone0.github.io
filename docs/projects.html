@@ -72,20 +72,48 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-featured .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-featured'] = new List('listing-featured', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-all-projects .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-all-projects'] = new List('listing-all-projects', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -171,13 +199,13 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-page">
       <h1 class="title">Projects</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page">
 
       
     
@@ -188,25 +216,101 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(14)</span></div><div class="category" data-category="Q2xpbWF0ZSUyMENoYW5nZQ==">Climate Change <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RGF0YSUyMFZpc3VhbGl6YXRpb24=">Data Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RWNvbm9taWNz">Economics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RXRoaWNz">Ethics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SG91c2luZw==">Housing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFjaGluZSUyMExlYXJuaW5n">Machine Learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TW92aWVz">Movies <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TXVzaWM=">Music <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TmV0d29yayUyMFNjaWVuY2U=">Network Science <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TkxQ">NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UG9saXRpY3M=">Politics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="VGlkeSUyMFR1ZXNkYXk=">Tidy Tuesday <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<section id="featured-projects" class="level2">
+<h2 class="anchored" data-anchor-id="featured-projects">Featured Projects</h2>
+<div id="listing-featured" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="RWNvbm9taWNzJTJDUG9saXRpY3MlMkNIb3VzaW5n" data-listing-date-sort="1765774800000" data-listing-file-modified-sort="1766093396208" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5560">
+<a href="./projects/portland/portland.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/portland/featured.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Evaluating U.S. Zoning Policy Shifts: A Case Study in Portland, OR
+</h5>
+<div class="card-text listing-description delink">
+Cities have struggled for decades to build affordable housing. Now, after home prices soared during the pandemic, many young people feel increasingly locked out of…<span class="citation" data-cites="YIMBY"></span>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Wesley Stone, Sam Anthony and Neel Thakurdas
+</div>
+<div class="listing-date">
+Dec 15, 2025
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="RXRoaWNz" data-listing-date-sort="1776916800000" data-listing-file-modified-sort="1787419448001" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="265">
+<a href="./projects/populationethics/populationethics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/populationethics/repugnant_diagram.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+A Risk-Sensitive Approach to Population Ethics
+</h5>
+<div class="card-text listing-description delink">
+My philosophy capstone project was in the field of population ethics, defined by the Oxford Handbook of Population Ethics as “the investigation of various ethical issues…
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Wesley Stone
+</div>
+<div class="listing-date">
+Apr 23, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Q2xpbWF0ZSUyMENoYW5nZSUyQ0RhdGElMjBWaXN1YWxpemF0aW9u" data-listing-date-sort="1787371200000" data-listing-file-modified-sort="1787423219005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="484">
+<a href="./projects/wetbulb/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./projects/wetbulb/featured.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Extreme Wet-Bulb Temperatures Across U.S. Cities
+</h5>
+<div class="card-text listing-description delink">
+<p>An interactive map of the highest wet-bulb temperature recorded each year in 56 U.S. cities from 2005 to 2025, how close each has come to the limit of human heat tolerance…</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Wesley Stone
+</div>
+<div class="listing-date">
+Aug 22, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="all-projects" class="level2">
+<h2 class="anchored" data-anchor-id="all-projects">All Projects</h2>
+<div id="listing-all-projects" class="quarto-listing quarto-listing-container-grid">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+    <select id="listing-all-projects-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-all-projects'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
       <option value="" disabled="" selected="" hidden="">Order By</option>
       <option value="index" data-direction="asc">Default</option>
       <option value="listing-title" data-direction="asc">
@@ -229,22 +333,25 @@ window.Quarto = {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1787424141125" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="./projects/urbanheat2/urbanheat2.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="R2FtZXMlMkNXcml0aW5nJTJDSGlzdG9yeQ==" data-listing-date-sort="1787457600000" data-listing-file-modified-sort="1787511354042" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="404">
+<a href="./projects/seraphim/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./projects/urbanheat2/WBT_5YearAverages_base.png" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./projects/seraphim/featured.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-urbanheat2
+The Seraphim Letters
 </h5>
 <div class="card-text listing-description delink">
-info
+<p>A browser detective game set in St.&nbsp;Petersburg in the winter of 1879: read the intercepted correspondence of a thirty-person conspiracy, pin the names to a map, and decide…</p>
 </div>
-<div class="card-attribution card-text-small start">
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
-Wesley Stone, Urban Climate Lab
+Wesley Stone
+</div>
+<div class="listing-date">
+Aug 23, 2026
 </div>
 </div>
 </div>
@@ -260,13 +367,6 @@ Wesley Stone, Urban Climate Lab
 <h5 class="no-anchor card-title listing-title">
 Extreme Wet-Bulb Temperatures Across U.S. Cities
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q2xpbWF0ZSUyMENoYW5nZQ=='); return false;">Climate Change</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFZpc3VhbGl6YXRpb24='); return false;">Data Visualization</div>
-
-</div>
 <div class="card-text listing-description delink">
 <p>An interactive map of the highest wet-bulb temperature recorded each year in 56 U.S. cities from 2005 to 2025, how close each has come to the limit of human heat tolerance…</p>
 </div>
@@ -291,17 +391,8 @@ Aug 22, 2026
 <h5 class="no-anchor card-title listing-title">
 A Network Analysis of the Kendrick Lamar/Drake Feud
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TmV0d29yayUyMFNjaWVuY2U='); return false;">Network Science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TXVzaWM='); return false;">Music</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TkxQ'); return false;">NLP</div>
-
-</div>
 <div class="card-text listing-description delink">
-
+Rap music is notable for its lyrical complexity. And among rappers, Kendrick Lamar’s “conscious” music has a reputation for lyricism and thematic density. My goal with this…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -324,11 +415,6 @@ May 6, 2026
 <h5 class="no-anchor card-title listing-title">
 A Risk-Sensitive Approach to Population Ethics
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXRoaWNz'); return false;">Ethics</div>
-
-</div>
 <div class="card-text listing-description delink">
 My philosophy capstone project was in the field of population ethics, defined by the Oxford Handbook of Population Ethics as “the investigation of various ethical issues…
 </div>
@@ -353,13 +439,6 @@ Apr 23, 2026
 <h5 class="no-anchor card-title listing-title">
 Network Analysis of Bad Movies
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TmV0d29yayUyMFNjaWVuY2U='); return false;">Network Science</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TW92aWVz'); return false;">Movies</div>
-
-</div>
 <div class="card-text listing-description delink">
 In this project we performed a network analysis of bad movies, defined as having an IMDB rating of 2/10 or less and at least 10 total ratings. From an initial dataset of…
 </div>
@@ -384,17 +463,8 @@ Mar 27, 2026
 <h5 class="no-anchor card-title listing-title">
 Evaluating U.S. Zoning Policy Shifts: A Case Study in Portland, OR
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RWNvbm9taWNz'); return false;">Economics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UG9saXRpY3M='); return false;">Politics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SG91c2luZw=='); return false;">Housing</div>
-
-</div>
 <div class="card-text listing-description delink">
-
+Cities have struggled for decades to build affordable housing. Now, after home prices soared during the pandemic, many young people feel increasingly locked out of…<span class="citation" data-cites="YIMBY"></span>
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -410,18 +480,13 @@ Dec 15, 2025
 <div class="g-col-1" data-index="6" data-categories="TWFjaGluZSUyMExlYXJuaW5n" data-listing-date-sort="1763960400000" data-listing-file-modified-sort="1768595348464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1423">
 <a href="./projects/LASSO_guide/FP6.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="projects/LASSO_guide/FP6_files/figure-html/explore-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Learning Guide for LASSO Regression
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMExlYXJuaW5n'); return false;">Machine Learning</div>
-
-</div>
 <div class="card-text listing-description delink">
-
+Ever faced a dataset with dozens (or hundreds!) of potential predictors and wondered which ones actually matter? LASSO regression is your new best friend. By the end of this…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -444,11 +509,6 @@ Nov 24, 2025
 <h5 class="no-anchor card-title listing-title">
 Self-Replicating Robots in Minecraft
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMExlYXJuaW5n'); return false;">Machine Learning</div>
-
-</div>
 <div class="card-text listing-description delink">
 In this project, we created self-replicating robots in Minecraft, prioritizing independence and resilience against unexpected circumstances. We used turtles from the mod CC…
 </div>
@@ -466,18 +526,13 @@ Dec 18, 2024
 <div class="g-col-1" data-index="8" data-categories="RWNvbm9taWNz" data-listing-date-sort="1734411600000" data-listing-file-modified-sort="1768595585450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="727">
 <a href="./projects/212_final_project/stock_analysis.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top"><img src="projects/212_final_project/stock_analysis_files/figure-html/unnamed-chunk-1-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Anchoring Bias in the Stock Market
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RWNvbm9taWNz'); return false;">Economics</div>
-
-</div>
 <div class="card-text listing-description delink">
-
+We came to this project with a simple question: are there cognitive biases that impact the daily highs and lows in which stocks are traded? In theory, stock prices should be…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -500,13 +555,8 @@ Dec 17, 2024
 <h5 class="no-anchor card-title listing-title">
 2024 Election Model
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UG9saXRpY3M='); return false;">Politics</div>
-
-</div>
 <div class="card-text listing-description delink">
-
+For my Stat 155 final project last semester, I examined the connection between urbanization and presidential elections. The results were intriguing; there was both a strong…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -529,13 +579,8 @@ Oct 17, 2024
 <h5 class="no-anchor card-title listing-title">
 Chess First Strike Capability
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('VGlkeSUyMFR1ZXNkYXk='); return false;">Tidy Tuesday</div>
-
-</div>
 <div class="card-text listing-description delink">
-
+It’s a well-known fact that playing the white pieces brings a small, but significant, advantage in a game of chess with its first move privilege. Generally, this is thought…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
@@ -558,11 +603,6 @@ Oct 1, 2024
 <h5 class="no-anchor card-title listing-title">
 Which countries have historically had the most success at the summer Olympics?
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('VGlkeSUyMFR1ZXNkYXk='); return false;">Tidy Tuesday</div>
-
-</div>
 <div class="card-text listing-description delink">
 In light of this summer’s Paris Olympics, it is interesting to look back at the history of this storied and unique event. As usual, the US was fairly dominant whichever…
 </div>
@@ -585,11 +625,6 @@ Aug 6, 2024
 <h5 class="no-anchor card-title listing-title">
 The Urban-Rural Divide in American Politics
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UG9saXRpY3M='); return false;">Politics</div>
-
-</div>
 <div class="card-text listing-description delink">
 The polarization of American politics along geographic lines is well-publicized. Big cities are associated with the Democratic party and its liberal policies, whereas rural…
 </div>
@@ -614,11 +649,6 @@ Apr 27, 2024
 <h5 class="no-anchor card-title listing-title">
 Human Heat Tolerance Index
 </h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q2xpbWF0ZSUyMENoYW5nZQ=='); return false;">Climate Change</div>
-
-</div>
 <div class="card-text listing-description delink">
 At a wet bulb (humidity-adjusted) temperature of 87°F, studies have shown that healthy young adults are at risk for severe symptoms with prolonged exposure. If this…
 </div>
@@ -635,7 +665,13 @@ Aug 15, 2023
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

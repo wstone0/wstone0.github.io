@@ -2,7 +2,7 @@
   {
     "listing": "/about.html",
     "items": [
-      "/projects/urbanheat2/urbanheat2.html",
+      "/projects/seraphim/index.html",
       "/projects/wetbulb/index.html",
       "/projects/kendrick_drake/code/report.html",
       "/projects/populationethics/populationethics.html",
@@ -21,12 +21,12 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/urbanheat2/urbanheat2.html",
-      "/projects/wetbulb/index.html",
-      "/projects/kendrick_drake/code/report.html",
-      "/projects/populationethics/populationethics.html",
-      "/projects/badmovies/badmovies.html",
       "/projects/portland/portland.html",
+      "/projects/populationethics/populationethics.html",
+      "/projects/wetbulb/index.html",
+      "/projects/seraphim/index.html",
+      "/projects/kendrick_drake/code/report.html",
+      "/projects/badmovies/badmovies.html",
       "/projects/LASSO_guide/FP6.html",
       "/projects/minecraftrobots/minecraftrobots.html",
       "/projects/212_final_project/stock_analysis.html",

@@ -9,13 +9,16 @@ about:
     - icon: envelope
       href: mailto:wesley.stone@duke.edu
     - icon: linkedin
-      href: https://www.linkedin.com/in/wesley-stone-49b5372aa/ 
+      href: https://www.linkedin.com/in/wesley-stone-49b5372aa/
+    - icon: handshake
+      href: https://app.joinhandshake.com/profiles/82u68s
+      
 ---
 
 ::: {#intro-heading}
 ## Wesley Stone
 
-Hi! I'm a first-year MA Economics student at Duke University currently studying microeconomics, econometrics and game theory. My interests are broad — economics, ethics, politics, the rapid rise of AI — and in the past year I've done research on YIMBY housing policy, population ethics and global warming. Outside of work, I enjoy a good book or TV show, playing guitar (electric and acoustic) and (very slowly) lowering my handicap on the golf course.
+Hi! I'm a first-year MA Economics student at Duke University currently studying microeconomics, econometrics and game theory. My interests are broad — economics, ethics, politics, the rapid rise of AI — and in the past year I've done research on YIMBY housing policy, population ethics and global warming. Outside of work, I enjoy a good biography or historical fiction novel, playing guitar (electric and acoustic) and (very slowly) lowering my handicap on the golf course.
 
 ## Education
 

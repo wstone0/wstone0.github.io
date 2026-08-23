@@ -1,9 +1,0 @@
----
-title: "urbanheat2"
-format: html
-editor: visual
-image: "WBT_5YearAverages_base.png"
-author: Wesley Stone, Urban Climate Lab
----
-
-info
