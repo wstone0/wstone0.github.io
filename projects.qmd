@@ -18,7 +18,7 @@ listing:
     categories: true
     sort-ui: true
     filter-ui: true
-page-layout: full
+page-layout: article
 toc: false
 comments: false
 format:
