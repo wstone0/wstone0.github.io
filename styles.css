@@ -1,1 +1,20 @@
 /* css styles */
+
+/* --- equity research note: rating strip and region tags --- */
+.ratings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  border-top: 1px solid #dee2e6;
+  border-bottom: 2px solid #212529;
+  margin: 1.2rem 0 2rem;
+}
+.ratings > div { padding: .7rem 1rem .8rem; border-right: 1px solid #dee2e6; }
+.ratings > div:last-child { border-right: none; }
+.ratings .k {
+  display: block; margin-bottom: 4px; font-size: 10px;
+  letter-spacing: .12em; text-transform: uppercase; color: #6c757d;
+}
+.ratings .v { font-size: 22px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.ratings .rating .v { color: #BD6630; font-size: 20px; }
+.n-tag { color: #007EA8; font-weight: 600; }
+.s-tag { color: #BD6630; font-weight: 600; }

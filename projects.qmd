@@ -3,6 +3,7 @@ title: ""
 listing:
   - id: featured
     contents:
+      - projects/mihomes/index.qmd
       - projects/portland/portland.qmd
       - projects/populationethics/populationethics.qmd
       - projects/wetbulb/index.qmd
