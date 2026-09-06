@@ -2,6 +2,8 @@
   {
     "listing": "/about.html",
     "items": [
+      "/projects/212_final_project/stock_analysis.html",
+      "/projects/mihomes/index.html",
       "/projects/seraphim/index.html",
       "/projects/wetbulb/index.html",
       "/projects/kendrick_drake/code/report.html",
@@ -10,7 +12,6 @@
       "/projects/portland/portland.html",
       "/projects/LASSO_guide/FP6.html",
       "/projects/minecraftrobots/minecraftrobots.html",
-      "/projects/212_final_project/stock_analysis.html",
       "/projects/electionmodel/model.html",
       "/projects/TT10:1:2024/TT2 copy.html",
       "/projects/TT8:6:2024/OlympicMedalTrends.html",
@@ -21,11 +22,11 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/212_final_project/stock_analysis.html",
       "/projects/mihomes/index.html",
       "/projects/wetbulb/index.html",
       "/projects/populationethics/populationethics.html",
       "/projects/portland/portland.html",
-      "/projects/212_final_project/stock_analysis.html",
       "/projects/seraphim/index.html",
       "/projects/kendrick_drake/code/report.html",
       "/projects/badmovies/badmovies.html",

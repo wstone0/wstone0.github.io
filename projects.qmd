@@ -3,6 +3,7 @@ title: ""
 listing:
   - id: featured
     contents:
+      - projects/212_final_project/stock_analysis.qmd
       - projects/mihomes/index.qmd
       - projects/portland/portland.qmd
       - projects/populationethics/populationethics.qmd

@@ -2,7 +2,9 @@
 title: "Shadows in the Stock Market"
 subtitle: "How resting limit orders shape daily highs and lows"
 author: "Wesley Stone"
-date: today
+date: "2026-09-06"
+image: featured.png
+categories: [Finance, Market Microstructure]
 format:
   html:
     theme: cosmo
