@@ -1,10 +1,13 @@
 ---
 title: "Why North Carolina's Migration Boom Isn't Making Homebuilders Money"
-subtitle: "An equity research initiation on M/I Homes: Neutral, $164 price target"
 author: "Wesley Stone"
-date: "2026-09-05"
+date: "2026-09-07"
 image: featured.png
 categories: [Economics, Finance, Housing]
+description: |
+  A three-statement model, a DCF and a comparables analysis, built to test whether
+  the biggest interstate migration flow in the country actually reaches a builder's
+  margin. It doesn't, and not because of interest rates but supply elasticity.
 toc: true
 toc-depth: 2
 format:
@@ -64,7 +67,7 @@ pc <- function(x, d = 1) paste0(formatC(x, format = "f", digits = d), "%")
 ```{r}
 #| output: asis
 sc  <- fig$scenarios
-val <- c(Rating = "Neutral", Target = usd(fig$meta$pt, 0), Price = usd(fig$meta$price),
+val <- c(Rating = fig$meta$rating, Target = usd(fig$meta$pt, 0), Price = usd(fig$meta$price),
          Return = sprintf("+%.0f%%", 100 * fig$meta$upside),
          `Mkt cap` = sprintf("$%.1fbn", fig$meta$mktcap_bn),
          `Bull / bear` = sprintf("%.0f / %.0f", sc$bull$value, sc$bear$value))
@@ -83,15 +86,17 @@ if (knitr::is_html_output()) {
 **[→ Download the note as a PDF](MHO_coverage_note.pdf)** · [download the model (Excel)](MHO_model.xlsx)
 :::
 
-I just moved to North Carolina for my graduate education. I'm not alone: in the year to July 2025 North Carolina gained a net `r format(fig$macro$nc_migration, big.mark = ",")` residents from other states, more than any other state. Given my previous work in housing, I was curious whether this presented an opportunity for homebuilders, and investors, to capitalize on new demand. I identified M/I Homes as a mid-cap builder with a large enough presence in the region for the influx of new arrivals to move the needle.
+I just moved to North Carolina for my graduate education. I'm not alone: in the year to July 2025 North Carolina gained a net 84,000 residents from other states, more than any other state. Given my previous work in housing, I was curious whether this presented an opportunity for homebuilders, and investors, to capitalize on new demand. I identified M/I Homes as a mid-cap builder with a large enough presence in the region for the influx of new arrivals to move the needle.
 
 ## The call
 
-I am initiating on M/I Homes at **Neutral** with a **$164 price target**, about 11% above the current price. This is a well-run builder in a net cash position, retiring roughly 5% of its shares a year, and at `r formatC(fig$reg$mho_pb, format='f', digits=2)`× book it is not expensive. But its return on equity has fallen from `r pc(fig$pnl$roe[2])` in 2024 to `r pc(fig$reg$mho_roe)` on trailing numbers, and a builder's book multiple is close to a restatement of its return on book. At an 11.5% cost of equity, today's multiple already pays for a normalized ROE of about `r pc(3.5 + fig$reg$mho_pb * (fig$dcf$ke - 3.5))`. My base case reaches `r pc(fig$pnl$roe[7])` by 2029. The recovery is largely in the price.
+I am initiating on M/I Homes at **Underweight** with a **`r usd(fig$meta$pt, 0)` price target**, about `r round(100*fig$meta$upside)`% above the current price and well below the street. This is a well-run company — net cash, retiring roughly 5% of its shares a year, and at `r formatC(fig$reg$mho_pb, format='f', digits=2)`× book not obviously expensive. The problem is what it now earns on that book. Return on equity has fallen from `r pc(fig$pnl$roe[2])` in 2024 to `r pc(fig$reg$mho_roe)` on trailing numbers. At an `r pc(fig$dcf$ke, 1)` cost of equity, today's multiple already pays for a normalized return of about `r pc(3.5 + fig$reg$mho_pb * (fig$dcf$ke - 3.5))`. My base case reaches `r pc(fig$pnl$roe[7])` by 2029, and only by assuming a competitive recovery I can't verify.
 
-The more interesting finding is underneath the rating, and it's the opposite of what I expected. In 2025 the [Southern]{.s-tag} segment, Raleigh and Charlotte alongside Florida and Texas, saw its operating margin fall from `r pc(s_om[2])` to `r pc(s_om[3])`. The [Northern]{.n-tag} segment, the Midwest business the market treats as a legacy drag, held at `r pc(n_om[3])`. The growth region stopped carrying the profit and loss.
+A 1% return is technically positive, but nothing impressive. MHO pays no dividend, so that's all you get, and with inflation what it is that's almost certainly negative in real terms. But the real issue is the risk. A `r sprintf("%+.0f%%", 100*fig$meta$upside)` expected return against an `r pc(fig$dcf$ke, 1)` cost of equity is roughly `r sprintf("%.0f", fig$dcf$ke - 100*fig$meta$upside)` points of negative alpha. And the risk is one-sided. My bull case is `r sprintf("%+.0f%%", 100*fig$scenarios$bull$upside)` and my bear case `r sprintf("%+.0f%%", 100*fig$scenarios$bear$upside)`, and the bull needs two independent things to go right at once, both rates falling and Sunbelt supply clearing, whereas the bear needs only one thing to keep happening.
 
-## Demand is real. Margin is the problem.
+The more interesting finding is underneath the rating, and it's the opposite of what I expected. In 2025 the [Southern]{.s-tag} segment, Raleigh and Charlotte alongside Florida and Texas, saw its operating margin fall from `r pc(s_om[2])` to `r pc(s_om[3])`. The [Northern]{.n-tag} segment, the Midwest business the market treats as a legacy drag, held at `r pc(n_om[3])`. The growth region stopped carrying the profit.
+
+## Demand is real; margin is the problem
 
 That net inflow is real, but it is slowing. 2025 was about 81% of the 2020–21 peak, and more importantly, arrivals are not clearing at the price builders want. House price indices for Raleigh and Charlotte rose just `r pc(fig$macro$raleigh_hpi)` and `r pc(fig$macro$charlotte_hpi)` over the three quarters to Q2 2026: flat in nominal terms, down in real terms, in the state everyone is moving to.
 
@@ -146,13 +151,13 @@ rbind(cbind(Region = c("Southern", "", "", ""), mk("south")),
 
 This was an important lesson for me, because I came into this project with the assumptions of the Portland, OR housing market in place. But the Southeast generally has much laxer zoning and permitting codes than the West Coast, which allows the market to quickly respond to the influx of demand with more construction, apparently even to the point of oversaturation. From a policy perspective it's a success story, but unfortunately MHO was not positioned to profit from that success.
 
-## How I built the forecast
+## The forecast
 
 Revenue is built region by region, deliveries times average selling price for [Northern]{.n-tag} and [Southern]{.s-tag} separately, rather than off a blended growth rate, because I'm interested in regional trends. Gross margin is what is left after an incentive load reduces the realized price and a separately-driven cost per home is subtracted.
 
 Incentive load is a base rate, plus a slope against the mortgage rate above a 5.5% neutral level, plus an explicit competition premium. That third term is necessary because rates were flat between 2024 and 2025 while the [Southern]{.s-tag} margin collapsed, so a rate-only model cannot reproduce what actually happened.
 
-The 2026 estimate is pinned to reported first-half results: `r format(fig$q226$deliveries, big.mark=',')` deliveries, `r usd(fig$q226$eps)` of EPS, a $`r fig$q226$asp`k average price. My full year of `r usd(eps26)` implies a second half about 8% ahead of the first, against an actual 6% step in 2025.
+The 2026 estimate is pinned to reported first-half results: `r format(fig$q226$deliveries, big.mark=',')` deliveries, `r usd(fig$q226$eps)` of EPS, a $`r fig$q226$asp`k average price. My full year of `r usd(eps26)` implies a second half about 8% ahead of the first, against an actual 6% step in 2025. But even this rosy outlook doesn't translate to a strong case for the stock.
 
 ```{r}
 #| label: tbl-sens
@@ -175,96 +180,98 @@ M/I Homes publishes no quantitative guidance; no delivery, revenue, margin or EP
 cs <- fig$consensus
 data.frame(
   Metric = c("2026E revenue", "2026E EPS", "2027E EPS", "Price target", "Rating"),
-  Mine = c("$4.15bn", usd(eps26), usd(eps27), "$164", "Neutral"),
+  Mine = c("$4.15bn", usd(eps26), usd(eps27), usd(fig$meta$pt, 0), fig$meta$rating),
   Consensus = c(cs$rev26, usd(cs$eps26), usd(cs$eps27), usd(cs$pt), cs$rating),
   Range = c("—", paste0(usd(cs$eps26_lo), "–", usd(cs$eps26_hi)), paste0(usd(cs$eps27_lo), "–", usd(cs$eps27_hi)), "—", "—"),
   check.names = FALSE
 ) |> kable(booktabs = TRUE, align = c("l", "r", "r", "r"))
 ```
 
-I sit below the street on both years and on the target, consistently rather than dramatically. My 2026 number is marginally below the lowest published estimate, which follows directly from not assuming a second-half margin inflection.
+I sit below the street on both years and, by a wider margin, on the target. My 2026 number is marginally below the lowest published estimate, which follows directly from not assuming a second-half margin inflection. I'm ok with deviating from the conventional wisdom here because four ratings is not that many, and I think the assumptions I made in the model are sound. However, I acknowledge it's a bit bold for my very first call. Time alone will tell.
 
 ::: {.callout-note appearance="simple"}
-**How much of the recovery is mine to defend.** Of the `r usd(fig$bridge$total)` of 2027 EPS growth over 2026, `r usd(fig$bridge$volume)` is extrapolation of reported trends: volume, price, cost and the buyback. `r usd(fig$bridge$rate)` is my mortgage-rate decline. And `r usd(fig$bridge$incentive)`, roughly half, is the [Southern]{.s-tag} competition premium decaying. I think it's a fair assumption because the current situation is an anomaly, but there's still no way to verify it until it happens. That's why the sensitivity grid matters more than the point estimate.
+**How much of the recovery is mine to defend.** Of the `r usd(fig$bridge$total)` of 2027 EPS growth over 2026, `r usd(fig$bridge$volume)` is extrapolation of reported trends: volume, price, cost and the buyback. `r usd(fig$bridge$rate)` is my mortgage-rate decline. And `r usd(fig$bridge$incentive)`, a little more than half, is the [Southern]{.s-tag} competition premium decaying. I think it's a fair assumption because the current situation is an anomaly, but there's still no way to verify it until it happens. That's why the sensitivity grid matters more than the point estimate.
 :::
 
 ## Valuation
 
-I ran a DCF and a comparables analysis separately, and they disagree. The DCF, at a `r pc(fig$dcf$wacc, 2)` WACC and 2.5% terminal growth, gives `r usd(fig$dcf$per_share)` today, below the market. The unadjusted peer median price-to-book of `r formatC(fig$comp_stats$median_pb, format='f', digits=2)`× gives about `r usd(fig$comp_stats$median_pb * mean(c(fig$pnl$bvps[i26], fig$pnl$bvps[i27])), 0)`.
+I ran a DCF and a comparables analysis separately, and they disagree sharply. The DCF, at a `r pc(fig$dcf$wacc, 2)` WACC and 2.5% terminal growth, gives `r usd(fig$dcf$per_share)` today, well below the market. The unadjusted peer median price-to-book of `r formatC(fig$comp_stats$median_pb, format='f', digits=2)`× gives about `r usd(fig$comp_stats$median_pb * mean(c(fig$pnl$bvps[i26], fig$pnl$bvps[i27])), 0)`, significantly above it.
 
 The DCF is low because a builder's earnings recovery does not reach shareholders. My base case grows NOPAT from $`r format(fig$dcf$nopat[1], big.mark=",")`m in 2026 to $`r format(fig$dcf$nopat[5], big.mark=",")`m in 2030, but land and homes under construction absorb roughly $200m a year over the same period. Growth, for a builder, consumes cash.
 
 ```{r}
-#| label: fig-pb
-#| fig-cap: "Book multiple against trailing return on book. Fitted on five peers; Tri Pointe is excluded because its 22× P/E signals trough earnings, so its book multiple is not describing its current return. The fit is tight partly because P/B = P/E × ROE is an identity — see the note below. Prices 4 September 2026; equity from each company's most recent 10-Q."
+#| label: tbl-peers
+#| tbl-cap: "The comparable set. Prices 4 September 2026; equity from each company's most recent 10-Q; trailing net income derived from market capitalisation and trailing P/E so every company sits on the same basis."
 cp <- fig$comps
-cp$grp <- ifelse(cp$ticker == "MHO", "M/I Homes", ifelse(cp$ticker == "TPH", "Excluded from fit", "Comp set"))
-fitd <- subset(cp, grp == "Comp set")
-ggplot(cp, aes(roe, pb)) +
-  geom_abline(intercept = fig$reg$intercept, slope = fig$reg$slope_pp, linetype = "22", linewidth = .5) +
-  geom_point(aes(colour = grp, size = grp)) +
-  geom_text(aes(label = ticker), nudge_y = .075, size = 2.6, colour = INK, family = BASE_FAMILY) +
-  scale_colour_manual(values = c("Comp set" = MUTED, "Excluded from fit" = FAINT, "M/I Homes" = SOUTH)) +
-  scale_size_manual(values = c("Comp set" = 2.2, "Excluded from fit" = 2.2, "M/I Homes" = 3.2), guide = "none") +
-  scale_x_continuous(labels = function(x) paste0(x, "%"), limits = c(4.5, 15.5)) +
-  scale_y_continuous(limits = c(.75, 1.95)) +
-  labs(x = "Trailing return on equity", y = "Price / book") +
-  theme_note()
+data.frame(
+  Company = paste0(cp$ticker, " — ", cp$name),
+  `Price`  = paste0("$", formatC(cp$price, format = "f", digits = 2)),
+  `Mkt cap $m` = formatC(cp$mktcap, format = "d", big.mark = ","),
+  `P/B`    = paste0(formatC(cp$pb, format = "f", digits = 2), "×"),
+  `P/E`    = paste0(formatC(cp$pe, format = "f", digits = 2), "×"),
+  `ROE`    = paste0(formatC(cp$roe, format = "f", digits = 1), "%"),
+  check.names = FALSE
+) |> kable(booktabs = TRUE, align = c("l", "r", "r", "r", "r", "r"))
 ```
+
+The striking thing in that table is the dispersion. Earnings multiples sit in a pretty narrow band, `r fig$comp_stats$pe_lo`× to `r fig$comp_stats$pe_hi`× excluding Tri Pointe, whose 22× reflects trough earnings rather than a rich valuation, while returns on equity run from `r pc(fig$comp_stats$roe_lo)` to `r pc(fig$comp_stats$roe_hi)`. So the market is paying similar earnings multiples for notably different returns on capital.
 
 ```{r}
 #| label: tbl-val
-#| tbl-cap: "Valuation summary — three independent views"
+#| tbl-cap: "Valuation summary — two independent views"
 v <- fig$valuation
 data.frame(
   Method = c(v$method, "Weighted price target"),
-  Value  = c(paste0("$", v$value), "$164"),
+  Value  = c(paste0("$", v$value), paste0("$", fig$meta$pt)),
   `vs price` = c(paste0(formatC(100 * (v$value / fig$meta$price - 1), format = "f", digits = 0, flag = "+"), "%"), paste0("+", round(100 * fig$meta$upside), "%")),
   Weight = c(paste0(round(100 * v$weight), "%"), "100%"),
   check.names = FALSE
 ) |> kable(booktabs = TRUE, align = c("l", "r", "r", "r"))
 ```
 
-::: {.callout-note appearance="simple"}
-**One caveat on the fit.** Price-to-book equals P/E × ROE by definition, so a tight relationship here is partly arithmetic: forcing the slope to the mean peer P/E with no fitting at all already gives an R² of `r fig$reg$r2_identity`. What the chart really shows is that peer earnings multiples cluster tightly (`r fig$comp_stats$pe_lo`× to `r fig$comp_stats$pe_hi`×) while returns on equity do not (`r pc(fig$comp_stats$roe_lo)` to `r pc(fig$comp_stats$roe_hi)`). The conclusion survives, but it also means the price-to-book and price-to-earnings comparables are one view of this stock, not two, which is why they are weighted once between them.
-:::
+There's a `r usd(fig$valuation$value[2] - fig$valuation$value[1], 0)` a share difference between the two methods, which makes me tread cautiously both with how I weight them and how much stock I put in the headline number. The DCF is grounded in what the business earns and what that leaves for shareholders once land has absorbed its share, while the comparables are grounded in what the market currently pays other builders for a dollar of book, and say nothing about whether the cash ever arrives. I weight the first more heavily for that reason.
 
-These weights are a judgment, but a defensible one. The two methods grounded in what the business earns, DCF and residual income, land near \$150. Only the method grounded in what peers trade at says `r usd(fig$valuation$value[2], 0)`, so I give the peer view the largest single weight without letting it carry a majority. Reweighting doesn't move the needle that much; putting 60% on the most optimistic method still only reaches about \$170, and you would need roughly three-quarters of the weight there to justify a Buy.
+However, it's ultimately a judgment call, and the target is more sensitive to it than I would like. At an even split it is about `r usd(0.5*fig$valuation$value[1] + 0.5*fig$valuation$value[2], 0)`, while weighting the comparables two-to-one over the DCF reaches roughly `r usd((fig$valuation$value[1] + 2*fig$valuation$value[2])/3, 0)`. Weighting the comparables at 100% gives `r usd(fig$valuation$value[2], 0)`, which is a Buy, so an analyst who trusts peer multiples and distrusts my cash-flow forecast reaches the opposite conclusion from the same spreadsheet. That's probably where the consensus Buy rating comes from. My objection is that the comparables value is three-quarters (\$32 of \$42 projected growth) a bet that M/I Homes re-rates to the peer multiple, and I'm skeptical that a builder earning `r pc(fig$scenarios$base$roe28)` on equity should be priced like ones earning 12% to 14%.
+
+I am about 9% below consensus on 2027 earnings and land at `r usd(fig$meta$pt, 0)` against the street's `r usd(fig$consensus$pt)`, so the target is consistent with the estimates rather than sitting on top of them.
 
 ## The bear case
 
-The bear case is not so much a recession as that the competition premium is structural rather than cyclical, and that I am calling a recovery that never arrives.
+The bear case isn't so much a recession as that the competition premium is structural rather than cyclical. It could be that even the slow decay in my base case is too generous, and the discounting simply persists.
 
 Affordability in Raleigh and Charlotte is now binding, so the marginal buyer can only be reached by moving down in price and specification. Every builder in those markets faces the same arithmetic and reaches the same conclusion at the same time. MHO controls `r format(fig$fy25$lots_south, big.mark=',')` lots in the [Southern]{.s-tag} region, `r format(fig$fy25$lots_south_owned, big.mark=',')` of them owned outright. Land bought for a \$500k product and sold into a \$440k market does not earn a 20% margin, and the $`r fig$fy25$writeoff_south`m of [Southern]{.s-tag} write-offs in 2025 may be the first installment rather than the last.
 
-The rate backdrop does not help: the 30-year mortgage sits at `r pc(fig$macro$mortgage_spot, 2)` and the 30-year Treasury at `r pc(fig$macro$ust30, 2)`. The long end has been rising. If rates hold near 7% and [Southern]{.s-tag} incentives ratchet higher, return on equity settles near `r pc(fig$scenarios$bear$roe28)`. The bull case rests on Sunbelt spec inventory clearing faster than I assume, and gets return on equity to `r pc(fig$scenarios$bull$roe28)`. I value both the same three ways as the base case, so the numbers are comparable rather than a separate judgement call.
+The rate backdrop doesn't help. The 30-year mortgage sits at `r pc(fig$macro$mortgage_spot, 2)` and the 30-year Treasury at `r pc(fig$macro$ust30, 2)`. If rates hold near 7% and [Southern]{.s-tag} incentives ratchet higher, return on equity settles near `r pc(fig$scenarios$bear$roe28)`. The bull case rests on Sunbelt spec inventory clearing faster than I assume, and gets return on equity to `r pc(fig$scenarios$bull$roe28)`. I value both the same two ways as the base case, so the numbers are comparable rather than a separate judgement call.
 
 ```{r}
 #| label: tbl-scen
-#| tbl-cap: "Scenarios, valued the same three ways as the base case"
+#| tbl-cap: "Scenarios, valued the same two ways as the base case"
 sc <- fig$scenarios
 data.frame(
   Scenario   = c("Bull", "Base", "Bear"),
   `2027E EPS` = sapply(sc[c("bull","base","bear")], function(x) usd(x$eps27)),
   `2028E ROE` = sapply(sc[c("bull","base","bear")], function(x) pc(x$roe28)),
+  `P/B used`  = sapply(sc[c("bull","base","bear")],
+                       function(x) paste0(formatC(x$pb, format = "f", digits = 2), "×")),
   Value      = sapply(sc[c("bull","base","bear")], function(x) usd(x$value, 0)),
   `vs price` = sapply(sc[c("bull","base","bear")],
                       function(x) sprintf("%+.0f%%", 100 * x$upside)),
-  `Peer earning that return today` = sapply(sc[c("bull","base","bear")],
-      function(x) sprintf("%s (%s%% ROE, %.2f× book)", x$peer_name, x$peer_roe, x$peer_pb)),
+  `Multiple taken from` = c(sprintf("%s, which earns %s%%", sc$bull$peer_name, sc$bull$peer_roe),
+                            "the peer median",
+                            sprintf("%s, which earns %s%%", sc$bear$peer_name, sc$bear$peer_roe)),
   check.names = FALSE, row.names = NULL
-) |> kable(booktabs = TRUE, align = c("l", "r", "r", "r", "r", "l"))
+) |> kable(booktabs = TRUE, align = c("l", "r", "r", "r", "r", "r", "l"))
 ```
 
-What I find reassuring about this is that neither end of the range is an extrapolation into empty space. Each scenario maps onto a builder that exists today. The bear case has MHO earning `r pc(fig$scenarios$bear$roe28)` on equity, which is almost exactly what Meritage earns now, and Meritage trades at `r formatC(fig$scenarios$bear$peer_pb, format='f', digits=2)`× book. The bull case has it earning `r pc(fig$scenarios$bull$roe28)`, which is Toll Brothers' current return, and Toll trades at `r formatC(fig$scenarios$bull$peer_pb, format='f', digits=2)`× book. The base case sits close to D.R. Horton. So the question is not whether these multiples are achievable in the abstract; it is which of three real companies M/I Homes comes to resemble. That is a more concrete question than a range of price targets usually implies, and it is why I am comfortable with the spread being wide.
+What I find reassuring about this is that neither end of the range is an extrapolation into empty space. Each scenario maps onto a builder that exists today. The bear case has MHO earning `r pc(fig$scenarios$bear$roe28)` on equity, which is almost exactly what Meritage earns now, and Meritage trades at `r formatC(fig$scenarios$bear$peer_pb, format='f', digits=2)`× book. The bull case has it earning `r pc(fig$scenarios$bull$roe28)`, which is Toll Brothers' current return, and Toll trades at `r formatC(fig$scenarios$bull$peer_pb, format='f', digits=2)`× book. The base case sits close to D.R. Horton. So the question is not whether these multiples are achievable in the abstract; it is which of three real companies M/I Homes comes to resemble. That is a more concrete question than a range of price targets usually implies, and it's why I am comfortable with the spread being wide.
 
-The skew is mildly unfavorable rather than symmetric, roughly `r sprintf("%+.0f%%", 100*fig$scenarios$bull$upside)` against `r sprintf("%+.0f%%", 100*fig$scenarios$bear$upside)`, and the bull case needs two independent things to go right at once: rates falling and Sunbelt supply clearing. That asymmetry is a large part of why this is a Neutral rather than a Buy.
+The skew is clearly unfavorable, roughly `r sprintf("%+.0f%%", 100*fig$scenarios$bull$upside)` against `r sprintf("%+.0f%%", 100*fig$scenarios$bear$upside)`, and the bull case needs two independent things to go right at once: rates falling and Sunbelt supply clearing. The bear case needs only one thing to keep happening. That asymmetry, more than the target itself, is what makes this an Underweight.
 
 What would change my mind, constructively: two consecutive quarters of [Southern]{.s-tag} gross margin expansion with average selling price stable or rising. Negatively: further write-offs in the [Southern]{.s-tag} land bank, or [Southern]{.s-tag} average selling price falling below $440k.
 
 ## Sources and limitations
 
-Claude Code assisted me with gathering data and writing code. Financial statements were copied from the FY2025 Form 10-K (filed 13 February 2026); segment revenue, cost and operating income come from its Note 12. Operating detail by region comes from the Q4 earnings releases for 2023, 2024 and 2025 and the Q2 2026 release. Consolidated figures were checked against SEC XBRL company facts and match to the dollar. Rates and house price indices are from FRED; prices and trailing multiples from stockanalysis.com on 4 September 2026. All forecasts are mine.
+Claude Code assisted me with gathering data, writing code and Excel. Financial statements were copied from the FY2025 Form 10-K (filed 13 February 2026); segment revenue, cost and operating income come from its Note 12. Operating detail by region comes from the Q4 earnings releases for 2023, 2024 and 2025 and the Q2 2026 release. Consolidated figures were checked against SEC XBRL company facts and match to the dollar. Rates and house price indices are from FRED; prices and trailing multiples from stockanalysis.com on 4 September 2026. All forecasts are mine.
 
 Two limitations are worth stating. MHO reports only two geographic segments, so Raleigh and Charlotte cannot be separated from Florida and Texas in public filings. "Southern" is the closest available proxy for the North Carolina question. And the financial services segment, about 13% of segment operating income, is valued inside the consolidated DCF rather than separately, which is a simplification rather than a strictly correct treatment.
 

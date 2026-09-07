@@ -7,3 +7,6 @@
 data/
 
 .Renviron
+
+# Excel lock files
+~$*
