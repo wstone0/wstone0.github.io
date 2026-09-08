@@ -11,10 +11,10 @@
   "mktcap_bn": 3.747,
   "shares_m": 25.28,
   "bull": 172,
-  "bear": 90,
+  "bear": 98,
   "rating": "Underweight",
-  "ev": 140,
-  "ev_upside": -0.0523,
+  "ev": 142,
+  "ev_upside": -0.0389,
   "p_bull": 0.25,
   "p_base": 0.5,
   "p_bear": 0.25
@@ -415,20 +415,20 @@
  },
  "scenarios": {
   "bull": {
-   "eps27": 16.82,
-   "eps28": 21.37,
-   "roe27": 11.9,
-   "roe28": 13.3,
-   "bvps": 136.7,
-   "pb": 1.53,
-   "dcf": 148,
-   "rel": 209,
+   "eps27": 16.19,
+   "eps28": 20.07,
+   "roe27": 11.5,
+   "roe28": 12.6,
+   "bvps": 136.84,
+   "pb": 1.68,
+   "dcf": 133,
+   "rel": 230,
    "value": 172,
-   "upside": 0.162,
-   "peer": "TOL",
-   "peer_name": "Toll Brothers",
-   "peer_pb": 1.53,
-   "peer_roe": 13.5
+   "upside": 0.159,
+   "peer": "DHI",
+   "peer_name": "D.R. Horton",
+   "peer_pb": 1.68,
+   "peer_roe": 12.3
   },
   "base": {
    "eps27": 14.06,
@@ -447,20 +447,20 @@
    "peer_roe": 12.3
   },
   "bear": {
-   "eps27": 8.82,
-   "eps28": 8.57,
-   "roe27": 6.7,
-   "roe28": 6.2,
-   "bvps": 130.85,
-   "pb": 0.87,
-   "dcf": 74,
-   "rel": 114,
-   "value": 90,
-   "upside": -0.393,
-   "peer": "MTH",
-   "peer_name": "Meritage",
-   "peer_pb": 0.87,
-   "peer_roe": 6.2
+   "eps27": 9.53,
+   "eps28": 9.38,
+   "roe27": 7.2,
+   "roe28": 6.7,
+   "bvps": 131.74,
+   "pb": 0.94,
+   "dcf": 82,
+   "rel": 123,
+   "value": 98,
+   "upside": -0.336,
+   "peer": "LEN",
+   "peer_name": "Lennar",
+   "peer_pb": 0.94,
+   "peer_roe": 7.1
   }
  },
  "dcf": {
@@ -486,7 +486,7 @@
  },
  "valuation": [
   {
-   "method": "Discounted cash flow",
+   "method": "Discounted cash flow, rolled forward 12 months",
    "value": 123,
    "weight": 0.6
   },
@@ -512,9 +512,9 @@
   "eps26": 11.94,
   "eps27": 14.06,
   "total": 2.12,
-  "volume": 0.61,
+  "volume": 1.08,
   "rate": 0.4,
-  "incentive": 1.11
+  "incentive": 0.63
  },
  "macro": {
   "mortgage_spot": 6.71,
